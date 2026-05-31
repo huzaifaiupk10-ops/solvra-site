@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — SOLVRA AI Studio</title>
+  <meta name="description" content="SOLVRA is run by Huzaifa Imran — web developer, AI agent developer, and UX/UI designer. Premium digital products for ambitious businesses."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="SOLVRA"/>
+  <meta property="og:title" content="About — SOLVRA AI Studio"/>
+  <meta property="og:description" content="SOLVRA is run by Huzaifa Imran — web developer, AI agent developer, and UX/UI designer. Premium digital products for ambitious businesses."/>
+  <meta property="og:image" content="https://solvrapremium.netlify.app/og-image.png"/>
+  <meta property="og:url" content="https://solvrapremium.netlify.app/about.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="About — SOLVRA AI Studio"/>
+  <meta name="twitter:description" content="SOLVRA is run by Huzaifa Imran — web developer, AI agent developer, and UX/UI designer."/>
+  <meta name="twitter:image" content="https://solvrapremium.netlify.app/og-image.png"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#080808;color:#fff;font-family:'Inter',sans-serif;overflow-x:hidden;}
+    .dot-grid{background-image:radial-gradient(circle,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:32px 32px;}
+    .navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.75);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.05);}
+    .nav-link{font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);transition:color 0.2s;cursor:pointer;}
+    .nav-link:hover{color:rgba(255,255,255,0.9);}
+    .nav-link.active{color:#C9992A;}
+    .btn-gold{background:linear-gradient(135deg,#C9992A,#E8B84B,#C9992A);background-size:200%;color:#080808;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.12em;transition:all 0.3s;cursor:pointer;}
+    .btn-gold:hover{box-shadow:0 0 30px rgba(201,153,42,0.4);transform:translateY(-2px);}
+    .page-hero{background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(100,40,180,0.1) 0%,transparent 65%),#080808;padding:160px 0 80px;}
+    .section-badge{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:#C9992A;display:flex;align-items:center;gap:10px;}
+    .section-badge::before,.section-badge::after{content:'';display:inline-block;width:20px;height:1px;background:linear-gradient(90deg,#C9992A,transparent);}
+    .value-card{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px 24px;transition:all 0.3s;cursor:pointer;}
+    .value-card:hover{border-color:rgba(201,153,42,0.25);transform:translateY(-4px);}
+    .team-card{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:16px;overflow:hidden;transition:all 0.3s;cursor:pointer;}
+    .team-card:hover{border-color:rgba(201,153,42,0.25);transform:translateY(-5px);}
+    .team-avatar{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;}
+    ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:#080808;}::-webkit-scrollbar-thumb{background:rgba(201,153,42,0.3);border-radius:3px;}
+    @media(hover:none){body{cursor:auto}}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 cursor-pointer">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+        <path d="M19 2L35 11V27L19 36L3 27V11L19 2Z" fill="#C9992A" fill-opacity="0.12" stroke="#C9992A" stroke-width="1.4"/>
+        <path d="M19 8L29 14V26L19 32L9 26V14L19 8Z" fill="#C9992A" fill-opacity="0.07" stroke="#C9992A" stroke-width="0.7"/>
+        <text x="19" y="24" text-anchor="middle" fill="#C9992A" font-size="15" font-weight="700" font-family="Space Grotesk,sans-serif">S</text>
+      </svg>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:0.18em;line-height:1;color:#fff;">SOLVRA</div>
+        <div style="font-size:0.58rem;letter-spacing:0.28em;color:#C9992A;opacity:0.8;margin-top:2px;">AI STUDIO</div>
+      </div>
+    </a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="work.html" class="nav-link">Work</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="process.html" class="nav-link">Process</a>
+      <a href="insights.html" class="nav-link">Insights</a>
+    </div>
+    <button id="mob-btn" class="lg:hidden flex flex-col justify-center gap-1.5 p-1.5 bg-transparent border-0" aria-label="Menu">
+      <span class="block w-5 h-px bg-white rounded transition-all duration-300"></span>
+      <span class="block w-5 h-px bg-white rounded transition-all duration-300"></span>
+      <span class="block w-5 h-px bg-white rounded transition-all duration-300"></span>
+    </button>
+    <button class="btn-gold hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-md">
+      LET'S BUILD
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div id="mob-nav" class="hidden fixed inset-0 z-50 flex-col items-center justify-center gap-3" style="background:rgba(8,8,8,0.97);backdrop-filter:blur(24px);">
+  <a href="index.html" class="text-3xl font-light text-white/60 hover:text-white transition-colors py-2" style="font-family:'Space Grotesk',sans-serif;">Home</a>
+  <a href="services.html" class="text-3xl font-light text-white/60 hover:text-white transition-colors py-2" style="font-family:'Space Grotesk',sans-serif;">Services</a>
+  <a href="work.html" class="text-3xl font-light text-white/60 hover:text-white transition-colors py-2" style="font-family:'Space Grotesk',sans-serif;">Work</a>
+  <a href="about.html" class="text-3xl font-light text-white/60 hover:text-white transition-colors py-2" style="font-family:'Space Grotesk',sans-serif;">About</a>
+  <a href="process.html" class="text-3xl font-light text-white/60 hover:text-white transition-colors py-2" style="font-family:'Space Grotesk',sans-serif;">Process</a>
+  <a href="insights.html" class="text-3xl font-light text-white/60 hover:text-white transition-colors py-2" style="font-family:'Space Grotesk',sans-serif;">Insights</a>
+  <div style="width:40px;height:1px;background:rgba(255,255,255,0.1);margin:12px 0;"></div>
+  <a href="index.html#contact" class="text-xs tracking-widest uppercase border px-6 py-3 rounded" style="color:#C9992A;border-color:rgba(201,153,42,0.4);">Let's Build</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero dot-grid">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div>
+        <div class="section-badge mb-6">ABOUT US</div>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.8rem,4vw,4.2rem);font-weight:700;line-height:1.06;letter-spacing:-0.02em;margin-bottom:24px;">
+          I am SOLVRA.<br/>AI is my craft.
+        </h1>
+        <p style="color:rgba(255,255,255,0.4);font-size:1rem;line-height:1.75;margin-bottom:32px;">
+          SOLVRA is a premium AI development studio founded on the belief that intelligence, design, and engineering should work together. I partner with ambitious companies to build AI products that don't just function — they lead.
+        </p>
+        <p style="color:rgba(255,255,255,0.3);font-size:0.9rem;line-height:1.75;">
+          From automation pipelines to full-stack AI platforms, I bring the expertise, craft, and obsession with quality that separates good from exceptional.
+        </p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div style="background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;color:#fff;line-height:1;">45+</div>
+          <div style="font-size:0.78rem;color:rgba(255,255,255,0.35);margin-top:6px;">Projects delivered across 12 industries</div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div style="background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:24px;">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:#C9992A;line-height:1;">98%</div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:6px;">Satisfaction rate</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:24px;">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:#C9992A;line-height:1;">5+</div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:6px;">Years of excellence</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section style="padding:80px 0;background:#080808;border-top:1px solid rgba(255,255,255,0.05);">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="section-badge justify-center mb-12">MY VALUES</div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="value-card">
+        <div style="font-size:1.6rem;margin-bottom:14px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C9992A" stroke-width="1.4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:10px;">Excellence First</h3>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.35);line-height:1.7;">I don't ship mediocre work. Every pixel, every prompt, every line of code is crafted to the highest standard.</p>
+      </div>
+      <div class="value-card">
+        <div style="font-size:1.6rem;margin-bottom:14px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C9992A" stroke-width="1.4"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:10px;">AI at the Core</h3>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.35);line-height:1.7;">I don't bolt AI onto existing products. I design systems from the ground up with intelligence woven in.</p>
+      </div>
+      <div class="value-card">
+        <div style="font-size:1.6rem;margin-bottom:14px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C9992A" stroke-width="1.4"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:10px;">True Partnership</h3>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.35);line-height:1.7;">I operate as an extension of your team — aligned with your goals, invested in your success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section style="padding:80px 0;background:#080808;border-top:1px solid rgba(255,255,255,0.05);">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="section-badge justify-center mb-12">THE TEAM</div>
+    <div class="flex justify-center">
+      <div class="team-card" style="max-width:300px;width:100%;">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#1a0b3b,#0d0520);height:200px;">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><circle cx="30" cy="22" r="14" stroke="#C9992A" stroke-width="1.2" fill="none"/><path d="M6 54c0-13.3 10.7-24 24-24s24 10.7 24 24" stroke="#C9992A" stroke-width="1.2" fill="none"/></svg>
+        </div>
+        <div style="padding:20px;">
+          <div style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:#C9992A;margin-bottom:6px;">Founder / Developer / Designer</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:0.95rem;font-weight:700;color:#fff;">Huzaifa Imran</div>
+          <div style="font-size:0.72rem;color:rgba(255,255,255,0.38);margin-top:7px;line-height:1.65;">Web Developer &bull; AI Agent Developer &bull; UX/UI Designer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const mbtn = document.getElementById('mob-btn');
+const mnav = document.getElementById('mob-nav');
+mbtn.addEventListener('click', () => {
+  const open = mnav.classList.toggle('hidden');
+  mnav.style.display = open ? '' : 'flex';
+  document.body.style.overflow = !open ? 'hidden' : '';
+});
+mnav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mnav.classList.add('hidden');
+    mnav.style.display = '';
+    document.body.style.overflow = '';
+  });
+});
+</script>
+<script src="gate.js"></script>
+</body>
+</html>

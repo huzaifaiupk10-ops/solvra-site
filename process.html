@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Process – SOLVRA AI Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#080808;color:#fff;font-family:'Inter',sans-serif;overflow-x:hidden;}
+    .dot-grid{background-image:radial-gradient(circle,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:32px 32px;}
+    .navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.75);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.05);}
+    .nav-link{font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);transition:color 0.2s;cursor:pointer;}
+    .nav-link:hover{color:rgba(255,255,255,0.9);}
+    .nav-link.active{color:#C9992A;}
+    .btn-gold{background:linear-gradient(135deg,#C9992A,#E8B84B,#C9992A);background-size:200%;color:#080808;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.12em;transition:all 0.3s;cursor:pointer;}
+    .btn-gold:hover{box-shadow:0 0 30px rgba(201,153,42,0.4);transform:translateY(-2px);}
+    .page-hero{background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(100,40,180,0.1) 0%,transparent 65%),#080808;padding:160px 0 80px;}
+    .section-badge{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:#C9992A;display:flex;align-items:center;gap:10px;}
+    .section-badge::before,.section-badge::after{content:'';display:inline-block;width:20px;height:1px;background:linear-gradient(90deg,#C9992A,transparent);}
+    .process-step{display:grid;grid-template-columns:80px 1fr;gap:32px;padding:48px 0;border-bottom:1px solid rgba(255,255,255,0.05);align-items:start;}
+    .step-num-box{width:64px;height:64px;border-radius:14px;background:rgba(201,153,42,0.08);border:1px solid rgba(201,153,42,0.2);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:#C9992A;flex-shrink:0;}
+    .connector{width:2px;height:40px;background:linear-gradient(to bottom,rgba(201,153,42,0.3),transparent);margin:4px auto;}
+    ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:#080808;}::-webkit-scrollbar-thumb{background:rgba(201,153,42,0.3);border-radius:3px;}
+    @media(hover:none){body{cursor:auto}}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 cursor-pointer">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+        <path d="M19 2L35 11V27L19 36L3 27V11L19 2Z" fill="#C9992A" fill-opacity="0.12" stroke="#C9992A" stroke-width="1.4"/>
+        <path d="M19 8L29 14V26L19 32L9 26V14L19 8Z" fill="#C9992A" fill-opacity="0.07" stroke="#C9992A" stroke-width="0.7"/>
+        <text x="19" y="24" text-anchor="middle" fill="#C9992A" font-size="15" font-weight="700" font-family="Space Grotesk,sans-serif">S</text>
+      </svg>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:0.18em;line-height:1;color:#fff;">SOLVRA</div>
+        <div style="font-size:0.58rem;letter-spacing:0.28em;color:#C9992A;opacity:0.8;margin-top:2px;">AI STUDIO</div>
+      </div>
+    </a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="work.html" class="nav-link">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="process.html" class="nav-link active">Process</a>
+      <a href="insights.html" class="nav-link">Insights</a>
+    </div>
+    <button id="mob-btn" class="lg:hidden flex flex-col justify-center gap-1.5 p-1.5 bg-transparent border-0" aria-label="Menu">
+      <span class="block w-5 h-px bg-white rounded transition-all duration-300"></span>
+      <span class="block w-5 h-px bg-white rounded transition-all duration-300"></span>
+      <span class="block w-5 h-px bg-white rounded transition-all duration-300"></span>
+    </button>
+    <button class="btn-gold hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-md">
+      LET'S BUILD
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div id="mob-nav" class="hidden fixed inset-0 z-50 flex-col items-center justify-center gap-3" style="background:rgba(8,8,8,0.97);backdrop-filter:blur(24px);">
+  <a href="index.html" class="text-3xl font-light text-white/60 hover:text-white transition-colors py-2" style="font-family:'Space Grotesk',sans-serif;">Home</a>
+  <a href="services.html" class="text-3xl font-light text-white/60 hover:text-white transition-colors py-2" style="font-family:'Space Grotesk',sans-serif;">Services</a>
+  <a href="work.html" class="text-3xl font-light text-white/60 hover:text-white transition-colors py-2" style="font-family:'Space Grotesk',sans-serif;">Work</a>
+  <a href="about.html" class="text-3xl font-light text-white/60 hover:text-white transition-colors py-2" style="font-family:'Space Grotesk',sans-serif;">About</a>
+  <a href="process.html" class="text-3xl font-light text-white/60 hover:text-white transition-colors py-2" style="font-family:'Space Grotesk',sans-serif;">Process</a>
+  <a href="insights.html" class="text-3xl font-light text-white/60 hover:text-white transition-colors py-2" style="font-family:'Space Grotesk',sans-serif;">Insights</a>
+  <div style="width:40px;height:1px;background:rgba(255,255,255,0.1);margin:12px 0;"></div>
+  <a href="index.html#contact" class="text-xs tracking-widest uppercase border px-6 py-3 rounded" style="color:#C9992A;border-color:rgba(201,153,42,0.4);">Let's Build</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero dot-grid">
+  <div class="max-w-7xl mx-auto px-8 text-center">
+    <div class="section-badge justify-center mb-6">HOW I WORK</div>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:700;line-height:1.06;letter-spacing:-0.02em;margin-bottom:20px;">My Process</h1>
+    <p style="color:rgba(255,255,255,0.4);font-size:1rem;line-height:1.7;max-width:520px;margin:0 auto;">A structured, battle-tested process that turns your idea into a premium, working AI product — every time.</p>
+  </div>
+</section>
+
+<!-- PROCESS STEPS -->
+<section style="padding:80px 0;background:#080808;">
+  <div class="max-w-5xl mx-auto px-8">
+
+    <div class="process-step">
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="step-num-box">01</div>
+        <div class="connector"></div>
+      </div>
+      <div style="padding-top:8px;">
+        <div style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:#C9992A;margin-bottom:12px;">Discovery & Strategy</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:16px;">I map the problem, not just the feature.</h3>
+        <p style="font-size:0.9rem;color:rgba(255,255,255,0.38);line-height:1.75;margin-bottom:20px;">I start with a deep-dive call to understand your business, your users, and what success actually looks like. I challenge assumptions, identify edge cases, and define the right solution — not just the obvious one.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Stakeholder Interviews</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Problem Mapping</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Tech Stack Audit</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Scope Definition</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="step-num-box">02</div>
+        <div class="connector"></div>
+      </div>
+      <div style="padding-top:8px;">
+        <div style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:#C9992A;margin-bottom:12px;">Design & Architecture</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:16px;">Beautiful systems designed to scale.</h3>
+        <p style="font-size:0.9rem;color:rgba(255,255,255,0.38);line-height:1.75;margin-bottom:20px;">Before a line of code is written, I architect the full system and design the UI in high fidelity. You see exactly what will be built. Feedback happens here — not after development.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">System Architecture</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">UI/UX Design</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Data Flow Design</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Prototype Review</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="step-num-box">03</div>
+        <div class="connector"></div>
+      </div>
+      <div style="padding-top:8px;">
+        <div style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:#C9992A;margin-bottom:12px;">Build & Integrate</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:16px;">Precision engineering with AI at every layer.</h3>
+        <p style="font-size:0.9rem;color:rgba(255,255,255,0.38);line-height:1.75;margin-bottom:20px;">My engineers build in focused sprints with weekly demos. I integrate AI models, automate workflows, and wire everything together — keeping you in the loop without slowing down.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Agile Sprints</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">AI Model Integration</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">API Development</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Weekly Demos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="step-num-box">04</div>
+        <div class="connector"></div>
+      </div>
+      <div style="padding-top:8px;">
+        <div style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:#C9992A;margin-bottom:12px;">Test & Refine</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:16px;">I break it so your users don't.</h3>
+        <p style="font-size:0.9rem;color:rgba(255,255,255,0.38);line-height:1.75;margin-bottom:20px;">Rigorous QA across edge cases, AI behavior testing, performance benchmarks, and UAT with real users before anything goes live. I ship confident — not hopeful.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">QA Testing</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">AI Behavior Testing</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Performance Audit</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">UAT Sign-off</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step" style="border-bottom:none;">
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="step-num-box">05</div>
+      </div>
+      <div style="padding-top:8px;">
+        <div style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:#C9992A;margin-bottom:12px;">Launch & Scale</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:16px;">I launch, then I grow with you.</h3>
+        <p style="font-size:0.9rem;color:rgba(255,255,255,0.38);line-height:1.75;margin-bottom:20px;">Deployment, monitoring, and ongoing optimization. I'm not done when I ship — I'm done when you're winning. Retainer packages available for continued AI model improvement and feature development.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Deployment</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Monitoring</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Model Optimization</span>
+          <span style="font-size:0.67rem;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.2);color:rgba(255,255,255,0.4);">Retainer Support</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:80px 0;border-top:1px solid rgba(255,255,255,0.05);text-align:center;">
+  <div class="max-w-7xl mx-auto px-8">
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2.6rem;font-weight:700;margin-bottom:16px;">Start your project today.</h2>
+    <p style="color:rgba(255,255,255,0.35);margin-bottom:36px;">Step 1 is a free discovery call. No commitment, no fluff.</p>
+    <button class="btn-gold flex items-center gap-2 px-8 py-4 rounded-md mx-auto text-sm">
+      BOOK A FREE CALL
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</section>
+
+<script>
+const mbtn = document.getElementById('mob-btn');
+const mnav = document.getElementById('mob-nav');
+mbtn.addEventListener('click', () => {
+  const open = mnav.classList.toggle('hidden');
+  mnav.style.display = open ? '' : 'flex';
+  document.body.style.overflow = !open ? 'hidden' : '';
+});
+mnav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mnav.classList.add('hidden');
+    mnav.style.display = '';
+    document.body.style.overflow = '';
+  });
+});
+</script>
+<script src="gate.js"></script>
+</body>
+</html>

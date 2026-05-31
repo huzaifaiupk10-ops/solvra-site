@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sol Slice &mdash; SOLVRA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0A0A0A;color:#F0EBE0;font-family:'Cormorant Garamond',sans-serif;overflow-x:hidden;cursor:none}
+img,svg{display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:none}
+#cur{width:9px;height:9px;background:#C4965A;border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);transition:width .15s,height .15s}
+#cur-ring{width:36px;height:36px;border:1px solid rgba(196,150,90,.32);border-radius:50%;position:fixed;z-index:9998;pointer-events:none;transform:translate(-50%,-50%)}
+nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:18px 36px;border-radius:14px;background:rgba(255,255,255,0.04);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,0.08);box-shadow:0 8px 32px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.06)}
+.nb{display:none}
+.logo{display:flex;align-items:center;gap:12px}
+.lwm{font-family:'Cormorant Garamond',sans-serif;font-weight:700;font-size:.83rem;letter-spacing:.28em;text-transform:uppercase;color:#F0EBE0}
+.lsub{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.22em;color:#C4965A;opacity:.7;margin-top:2px}
+.back-link{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(196,150,90,.6);display:flex;align-items:center;gap:8px;transition:color .2s}
+.back-link:hover{color:#C4965A}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#C4965A;border:1px solid rgba(196,150,90,.32);padding:10px 20px;border-radius:2px;transition:all .25s;background:transparent}
+.nav-cta:hover{background:rgba(196,150,90,.08);border-color:#C4965A}
+.proj-hero{padding:160px 80px 80px;border-bottom:1px solid #1E1E1E}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+.eyebrow-line{width:44px;height:1px;background:#C4965A;flex-shrink:0}
+.eyebrow-txt{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:#C4965A}
+.proj-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,6.5vw,7.5rem);line-height:.92;letter-spacing:-.03em;margin-bottom:40px;max-width:900px}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px}
+.ptag{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border:1px solid #1E1E1E;color:#5C5650;border-radius:2px}
+.proj-img-wrap{border-bottom:1px solid #1E1E1E;background:#060606}
+.proj-img-wrap img{width:100%;height:auto;display:block}
+.proj-details{display:grid;grid-template-columns:1fr 320px;border-bottom:1px solid #1E1E1E}
+.proj-desc-col{padding:72px 80px;border-right:1px solid #1E1E1E}
+.sec-label{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:#3A3530;margin-bottom:20px}
+.proj-desc-text{font-size:1rem;line-height:1.9;color:rgba(240,235,224,.68);max-width:580px}
+.proj-meta-col{padding:72px 48px}
+.meta-block{margin-bottom:36px}
+.meta-label{font-family:'JetBrains Mono',monospace;font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:#2E2A26;margin-bottom:10px}
+.meta-val{font-family:'Cormorant Garamond',sans-serif;font-size:.85rem;color:rgba(240,235,224,.62);line-height:1.8}
+.proj-cta{padding:80px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.cta-text{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);line-height:1.05;letter-spacing:-.02em;max-width:500px}
+.cta-text em{font-style:italic;color:#C4965A}
+.cta-btns{display:flex;gap:14px;flex-shrink:0}
+.btn-fill{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;background:#C4965A;color:#080808;border:none;padding:15px 30px;border-radius:2px;cursor:none;transition:opacity .25s;display:inline-flex;align-items:center;gap:10px;font-weight:500}
+.btn-fill:hover{opacity:.85}
+.btn-outline{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:rgba(240,235,224,.62);border:1px solid #1E1E1E;padding:15px 30px;border-radius:2px;cursor:none;transition:all .25s;display:inline-flex;align-items:center;gap:10px}
+.btn-outline:hover{border-color:rgba(196,150,90,.4);color:#C4965A}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#0A0A0A}::-webkit-scrollbar-thumb{background:rgba(196,150,90,.2);border-radius:2px}
+@media(hover:none){body{cursor:auto}button{cursor:pointer}#cur,#cur-ring{display:none}}
+@media(max-width:768px){
+  nav{top:8px;left:10px;right:10px;padding:12px 18px}
+  .back-link{display:none}
+  .proj-hero{padding:100px 24px 56px}
+  .proj-details{grid-template-columns:1fr}
+  .proj-desc-col{padding:48px 24px;border-right:none;border-bottom:1px solid #1E1E1E}
+  .proj-meta-col{padding:40px 24px}
+  .proj-cta{flex-direction:column;align-items:flex-start;padding:48px 24px;gap:24px}
+  .cta-btns{flex-direction:column;width:100%}
+  .btn-fill,.btn-outline{justify-content:center;width:100%;box-sizing:border-box}
+}
+.proj-title,.cta-text{background:linear-gradient(110deg,#c0c0c0 0%,#e8e8e8 22%,#ffffff 38%,#f4f4f4 48%,#e2e2e2 58%,#f9f9f9 72%,#ffffff 82%,#d8d8d8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta-text em{background:none;-webkit-text-fill-color:#C4965A}
+#curtain{position:fixed;inset:0;background:#0A0A0A;z-index:10000;pointer-events:none;animation:curtain-up .9s cubic-bezier(.76,0,.24,1) .05s forwards}
+@keyframes curtain-up{0%{transform:translateY(0)}100%{transform:translateY(-100%)}}
+.eyebrow{opacity:0;transform:translateY(20px);animation:rv .65s cubic-bezier(.4,0,.2,1) .65s forwards}
+.proj-title{opacity:0;transform:translateY(40px);animation:rv .9s cubic-bezier(.22,1,.36,1) .82s forwards}
+.tag-row{opacity:0;transform:translateY(16px);animation:rv .6s cubic-bezier(.4,0,.2,1) 1.08s forwards}
+@keyframes rv{to{opacity:1;transform:translateY(0)}}
+.sr{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.sr.in{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<div id="curtain"></div>
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<nav>
+  <a href="index.html" class="logo">
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M17 2L31 9.5V24.5L17 32L3 24.5V9.5L17 2Z" fill="#C4965A" fill-opacity="0.1" stroke="#C4965A" stroke-width="1.2"/><text x="17" y="22" text-anchor="middle" fill="#C4965A" font-size="13" font-weight="700" font-family="Space Grotesk,sans-serif">S</text></svg>
+    <div><div class="lwm">SOLVRA</div><div class="lsub">AI STUDIO</div></div>
+  </a>
+  <a href="index.html" class="back-link">Home</a>
+  <a href="index.html#projects" class="back-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Back to Work
+  </a>
+  <a href="index.html#contact" class="nav-cta">Start a Project</a>
+</nav>
+
+<section class="proj-hero">
+  <div class="eyebrow">
+    <div class="eyebrow-line"></div>
+    <div class="eyebrow-txt">Creative Agency Landing Page</div>
+  </div>
+  <h1 class="proj-title">Sol<br/>Slice</h1>
+  <div class="tag-row">
+    <span class="ptag">Web Design</span>
+    <span class="ptag">Front-End</span>
+    <span class="ptag">UI/UX</span>
+  </div>
+</section>
+
+<div class="proj-img-wrap">
+  <img src="project8.jpg" alt="Sol Slice"/>
+</div>
+
+<div class="proj-details">
+  <div class="proj-desc-col">
+    <div class="sec-label">Overview</div>
+    <p class="proj-desc-text">A creative agency landing page concept focused on bold visuals, modern structure, and a sleek user experience. Designed to make an immediate impact, the page leads with strong visual hierarchy and precise typography to communicate the agency&apos;s personality within the first scroll. Every section was crafted to move the visitor naturally toward a single, clear goal: getting in touch.</p>
+  </div>
+  <div class="proj-meta-col">
+    <div class="meta-block">
+      <div class="meta-label">Category</div>
+      <div class="meta-val">Creative Agency</div>
+    </div>
+    <div class="meta-block">
+      <div class="meta-label">Services Delivered</div>
+      <div class="meta-val">Web Design<br/>Front-End Development<br/>UI/UX Design</div>
+    </div>
+    <div class="meta-block">
+      <div class="meta-label">Type</div>
+      <div class="meta-val">Concept Project</div>
+    </div>
+  </div>
+</div>
+
+<div class="proj-cta">
+  <div class="cta-text">Want something<br/><em>like this?</em></div>
+  <div class="cta-btns">
+    <a href="index.html#contact"><button class="btn-fill">Start a Project <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+    <a href="index.html#projects"><button class="btn-outline">View All Work</button></a>
+  </div>
+</div>
+
+<script>
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
+let mx=window.innerWidth/2,my=window.innerHeight/2,rx=mx,ry=my;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.width='14px';cur.style.height='14px'});el.addEventListener('mouseleave',()=>{cur.style.width='9px';cur.style.height='9px'})});
+const sr=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');sr.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.proj-img-wrap,.proj-details,.proj-cta').forEach(el=>{el.classList.add('sr');sr.observe(el)});
+</script>
+<script src="gate.js"></script>
+</body>
+</html>

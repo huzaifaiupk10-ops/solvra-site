@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SOLVRA — Premium AI Development Studio</title>
+<meta name="description" content="Premium AI development studio. Web development, AI agents & automation, and branding & identity for ambitious businesses."/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="SOLVRA"/>
+<meta property="og:title" content="SOLVRA — Web Development, AI Agents & Branding Studio"/>
+<meta property="og:description" content="Web development, AI agents & automation, and branding & identity for ambitious businesses. Studio-level craft, freelance flexibility."/>
+<meta property="og:image" content="https://solvrapremium.netlify.app/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="SOLVRA — Premium AI Development Studio"/>
+<meta property="og:url" content="https://solvrapremium.netlify.app"/>
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="SOLVRA — Premium AI Development Studio"/>
+<meta name="twitter:description" content="Web development, AI agents & automation, and branding & identity for ambitious businesses."/>
+<meta name="twitter:image" content="https://solvrapremium.netlify.app/og-image.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0A0A0A;color:#F0EBE0;font-family:'Cormorant Garamond',sans-serif;overflow-x:hidden;cursor:none}
+img,svg{display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:none}
+
+#cur{width:9px;height:9px;background:#C4965A;border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);transition:width .15s,height .15s,opacity .2s}
+#cur-ring{width:36px;height:36px;border:1px solid rgba(196,150,90,.32);border-radius:50%;position:fixed;z-index:9998;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+
+.serif{font-family:'Cormorant Garamond',serif}
+.mono{font-family:'JetBrains Mono',monospace}
+
+nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:18px 36px;border-radius:14px;background:rgba(255,255,255,0.04);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,0.08);box-shadow:0 8px 32px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.06)}
+.mob-btn{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;padding:6px;cursor:none;flex-shrink:0}
+.mob-btn span{display:block;width:20px;height:1.5px;background:#F0EBE0;border-radius:1px;transition:transform .28s ease,opacity .2s ease}
+.mob-btn.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.mob-btn.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.mob-btn.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;inset:0;z-index:490;background:rgba(8,6,4,.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:80px 40px}
+.mob-nav.open{display:flex}
+.mob-nl{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:400;letter-spacing:-.01em;color:rgba(240,235,224,.65);transition:color .2s;padding:10px 0;line-height:1}
+.mob-nl:hover,.mob-nl.active{color:#C4965A}
+.mob-div{width:48px;height:1px;background:#1E1E1E;margin:14px 0}
+.mob-cta{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#C4965A;border:1px solid rgba(196,150,90,.35);padding:13px 26px;border-radius:2px;margin-top:8px;transition:background .2s}
+.mob-cta:hover{background:rgba(196,150,90,.07)}
+.logo{display:flex;align-items:center;gap:12px}
+.lwm{font-family:'Cormorant Garamond',sans-serif;font-weight:700;font-size:.83rem;letter-spacing:.28em;text-transform:uppercase;color:#F0EBE0}
+.lsub{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.22em;color:#C4965A;opacity:.7;margin-top:2px}
+.nav-links{display:flex;gap:34px}
+.nl{font-size:.64rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,235,224,.62);transition:color .2s;position:relative}
+.nl::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:#C4965A;transition:width .3s}
+.nl:hover{color:#F0EBE0}
+.nl:hover::after{width:100%}
+.nl.active{color:#C4965A}
+.nl.active::after{width:100%}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#C4965A;border:1px solid rgba(196,150,90,.32);padding:10px 20px;border-radius:2px;transition:all .25s;background:transparent}
+.nav-cta:hover{background:rgba(196,150,90,.08);border-color:#C4965A}
+
+#home{min-height:100vh;position:relative;z-index:0;display:flex;flex-direction:column;background:#0A0806}
+#hero-bg-layer{position:absolute;inset:-7% -7%;z-index:0;background:url('hero-bg.png') center 20%/cover no-repeat;will-change:transform}
+#hero-canvas{position:absolute;inset:0;z-index:4;pointer-events:none;width:100%;height:100%}
+#orb-sys{position:absolute;top:50%;right:24%;z-index:3;pointer-events:none;width:0;height:0}
+.h-orb{position:absolute;top:0;left:0;border-radius:50%;filter:blur(55px);pointer-events:none;transform-origin:0 0;animation:orb-rev var(--s,13s) linear infinite}
+@keyframes orb-rev{from{transform:rotate(var(--a0,0deg)) translateX(var(--r,220px)) translate(-50%,-50%)}to{transform:rotate(calc(var(--a0,0deg) + 360deg)) translateX(var(--r,220px)) translate(-50%,-50%)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,rgba(8,6,4,.96) 0%,rgba(8,6,4,.82) 32%,rgba(8,6,4,.42) 58%,rgba(8,6,4,.08) 100%)}
+.hero-vignette{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to bottom,rgba(8,6,4,.45) 0%,transparent 30%,transparent 62%,rgba(8,6,4,.72) 100%)}
+.hero-top{position:relative;z-index:6;padding:112px 80px 0;display:flex;align-items:flex-start;justify-content:space-between}
+.eyebrow{display:flex;align-items:center;gap:14px}
+.eyebrow-line{width:44px;height:1px;background:#C4965A;flex-shrink:0}
+.eyebrow-txt{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:#C4965A}
+.hero-stamp{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(196,150,90,.3);line-height:1.7;text-align:right}
+.hero-mid{flex:1;position:relative;z-index:6;padding:0 80px;display:flex;flex-direction:column;justify-content:center;padding-top:48px}
+.h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.4rem,5.8vw,7.5rem);line-height:.9;letter-spacing:-.03em;margin-bottom:48px;max-width:720px}
+.h1 em{font-style:italic;color:#C4965A}
+.hero-bottom-row{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;max-width:900px}
+.hero-p{font-size:.9rem;line-height:1.8;color:rgba(240,235,224,.62);max-width:340px}
+.hero-btns{display:flex;align-items:center;gap:24px;flex-shrink:0;padding-bottom:4px}
+.btn-fill{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#0A0A0A;background:#C4965A;padding:14px 28px;border:none;border-radius:2px;transition:all .25s;display:inline-flex;align-items:center;gap:10px}
+.btn-fill:hover{background:#D4B483;transform:translateY(-1px)}
+.btn-ghost{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,235,224,.5);transition:all .22s}
+.btn-ghost:hover{color:#F0EBE0;gap:16px}
+.g-arrow{width:31px;height:31px;border-radius:50%;border:1px solid rgba(240,235,224,.12);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;flex-shrink:0}
+.btn-ghost:hover .g-arrow{background:#C4965A;border-color:#C4965A}
+.hero-bar{position:relative;z-index:6;border-top:1px solid rgba(30,26,22,.9);display:flex;align-items:stretch;background:rgba(10,8,6,.62);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);margin-top:100px}
+.hb-item{flex:1;padding:20px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid rgba(30,26,22,.9)}
+.hb-item:last-child{border-right:none}
+.hs-n{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:#F0EBE0;line-height:1}
+.hs-l{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:#5C5650;margin-top:5px}
+.ha1{animation:hFI .7s ease .1s both}
+.ha2{animation:hFI .9s ease .28s both}
+.ha3{animation:hFI .7s ease .52s both}
+.ha4{animation:hFI .7s ease .68s both}
+.ha5{animation:hFI .7s ease .82s both}
+@keyframes hFI{from{opacity:0}to{opacity:1}}
+
+.ticker{overflow:hidden;border-top:1px solid rgba(180,60,70,0.18);border-bottom:1px solid rgba(0,0,0,0.5);padding:16px 0;background:#2a0c12;position:relative;z-index:1}
+.t-track{display:flex;width:max-content;animation:tick 32s linear infinite}
+.t-track:hover{animation-play-state:paused}
+.ti{padding:0 40px;font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:40px;color:#D4A96A}
+.tdot{width:4px;height:4px;border-radius:50%;flex-shrink:0;background:#C4965A;box-shadow:0 0 6px rgba(196,150,90,0.4)}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.sec-hd{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:80px;align-items:end}
+.sec-label{display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:#5C5650;margin-bottom:20px}
+.sl-rule{width:28px;height:1px;background:#1E1E1E}
+.sec-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.8vw,3.8rem);line-height:1.05;letter-spacing:-.02em}
+.sec-p{font-size:.87rem;line-height:1.78;color:rgba(240,235,224,.60);max-width:360px}
+
+#about{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #1E1E1E;position:relative;z-index:1}
+.abt-l{background:#0D0B09;padding:100px 64px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid #1E1E1E;position:relative;overflow:hidden;min-height:88vh}
+.abt-r{padding:100px 72px;display:flex;flex-direction:column;justify-content:center}
+.pq{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.8vw,2.6rem);line-height:1.2;position:relative;z-index:2;color:#F0EBE0}
+.pq::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:7rem;line-height:.55;color:rgba(196,150,90,.1);display:block;margin-bottom:16px}
+.pq em{font-style:italic;color:#C4965A}
+.abt-body{font-size:.87rem;line-height:1.8;color:rgba(240,235,224,.62);margin-bottom:14px}
+.abt-deco{position:absolute;right:-80px;bottom:-80px;z-index:1;opacity:.05;pointer-events:none}
+.team-strip{margin-top:52px;padding-top:32px;border-top:1px solid #1E1E1E;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.tm{padding-right:24px}
+.tm:not(:last-child){border-right:1px solid #1E1E1E;margin-right:24px}
+.tm-name{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:#F0EBE0;margin-bottom:4px}
+.tm-role{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;color:#C4965A}
+.abt-vals{margin-top:36px;display:flex;flex-direction:column;gap:0;border-top:1px solid #1E1E1E}
+.av{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:1px solid #1E1E1E}
+.av-num{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:#C4965A;flex-shrink:0;margin-top:2px}
+.av-title{font-family:'Cormorant Garamond',serif;font-size:1rem;color:#F0EBE0;margin-bottom:4px}
+.av-desc{font-size:.78rem;color:rgba(240,235,224,.58);line-height:1.65}
+
+#skills{padding:120px 80px;border-bottom:1px solid #1E1E1E}
+.sk-list{margin-top:72px;border-top:1px solid #1E1E1E}
+.sk{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:40px;padding:36px 0;border-bottom:1px solid #1E1E1E;transition:background .3s}
+.sk:hover{background:rgba(196,150,90,.018)}
+.sk-n{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:rgba(240,235,224,.07);line-height:1;transition:color .3s}
+.sk:hover .sk-n{color:rgba(196,150,90,.28)}
+.sk-info{display:flex;flex-direction:column;gap:6px}
+.sk-cat-row{display:flex;align-items:center;gap:10px}
+.sk-cat{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.2vw,1.9rem);color:#F0EBE0;line-height:1.1}
+.sk-sub{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:#5C5650}
+.sk-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;max-width:460px}
+.sktag{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border:1px solid #1E1E1E;color:#5C5650;border-radius:2px;transition:all .2s}
+.sktag:hover{border-color:rgba(196,150,90,.3);color:#C4965A}
+
+#projects{padding:120px 0;border-bottom:1px solid #1E1E1E;position:relative;z-index:1}
+.work-hd{padding:0 80px;margin-bottom:68px;display:flex;justify-content:space-between;align-items:flex-end}
+.btn-line{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#5C5650;border:none;background:transparent;display:flex;align-items:center;gap:8px;transition:color .2s;padding:0}
+.btn-line:hover{color:#C4965A}
+.work-list{display:flex;flex-direction:column;gap:12px}
+.wi{display:grid;grid-template-columns:1fr 1fr;border:1px solid #1E1E1E;transition:background .35s;position:relative;overflow:hidden;align-items:stretch}
+.wi:hover{background:#0D0B09}
+.wi-info{padding:36px 48px;display:flex;flex-direction:column;justify-content:center}
+.wi-cat{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:#C4965A;margin-bottom:10px}
+.wi-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.2vw,2rem);color:#F0EBE0;line-height:1.06;margin-bottom:12px}
+.wi-desc{font-size:.8rem;color:rgba(240,235,224,.55);line-height:1.65;max-width:480px}
+.wi-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;margin-bottom:18px}
+.wpill{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid #1E1E1E;color:#5C5650;border-radius:2px}
+.wi-cta{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#C4965A;display:inline-flex;align-items:center;gap:6px;transition:gap .2s;margin-top:auto}
+.wi-cta:hover{gap:10px}
+.wi-vis{border-left:1px solid #1E1E1E;position:relative;overflow:hidden;display:flex;align-items:flex-start}
+.wi-sweep{position:absolute;inset:0;background:rgba(196,150,90,.06);transform:translateX(-100%);transition:transform .55s cubic-bezier(.4,0,.2,1);z-index:2}
+.wi:hover .wi-sweep{transform:translateX(0)}
+.wi-img{width:100%;height:auto;display:block;transition:transform .55s ease,opacity .4s}
+.wi:hover .wi-img{transform:scale(1.04);opacity:.88}
+.wi-ph{font-family:'Cormorant Garamond',serif;font-size:5rem;color:rgba(196,150,90,.05);user-select:none;pointer-events:none;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;line-height:1}
+.work-foot{padding:44px 80px;border-top:1px solid #1E1E1E;display:flex;justify-content:center}
+
+#services{padding:120px 80px;border-bottom:1px solid #1E1E1E;position:relative;z-index:1}
+.svc-list{border-top:1px solid #1E1E1E}
+.svc{border-bottom:1px solid #1E1E1E;transition:background .3s}
+.svc:hover{background:rgba(196,150,90,.018)}
+.svc-hd{display:grid;grid-template-columns:72px 1fr 40px;align-items:center;gap:24px;padding:32px 0;cursor:none}
+.svc-n{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:rgba(240,235,224,.07);line-height:1;transition:color .3s}
+.svc.open .svc-n{color:rgba(196,150,90,.28)}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.2vw,1.9rem);color:#F0EBE0;transition:color .2s}
+.svc:hover .svc-name{color:#D4B483}
+.svc-tog{width:36px;height:36px;border:1px solid #1E1E1E;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;flex-shrink:0}
+.svc.open .svc-tog{background:rgba(196,150,90,.1);border-color:rgba(196,150,90,.3);transform:rotate(45deg)}
+.svc-bd{display:none;padding:0 0 36px 96px}
+.svc.open .svc-bd{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.svc-desc{font-size:.86rem;line-height:1.8;color:rgba(240,235,224,.62)}
+.svc-tags{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;padding-top:2px}
+.stag{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border:1px solid #1E1E1E;color:#5C5650;border-radius:2px;transition:all .2s}
+.svc-explore{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:#C4965A;display:inline-flex;align-items:center;gap:6px;margin-top:24px;transition:gap .2s;opacity:.7}
+.svc-explore:hover{gap:10px;opacity:1}
+.stag:hover{border-color:rgba(196,150,90,.3);color:#C4965A}
+
+#contact{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #1E1E1E;position:relative;z-index:1}
+.con-l{padding:100px 80px;background:#0A0808;border-right:1px solid #1E1E1E;display:flex;flex-direction:column;justify-content:center}
+.con-r{padding:100px 72px;display:flex;flex-direction:column;justify-content:center}
+.con-h{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.15;margin-bottom:8px}
+.con-h em{font-style:italic;color:#C4965A}
+.con-sub{font-size:.85rem;line-height:1.78;color:rgba(240,235,224,.60);margin-bottom:48px;max-width:340px}
+.field{margin-bottom:26px}
+.fl{display:block;font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:#5C5650;margin-bottom:10px}
+.fi{width:100%;background:transparent;border:none;border-bottom:1px solid #1E1E1E;padding:10px 0;color:#F0EBE0;font-family:'Cormorant Garamond',sans-serif;font-size:.9rem;outline:none;transition:border-color .25s}
+.fi:focus{border-color:rgba(196,150,90,.5)}
+.fi::placeholder{color:rgba(240,235,224,.16)}
+select.fi{appearance:none;cursor:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235C5650' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center}
+select.fi option{background:#141414;color:#F0EBE0}
+textarea.fi{resize:none;min-height:90px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.sub-btn{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:#0A0A0A;background:#C4965A;border:none;padding:16px 36px;border-radius:2px;display:inline-flex;align-items:center;gap:12px;transition:all .25s;margin-top:8px}
+.sub-btn:hover{background:#D4B483;transform:translateY(-1px)}
+.form-ok{display:none;margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:.63rem;letter-spacing:.08em;color:#C4965A}
+.ci{padding:28px 0;border-bottom:1px solid #1E1E1E}
+.ci:first-of-type{border-top:1px solid #1E1E1E;margin-top:20px}
+.ci-l{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:#5C5650;margin-bottom:6px}
+.ci-v{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#F0EBE0}
+.soc{display:flex;gap:14px;margin-top:40px}
+.soc-a{width:36px;height:36px;border:1px solid #1E1E1E;border-radius:2px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.soc-a:hover{border-color:rgba(196,150,90,.35);background:rgba(196,150,90,.06)}
+
+footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
+.fc{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.1em;color:#5C5650}
+.fl-links{display:flex;gap:28px}
+.fll{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#5C5650;transition:color .2s}
+.fll:hover{color:#C4965A}
+
+.rv{opacity:0;transform:translateY(36px);transition:opacity .85s ease,transform .85s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv-l{opacity:0;transform:translateX(-28px);transition:opacity .8s ease,transform .8s ease}
+.rv-l.in{opacity:1;transform:translateX(0)}
+.rv-r{opacity:0;transform:translateX(28px);transition:opacity .8s ease,transform .8s ease}
+.rv-r.in{opacity:1;transform:translateX(0)}
+
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:#0A0A0A}
+::-webkit-scrollbar-thumb{background:rgba(196,150,90,.2)}
+.h1,.sec-h2,.pq,.svc-name,.sk-cat,.wi-title,.con-h,.hs-n,.tm-name,.av-title,.ci-v{background:linear-gradient(110deg,#c0c0c0 0%,#e8e8e8 22%,#ffffff 38%,#f4f4f4 48%,#e2e2e2 58%,#f9f9f9 72%,#ffffff 82%,#d8d8d8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.h1 em,.con-h em,.pq em{background:none;-webkit-text-fill-color:#C4965A}
+.pq::before{-webkit-text-fill-color:rgba(196,150,90,.1)}
+.svc:hover .svc-name{filter:brightness(1.22)}
+
+@media(max-width:1024px){
+  .hero-top{padding:108px 40px 0}
+  .hero-mid{padding:0 40px}
+  .hero-stamp{display:none}
+  .hero-bottom-row{flex-direction:column;align-items:flex-start;gap:24px}
+  .hero-p{max-width:100%}
+  nav{padding:20px 32px}
+  .nav-links{display:none}
+  #about{grid-template-columns:1fr}
+  .abt-l{min-height:auto;padding:72px 40px}
+  .abt-r{padding:64px 40px}
+  .team-strip{grid-template-columns:1fr 1fr;gap:24px}
+  .tm:not(:last-child){border-right:none;margin-right:0}
+  #skills{padding:80px 40px}
+  .sk{grid-template-columns:52px 1fr;gap:24px}
+  .sk-tags{display:none}
+  #projects .work-hd{padding:0 40px}
+  #projects .work-foot{padding:36px 40px}
+  .wi{grid-template-columns:1fr}
+  .wi-vis{display:none}
+  #services{padding:80px 40px}
+  .sec-hd{grid-template-columns:1fr;gap:24px;margin-bottom:48px}
+  .svc-hd{grid-template-columns:52px 1fr 36px;gap:16px}
+  .svc-bd{padding-left:68px}
+  .svc.open .svc-bd{grid-template-columns:1fr}
+  #contact{grid-template-columns:1fr}
+  .con-l{border-right:none;border-bottom:1px solid #1E1E1E;padding:72px 40px}
+  .con-r{padding:64px 40px}
+  footer{padding:20px 32px}
+  .mob-btn{display:flex}
+}
+@media(hover:none){body{cursor:auto}button{cursor:auto}#cur,#cur-ring{display:none}}
+@media(max-width:600px){
+  nav{top:8px;left:10px;right:10px;padding:12px 18px}
+  .nav-cta{display:none}
+  .hero-top{padding:84px 20px 0}
+  .hero-mid{padding:0 20px;padding-top:28px}
+  .hero-btns{flex-direction:column;align-items:flex-start;gap:14px}
+  .hero-bar{margin-top:64px;flex-wrap:wrap}
+  .hb-item{flex:0 0 33.33%}
+  .hb-item:nth-child(3n){border-right:none}
+  .abt-l{padding:56px 20px}
+  .abt-r{padding:48px 20px}
+  .team-strip{grid-template-columns:1fr 1fr}
+  #skills{padding:56px 20px}
+  .sk-n{font-size:1.8rem}
+  #projects .work-hd{padding:0 20px;flex-direction:column;align-items:flex-start;gap:20px}
+  #projects .work-foot{padding:28px 20px}
+  .wi-info{padding:28px 20px}
+  #services{padding:56px 20px}
+  .svc-hd{grid-template-columns:44px 1fr 32px;gap:12px;padding:24px 0}
+  .svc-bd{padding-left:56px}
+  #contact .con-l{padding:56px 20px}
+  #contact .con-r{padding:48px 20px}
+  .f-row{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:14px;text-align:center;padding:20px}
+  .fl-links{flex-wrap:wrap;justify-content:center;gap:14px}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<nav id="nav">
+  <a href="#home" class="logo">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+      <path d="M15 2L28 9V21L15 28L2 21V9L15 2Z" fill="rgba(196,150,90,.1)" stroke="#C4965A" stroke-width="1"/>
+      <text x="15" y="19.5" text-anchor="middle" fill="#C4965A" font-size="12" font-weight="700" font-family="Space Grotesk,sans-serif">S</text>
+    </svg>
+    <div>
+      <div class="lwm">SOLVRA</div>
+      <div class="lsub">AI STUDIO</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#home" class="nl">Home</a>
+    <a href="#about" class="nl">About</a>
+    <a href="#services" class="nl">Services</a>
+    <a href="#projects" class="nl">Projects</a>
+    <a href="#contact" class="nl">Contact</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="#contact" class="nav-cta">Start a Project</a>
+    <button class="mob-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-nav">
+  <a href="#home" class="mob-nl">Home</a>
+  <a href="#about" class="mob-nl">About</a>
+  <a href="#services" class="mob-nl">Services</a>
+  <a href="#projects" class="mob-nl">Projects</a>
+  <a href="#contact" class="mob-nl">Contact</a>
+  <div class="mob-div"></div>
+  <a href="#contact" class="mob-cta">Start a Project</a>
+</div>
+
+<section id="home">
+  <div id="hero-bg-layer"></div>
+  <canvas id="hero-canvas"></canvas>
+  <div id="orb-sys">
+    <div class="h-orb" style="width:520px;height:520px;background:radial-gradient(circle,rgba(196,150,90,.32) 0%,rgba(196,150,90,.08) 45%,transparent 70%);--s:14s;--r:230px;--a0:0deg"></div>
+    <div class="h-orb" style="width:720px;height:720px;background:radial-gradient(circle,rgba(100,45,200,.22) 0%,rgba(80,35,160,.06) 50%,transparent 70%);--s:22s;--r:380px;--a0:128deg;animation-direction:reverse"></div>
+    <div class="h-orb" style="width:340px;height:340px;background:radial-gradient(circle,rgba(196,150,90,.28) 0%,rgba(196,150,90,.07) 45%,transparent 70%);--s:9s;--r:145px;--a0:252deg"></div>
+    <div class="h-orb" style="width:240px;height:240px;background:radial-gradient(circle,rgba(220,160,60,.2) 0%,transparent 70%);--s:6s;--r:290px;--a0:310deg"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-top ha1">
+    <div class="eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-txt">AI Development</span>
+    </div>
+    <div class="hero-stamp">Est. 2019<br>Remote-first &middot; Global</div>
+  </div>
+  <div class="hero-mid">
+    <h1 class="h1 ha2">Premium Web<br>Development<br>&amp; <em>AI</em> Automation</h1>
+    <div class="hero-bottom-row ha3">
+      <p class="hero-p">AI agents, automation systems, and premium digital experiences &mdash; engineered for companies that refuse to be ordinary.</p>
+      <div class="hero-btns ha4">
+        <a href="#contact"><button class="btn-fill">Start a Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+        <a href="#projects" class="btn-ghost">View Projects <div class="g-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bar ha5">
+    <div class="hb-item"><div class="hs-n">20+</div><div class="hs-l">Projects</div></div>
+    <div class="hb-item"><div class="hs-n">100%</div><div class="hs-l">Satisfaction</div></div>
+    <div class="hb-item"><div class="hs-n">20+</div><div class="hs-l">Clients</div></div>
+    <div class="hb-item"><div class="hs-n">3+</div><div class="hs-l">Years</div></div>
+    <div class="hb-item"><div class="hs-n">6</div><div class="hs-l">Industries</div></div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="t-track">
+    <div class="ti">UXONA RETAIL<span class="tdot"></span>VERTEX GROUP<span class="tdot"></span>ELEVATE CAPITAL<span class="tdot"></span>NOVA INTELLIGENCE<span class="tdot"></span>MERIDIAN AI<span class="tdot"></span>APEX VENTURES<span class="tdot"></span>NEBULA SYSTEMS<span class="tdot"></span></div>
+    <div class="ti">UXONA RETAIL<span class="tdot"></span>VERTEX GROUP<span class="tdot"></span>ELEVATE CAPITAL<span class="tdot"></span>NOVA INTELLIGENCE<span class="tdot"></span>MERIDIAN AI<span class="tdot"></span>APEX VENTURES<span class="tdot"></span>NEBULA SYSTEMS<span class="tdot"></span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="abt-l rv-l">
+    <div class="abt-deco">
+      <svg width="360" height="360" viewBox="0 0 360 360" fill="none">
+        <circle cx="180" cy="180" r="175" stroke="#C4965A" stroke-width="1"/>
+        <circle cx="180" cy="180" r="120" stroke="#C4965A" stroke-width=".5"/>
+        <circle cx="180" cy="180" r="65" stroke="#C4965A" stroke-width=".3"/>
+        <line x1="5" y1="180" x2="355" y2="180" stroke="#C4965A" stroke-width=".3"/>
+        <line x1="180" y1="5" x2="180" y2="355" stroke="#C4965A" stroke-width=".3"/>
+      </svg>
+    </div>
+    <div class="sec-label" style="margin-bottom:36px"><div class="sl-rule"></div>About SOLVRA</div>
+    <div class="pq">
+      I don't build features.<br>I build <em>intelligence</em> that thinks<br>alongside your business.
+    </div>
+    <div style="margin-top:40px;font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:#5C5650;position:relative;z-index:2">
+      &mdash; SOLVRA PRINCIPLE
+    </div>
+    <div class="team-strip" style="position:relative;z-index:2;grid-template-columns:1fr">
+      <div class="tm" style="padding-right:0;border-right:none;margin-right:0">
+        <div class="tm-role">Founder / Developer / Designer</div>
+        <div class="tm-name">Huzaifa Imran</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.08em;color:rgba(240,235,224,.42);margin-top:7px;line-height:1.8">Web Developer &bull; AI Agent Developer &bull; UX/UI Designer</div>
+      </div>
+    </div>
+  </div>
+  <div class="abt-r rv-r">
+    <div class="sec-label" style="margin-bottom:28px"><div class="sl-rule"></div>My Story</div>
+    <h2 class="sec-h2" style="margin-bottom:24px">I am SOLVRA.<br>AI is my craft.</h2>
+    <p class="abt-body">SOLVRA is a premium AI development studio founded on the belief that intelligence, design, and engineering belong together. I partner with ambitious companies to build AI products that don't just function &mdash; they lead.</p>
+    <p class="abt-body">From automation pipelines to full-stack AI platforms, I bring the obsession with quality that separates good from exceptional. Every engagement is treated as a long-term partnership, not a transaction.</p>
+    <div class="abt-vals">
+      <div class="av">
+        <div class="av-num">&mdash;01</div>
+        <div><div class="av-title">Excellence First</div><div class="av-desc">I don't ship mediocre work. Every pixel, prompt, and pipeline is crafted to the highest standard possible.</div></div>
+      </div>
+      <div class="av">
+        <div class="av-num">&mdash;02</div>
+        <div><div class="av-title">AI at the Core</div><div class="av-desc">I design systems from the ground up with intelligence woven in &mdash; not bolted on as an afterthought.</div></div>
+      </div>
+      <div class="av">
+        <div class="av-num">&mdash;03</div>
+        <div><div class="av-title">True Partnership</div><div class="av-desc">I operate as an extension of your team &mdash; aligned with your goals, invested in your success.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" style="padding:120px 80px;border-bottom:1px solid #1E1E1E;position:relative;z-index:1;overflow:hidden">
+  <div style="position:absolute;top:-160px;right:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(196,150,90,.05) 0%,transparent 70%);pointer-events:none"></div>
+  <div class="sec-hd rv">
+    <div>
+      <div class="sec-label"><div class="sl-rule"></div>Client Testimonials</div>
+      <h2 class="sec-h2">What clients<br><em style="font-style:italic;color:#C4965A">say.</em></h2>
+    </div>
+    <p class="sec-p">Every project is a partnership. Here's what the people I've worked with have to say about the experience and results.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1E1E1E;border:1px solid #1E1E1E;border-radius:2px" class="rv">
+
+    <div style="background:#0A0806;padding:48px 40px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;transition:background .3s" onmouseenter="this.style.background='#0D0B09'" onmouseleave="this.style.background='#0A0806'">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;line-height:.6;color:rgba(196,150,90,.18);margin-bottom:20px">&ldquo;</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;line-height:1.8;color:rgba(240,235,224,.78);font-style:italic">Working with Solvra was a game-changer for our business. The attention to detail and quality of the final product exceeded every expectation we had going in.</p>
+      </div>
+      <div style="border-top:1px solid #1E1E1E;padding-top:24px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:#F0EBE0;margin-bottom:4px">James Whitfield</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:#C4965A">CEO, Apex Ventures</div>
+      </div>
+    </div>
+
+    <div style="background:#0A0806;padding:48px 40px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;transition:background .3s" onmouseenter="this.style.background='#0D0B09'" onmouseleave="this.style.background='#0A0806'">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;line-height:.6;color:rgba(196,150,90,.18);margin-bottom:20px">&ldquo;</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;line-height:1.8;color:rgba(240,235,224,.78);font-style:italic">The AI automation system Solvra built for us saved our team hours every week. Clean, reliable, and exactly what we needed. Truly premium work.</p>
+      </div>
+      <div style="border-top:1px solid #1E1E1E;padding-top:24px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:#F0EBE0;margin-bottom:4px">Sofia Merritt</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:#C4965A">Founder, Nova Intelligence</div>
+      </div>
+    </div>
+
+    <div style="background:#0A0806;padding:48px 40px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;transition:background .3s" onmouseenter="this.style.background='#0D0B09'" onmouseleave="this.style.background='#0A0806'">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;line-height:.6;color:rgba(196,150,90,.18);margin-bottom:20px">&ldquo;</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;line-height:1.8;color:rgba(240,235,224,.78);font-style:italic">Our website now looks and feels like a top-tier brand. Solvra understood our vision immediately and delivered something far beyond what we imagined.</p>
+      </div>
+      <div style="border-top:1px solid #1E1E1E;padding-top:24px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:#F0EBE0;margin-bottom:4px">Daniel Okafor</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:#C4965A">Director, Meridian AI</div>
+      </div>
+    </div>
+
+  </div>
+  <style>
+    @media(max-width:1024px){#testimonials{padding:80px 40px}#testimonials>div:nth-child(3){grid-template-columns:1fr!important}}
+    @media(max-width:600px){#testimonials{padding:56px 20px}#testimonials>div:nth-child(3){grid-template-columns:1fr!important}}
+  </style>
+</section>
+
+<section id="services" style="background-image:url('services-bg.png');background-size:cover;background-position:center;background-repeat:no-repeat;position:relative">
+<div style="position:absolute;inset:0;background:rgba(10,8,6,0.45);pointer-events:none"></div>
+  <div style="position:relative;z-index:1">
+  <div class="sec-hd">
+    <div class="rv-l">
+      <div class="sec-label"><div class="sl-rule"></div>What I Build</div>
+      <h2 class="sec-h2">My Services</h2>
+    </div>
+    <p class="sec-p rv-r">End-to-end AI solutions crafted for businesses that demand precision, elegance, and measurable impact. I don't do generic.</p>
+  </div>
+  <div class="svc-list rv">
+    <div class="svc open">
+      <div class="svc-hd" onclick="toggleSvc(this)">
+        <div class="svc-n">01</div>
+        <div class="svc-name">Web Development</div>
+        <div class="svc-tog"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="rgba(240,235,224,0.4)" stroke-width="1.5" stroke-linecap="round"><line x1="7" y1="0" x2="7" y2="14"/><line x1="0" y1="7" x2="14" y2="7"/></svg></div>
+      </div>
+      <div class="svc-bd">
+        <div class="svc-desc">I build responsive, modern, and high-performing websites that look polished and work smoothly across all devices and screen sizes.</div>
+        <div class="svc-tags"><span class="stag">React</span><span class="stag">HTML/CSS</span><span class="stag">Responsive</span><span class="stag">Performance</span></div>
+        <a href="service-1.html" class="svc-explore">Explore Service <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="svc-hd" onclick="toggleSvc(this)">
+        <div class="svc-n">02</div>
+        <div class="svc-name">AI Agents &amp; Automation</div>
+        <div class="svc-tog"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="rgba(240,235,224,0.4)" stroke-width="1.5" stroke-linecap="round"><line x1="7" y1="0" x2="7" y2="14"/><line x1="0" y1="7" x2="14" y2="7"/></svg></div>
+      </div>
+      <div class="svc-bd">
+        <div class="svc-desc">I create smarter digital systems using AI, prompt engineering, and automation workflows to save time and improve productivity.</div>
+        <div class="svc-tags"><span class="stag">AI Agents</span><span class="stag">Prompt Engineering</span><span class="stag">Automation</span><span class="stag">Agentic AI</span></div>
+        <a href="service-2.html" class="svc-explore">Explore Service <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="svc-hd" onclick="toggleSvc(this)">
+        <div class="svc-n">03</div>
+        <div class="svc-name">Branding &amp; Identity</div>
+        <div class="svc-tog"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="rgba(240,235,224,0.4)" stroke-width="1.5" stroke-linecap="round"><line x1="7" y1="0" x2="7" y2="14"/><line x1="0" y1="7" x2="14" y2="7"/></svg></div>
+      </div>
+      <div class="svc-bd">
+        <div class="svc-desc">I design strong visual identities that help brands look consistent, memorable, and professional across all digital platforms.</div>
+        <div class="svc-tags"><span class="stag">Logo Design</span><span class="stag">Typography</span><span class="stag">Color Systems</span></div>
+        <a href="service-3.html" class="svc-explore">Explore Service <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="work-hd rv">
+    <div>
+      <div class="sec-label"><div class="sl-rule"></div>Selected Projects</div>
+      <h2 class="sec-h2" style="margin-top:16px">Projects</h2>
+    </div>
+    <button class="btn-line">All Projects <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+  </div>
+
+  <div class="work-list">
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">Premium Fitness Website Concept</div>
+        <div class="wi-title">Gold's Gym Redesign</div>
+        <div class="wi-desc">A premium website redesign concept for Gold's Gym Woodbridge/Lake Ridge, focused on improving digital presence, visual branding, and membership conversion with a bold luxury fitness aesthetic.</div>
+        <div class="wi-pills"><span class="wpill">Web Design</span><span class="wpill">Website Redesign</span><span class="wpill">UI/UX Design</span><span class="wpill">React</span><span class="wpill">Framer Motion</span><span class="wpill">Branding</span><span class="wpill">Landing Page</span></div>
+        <a href="project-1.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project1.png" alt="Gold's Gym Redesign" class="wi-img"/>
+        <div class="wi-ph">01</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">Branding &amp; Web Design</div>
+        <div class="wi-title">Gala Gents</div>
+        <div class="wi-desc">A premium menswear brand concept built around elegance, confidence, and purpose — dark cinematic layout, gold typography, and refined luxury details.</div>
+        <div class="wi-pills"><span class="wpill">UX/UI</span><span class="wpill">React</span><span class="wpill">Node.js</span></div>
+        <a href="project-2.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="gala-gents.png" alt="Gala Gents" class="wi-img"/>
+        <div class="wi-ph">02</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">VirginiaWebs AI-Powered Chatbot UI</div>
+        <div class="wi-title">AI Assistant</div>
+        <div class="wi-desc">VirginiaWebs AI Assistant is a premium AI chatbot UI designed to capture leads and answer customer questions. It helps visitors explore services, pricing, and bookings through a modern branded automation experience.</div>
+        <div class="wi-pills"><span class="wpill">AI</span><span class="wpill">AI Agents</span><span class="wpill">Chatbot UI</span><span class="wpill">UI/UX Design</span><span class="wpill">Automation</span><span class="wpill">Branding</span><span class="wpill">Lead Generation</span></div>
+        <a href="project-3.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project3.png" alt="AI Assistant" class="wi-img"/>
+        <div class="wi-ph">03</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">AI Lead Generation &amp; Automation</div>
+        <div class="wi-title">AI Lead Dashboard</div>
+        <div class="wi-desc">A smart dashboard concept focused on automation, AI workflows, lead generation, and agentic systems for business efficiency.</div>
+        <div class="wi-pills"><span class="wpill">AI</span><span class="wpill">Automation</span><span class="wpill">AI Agents</span><span class="wpill">Product Design</span></div>
+        <a href="project-4.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project4.jpg" alt="AI Lead Dashboard" class="wi-img"/>
+        <div class="wi-ph">04</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">Luxury Fashion Website Design</div>
+        <div class="wi-title">Lumi&egrave;re Fashion Web</div>
+        <div class="wi-desc">A luxury fashion website concept designed to feel elegant, premium, and immersive while staying modern and responsive.</div>
+        <div class="wi-pills"><span class="wpill">Web Development</span><span class="wpill">Web Design</span><span class="wpill">HTML</span><span class="wpill">Product Development</span></div>
+        <a href="project-5.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project5.jpg" alt="Lumiere Fashion Web" class="wi-img"/>
+        <div class="wi-ph">05</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">Fashion Campaign Design</div>
+        <div class="wi-title">Lumi&egrave;re Editorial</div>
+        <div class="wi-desc">A visually driven fashion campaign concept combining editorial aesthetics, creative direction, and premium digital presentation.</div>
+        <div class="wi-pills"><span class="wpill">Content Creation</span><span class="wpill">Creative Direction</span><span class="wpill">Visual Design</span></div>
+        <a href="project-6.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project6.jpg" alt="Lumiere Editorial" class="wi-img"/>
+        <div class="wi-ph">06</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">Luxury Brand Identity Design</div>
+        <div class="wi-title">Lumi&egrave;re Visual System</div>
+        <div class="wi-desc">A luxury brand identity concept featuring logo design, typography, color systems, and visual branding for a high-end aesthetic.</div>
+        <div class="wi-pills"><span class="wpill">Brand Identity</span><span class="wpill">Logo Design</span><span class="wpill">Typography</span><span class="wpill">Color Theory</span></div>
+        <a href="project-7.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project7.jpg" alt="Lumiere Visual System" class="wi-img"/>
+        <div class="wi-ph">07</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">Creative Agency Landing Page</div>
+        <div class="wi-title">Sol Slice</div>
+        <div class="wi-desc">A creative agency landing page concept focused on bold visuals, modern structure, and a sleek user experience.</div>
+        <div class="wi-pills"><span class="wpill">Web Design</span><span class="wpill">Front-End</span><span class="wpill">UI/UX</span></div>
+        <a href="project-8.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project8.jpg" alt="Sol Slice" class="wi-img"/>
+        <div class="wi-ph">08</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="work-foot">
+    <a href="#contact"><button class="btn-fill">Discuss Your Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="con-l">
+    <div class="sec-label" style="margin-bottom:28px"><div class="sl-rule"></div>Get In Touch</div>
+    <h2 class="con-h">Start Your<br><em>Project.</em></h2>
+    <p class="con-sub">Tell us what you're building. I'll respond within 24 hours &mdash; no commitment, no fluff.</p>
+    <form onsubmit="handleForm(event)">
+      <div class="f-row">
+        <div class="field"><label class="fl">First Name</label><input type="text" class="fi" placeholder="John" required/></div>
+        <div class="field"><label class="fl">Last Name</label><input type="text" class="fi" placeholder="Doe" required/></div>
+      </div>
+      <div class="field"><label class="fl">Email</label><input type="email" class="fi" placeholder="john@company.com" required/></div>
+      <div class="field"><label class="fl">Company</label><input type="text" class="fi" placeholder="Your Company"/></div>
+      <div class="field">
+        <label class="fl">Service Needed</label>
+        <select class="fi">
+          <option value="">Select a service</option>
+          <option>Web Development</option>
+          <option>AI Agents &amp; Automation</option>
+          <option>Branding &amp; Identity</option>
+        </select>
+      </div>
+      <div class="field"><label class="fl">Message</label><textarea class="fi" placeholder="Tell us about your project..." required></textarea></div>
+      <button type="submit" class="sub-btn">Send Message <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      <div class="form-ok" id="formOk">Message received &mdash; I'll be in touch within 24 hours.</div>
+    </form>
+  </div>
+  <div class="con-r rv-r">
+    <div class="sec-label" style="margin-bottom:28px"><div class="sl-rule"></div>Contact Info</div>
+    <h2 class="con-h" style="margin-bottom:8px">Let's build<br>something<br><em>exceptional.</em></h2>
+    <p style="font-size:.87rem;line-height:1.78;color:rgba(240,235,224,.60);max-width:320px">Whether you have a defined brief or just a bold idea, I'm here to help you build something world-class.</p>
+    <div>
+      <div class="ci"><div class="ci-l">Email</div><div class="ci-v"><a href="mailto:huzaifaiupk10@gmail.com" style="color:inherit">huzaifaiupk10@gmail.com</a></div></div>
+      <div class="ci"><div class="ci-l">Phone</div><div class="ci-v"><a href="tel:+15714774920" style="color:inherit">+1 571 477 4920</a></div></div>
+      <div class="ci"><div class="ci-l">Response Time</div><div class="ci-v">Within 24 hours</div></div>
+      <div class="ci"><div class="ci-l">Availability</div><div class="ci-v">Taking new projects</div></div>
+    </div>
+    <div class="soc">
+      <a href="https://www.linkedin.com/in/huzaifa-imran-6a132b330" target="_blank" rel="noopener" class="soc-a"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(240,235,224,0.38)" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="mailto:huzaifaiupk10@gmail.com" class="soc-a"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(240,235,224,0.38)" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="display:flex;align-items:center;gap:10px">
+    <svg width="22" height="22" viewBox="0 0 30 30" fill="none">
+      <path d="M15 2L28 9V21L15 28L2 21V9L15 2Z" fill="rgba(196,150,90,.1)" stroke="#C4965A" stroke-width="1"/>
+      <text x="15" y="19.5" text-anchor="middle" fill="#C4965A" font-size="12" font-weight="700" font-family="Space Grotesk,sans-serif">S</text>
+    </svg>
+    <span class="fc">SOLVRA AI STUDIO</span>
+    <span class="fc" style="margin-left:16px;opacity:.5">&copy; 2026 All rights reserved.</span>
+  </div>
+  <div class="fl-links">
+    <a href="#about" class="fll">About</a>
+    <a href="#services" class="fll">Services</a>
+    <a href="#projects" class="fll">Projects</a>
+    <a href="#services" class="fll">Services</a>
+    <a href="#contact" class="fll">Contact</a>
+  </div>
+</footer>
+
+<script>
+// Hero 3D particle animation
+(function(){
+  const hero = document.getElementById('home');
+  const bgLayer = document.getElementById('hero-bg-layer');
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H;
+  function resize(){W=canvas.width=hero.offsetWidth;H=canvas.height=hero.offsetHeight;}
+  resize();
+  window.addEventListener('resize',resize);
+
+  const N=62;
+  const pts=Array.from({length:N},()=>({
+    x:Math.random()*window.innerWidth,
+    y:Math.random()*window.innerHeight,
+    vx:(Math.random()-.5)*.22,
+    vy:(Math.random()-.5)*.22,
+    r:Math.random()*1.3+.4,
+    pulse:Math.random()*Math.PI*2
+  }));
+
+  let hmx=W/2,hmy=H/2,bx=0,by=0;
+  hero.addEventListener('mousemove',e=>{
+    const r=hero.getBoundingClientRect();
+    hmx=e.clientX-r.left;hmy=e.clientY-r.top;
+  });
+
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+
+    // Smooth parallax on bg
+    const tx=(hmx/W-.5)*-22;
+    const ty=(hmy/H-.5)*-14;
+    bx+=(tx-bx)*.055;by+=(ty-by)*.055;
+    bgLayer.style.transform=`translate(${bx}px,${by}px)`;
+
+    // Update particles
+    for(const p of pts){
+      p.pulse+=.01;
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+      if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+      // mouse repulsion
+      const dx=p.x-hmx,dy=p.y-hmy;
+      const d2=dx*dx+dy*dy;
+      if(d2<16000){const d=Math.sqrt(d2);p.x+=dx/d*.8;p.y+=dy/d*.8;}
+      // draw dot
+      const a=.5+Math.sin(p.pulse)*.25;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r+Math.sin(p.pulse)*.4,0,Math.PI*2);
+      ctx.fillStyle=`rgba(196,150,90,${a})`;
+      ctx.fill();
+      // glow halo
+      const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*5);
+      g.addColorStop(0,`rgba(196,150,90,${a*.3})`);
+      g.addColorStop(1,'rgba(196,150,90,0)');
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r*5,0,Math.PI*2);
+      ctx.fillStyle=g;
+      ctx.fill();
+    }
+
+    // Draw connection lines
+    for(let i=0;i<N;i++){
+      for(let j=i+1;j<N;j++){
+        const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<145){
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x,pts[i].y);
+          ctx.lineTo(pts[j].x,pts[j].y);
+          ctx.strokeStyle=`rgba(196,150,90,${(1-d/145)*.22})`;
+          ctx.lineWidth=.7;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+const cur = document.getElementById('cur');
+const ring = document.getElementById('cur-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cur.style.left = mx + 'px'; cur.style.top = my + 'px'; });
+(function animRing() {
+  rx += (mx - rx) * .12; ry += (my - ry) * .12;
+  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+  requestAnimationFrame(animRing);
+})();
+document.querySelectorAll('a, button, .svc-hd, .wi, .sk').forEach(el => {
+  el.addEventListener('mouseenter', () => { cur.style.width = '14px'; cur.style.height = '14px'; ring.style.width = '52px'; ring.style.height = '52px'; });
+  el.addEventListener('mouseleave', () => { cur.style.width = '9px'; cur.style.height = '9px'; ring.style.width = '36px'; ring.style.height = '36px'; });
+});
+document.addEventListener('mouseleave', () => { cur.style.opacity = '0'; ring.style.opacity = '0'; });
+document.addEventListener('mouseenter', () => { cur.style.opacity = '1'; ring.style.opacity = '1'; });
+
+function toggleSvc(hd) {
+  const item = hd.closest('.svc');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.svc').forEach(s => s.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revObs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.rv, .rv-l, .rv-r').forEach(el => revObs.observe(el));
+
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nl');
+window.addEventListener('scroll', () => {
+  let active = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) active = s.id; });
+  navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + active));
+}, { passive: true });
+
+const mobBtn = document.querySelector('.mob-btn');
+const mobNav = document.querySelector('.mob-nav');
+mobBtn.addEventListener('click', () => {
+  const open = mobBtn.classList.toggle('open');
+  mobNav.classList.toggle('open');
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+mobNav.querySelectorAll('.mob-nl, .mob-cta').forEach(link => {
+  link.addEventListener('click', () => {
+    mobBtn.classList.remove('open');
+    mobNav.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+function handleForm(e) {
+  e.preventDefault();
+  const ok = document.getElementById('formOk');
+  ok.style.display = 'block';
+  e.target.reset();
+  setTimeout(() => { ok.style.display = 'none'; }, 6000);
+}
+</script>
+<!-- Netlify form detection (do not remove) -->
+<form name="solvra-leads" netlify style="display:none">
+  <input name="name" />
+  <input name="email" />
+</form>
+<script src="chatbot.js"></script>
+<script src="gate.js"></script>
+</body>
+</html>

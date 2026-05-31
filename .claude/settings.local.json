@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -iE \"\\\\.\\(png|jpg|jpeg|webp|gif|svg\\)$\")",
+      "Bash(grep -iE \"\\\\.\\(png|jpg|jpeg|webp|gif\\)$\")",
+      "Bash(cp \"C:/Users/haadi/OneDrive/Desktop/Web.png\" \"C:/Users/haadi/OneDrive/Desktop/Solvra/Web.png\")",
+      "Bash(cp \"C:/Users/haadi/OneDrive/Desktop/Branding.png\" \"C:/Users/haadi/OneDrive/Desktop/Solvra/Branding.png\")",
+      "Bash(cp \"C:/Users/haadi/OneDrive/Desktop/Ai.png\" \"C:/Users/haadi/OneDrive/Desktop/Solvra/Ai.png\")",
+      "PowerShell(Rename-Item *)"
+    ]
+  }
+}

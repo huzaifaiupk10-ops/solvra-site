@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights – SOLVRA AI Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#080808;color:#fff;font-family:'Inter',sans-serif;overflow-x:hidden;}
+    .dot-grid{background-image:radial-gradient(circle,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:32px 32px;}
+    .navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.75);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.05);}
+    .nav-link{font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);transition:color 0.2s;cursor:pointer;}
+    .nav-link:hover{color:rgba(255,255,255,0.9);}
+    .nav-link.active{color:#C9992A;}
+    .btn-gold{background:linear-gradient(135deg,#C9992A,#E8B84B,#C9992A);background-size:200%;color:#080808;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.12em;transition:all 0.3s;cursor:pointer;}
+    .btn-gold:hover{box-shadow:0 0 30px rgba(201,153,42,0.4);transform:translateY(-2px);}
+    .page-hero{background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(100,40,180,0.1) 0%,transparent 65%),#080808;padding:160px 0 80px;}
+    .section-badge{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:#C9992A;display:flex;align-items:center;gap:10px;}
+    .section-badge::before,.section-badge::after{content:'';display:inline-block;width:20px;height:1px;background:linear-gradient(90deg,#C9992A,transparent);}
+    .article-card{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:16px;overflow:hidden;cursor:pointer;transition:all 0.3s;}
+    .article-card:hover{border-color:rgba(201,153,42,0.3);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+    .article-thumb{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;}
+    .article-tag{display:inline-block;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,153,42,0.3);color:#C9992A;}
+    ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:#080808;}::-webkit-scrollbar-thumb{background:rgba(201,153,42,0.3);border-radius:3px;}
+    .mob-overlay{display:none;position:fixed;inset:0;z-index:99;background:rgba(8,8,8,0.97);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:80px 40px;}
+    .mob-overlay.open{display:flex;}
+    .mob-overlay a{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:300;color:rgba(255,255,255,0.6);padding:10px 0;transition:color .2s;}
+    .mob-overlay a:hover{color:#C9992A;}
+    .mob-sep{width:40px;height:1px;background:rgba(255,255,255,0.1);margin:12px 0;}
+    .featured-grid{display:grid;grid-template-columns:1fr 1fr;}
+    @media(max-width:768px){.featured-grid{display:block;}}
+    @media(hover:none){body{cursor:auto}}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 cursor-pointer">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+        <path d="M19 2L35 11V27L19 36L3 27V11L19 2Z" fill="#C9992A" fill-opacity="0.12" stroke="#C9992A" stroke-width="1.4"/>
+        <path d="M19 8L29 14V26L19 32L9 26V14L19 8Z" fill="#C9992A" fill-opacity="0.07" stroke="#C9992A" stroke-width="0.7"/>
+        <text x="19" y="24" text-anchor="middle" fill="#C9992A" font-size="15" font-weight="700" font-family="Space Grotesk,sans-serif">S</text>
+      </svg>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:0.18em;line-height:1;color:#fff;">SOLVRA</div>
+        <div style="font-size:0.58rem;letter-spacing:0.28em;color:#C9992A;opacity:0.8;margin-top:2px;">AI STUDIO</div>
+      </div>
+    </a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="work.html" class="nav-link">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="process.html" class="nav-link">Process</a>
+      <a href="insights.html" class="nav-link active">Insights</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="btn-gold hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-md">
+        LET'S BUILD
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <button id="mob-btn" class="lg:hidden flex flex-col justify-center gap-1.5 bg-transparent border-0 p-2" aria-label="Menu">
+        <span class="block w-5 h-px bg-white rounded"></span>
+        <span class="block w-5 h-px bg-white rounded"></span>
+        <span class="block w-5 h-px bg-white rounded"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div id="mob-nav" class="mob-overlay">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="work.html">Work</a>
+  <a href="about.html">About</a>
+  <a href="process.html">Process</a>
+  <a href="insights.html">Insights</a>
+  <div class="mob-sep"></div>
+  <a href="index.html#contact" style="font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:1px solid rgba(201,153,42,0.4);padding:12px 24px;border-radius:4px;color:#C9992A;">Let's Build</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero dot-grid">
+  <div class="max-w-7xl mx-auto px-8 text-center">
+    <div class="section-badge justify-center mb-6">INSIGHTS</div>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:700;line-height:1.06;letter-spacing:-0.02em;margin-bottom:20px;">AI Perspectives</h1>
+    <p style="color:rgba(255,255,255,0.4);font-size:1rem;line-height:1.7;max-width:500px;margin:0 auto;">Deep dives, case studies, and practical guides from the team building at the frontier of AI.</p>
+  </div>
+</section>
+
+<!-- FEATURED ARTICLE -->
+<section style="padding:60px 0 40px;background:#080808;">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="article-card featured-grid">
+      <div class="article-thumb" style="background:linear-gradient(135deg,#1a0b3b,#0d0520,#200840);aspect-ratio:auto;min-height:320px;">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" opacity="0.25">
+          <polygon points="50 5 93 28 93 72 50 95 7 72 7 28" stroke="#C9992A" stroke-width="1.5" fill="none"/>
+          <polygon points="50 20 78 35 78 65 50 80 22 65 22 35" stroke="#C9992A" stroke-width="0.8" fill="none"/>
+          <circle cx="50" cy="50" r="16" stroke="#C9992A" stroke-width="0.8" fill="none"/>
+          <line x1="50" y1="5" x2="50" y2="95" stroke="#C9992A" stroke-width="0.4"/>
+          <line x1="7" y1="28" x2="93" y2="72" stroke="#C9992A" stroke-width="0.4"/>
+          <line x1="93" y1="28" x2="7" y2="72" stroke="#C9992A" stroke-width="0.4"/>
+        </svg>
+        <div style="position:absolute;top:20px;left:20px;" class="article-tag">Featured</div>
+      </div>
+      <div style="padding:40px 44px;display:flex;flex-direction:column;justify-content:center;">
+        <div class="article-tag" style="display:inline-block;margin-bottom:16px;width:fit-content;">AI Strategy</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;color:#fff;line-height:1.25;margin-bottom:16px;">Why Most Businesses Are Building AI Backwards</h2>
+        <p style="font-size:0.88rem;color:rgba(255,255,255,0.38);line-height:1.75;margin-bottom:28px;">Companies are retrofitting AI onto existing processes and wondering why it doesn't work. The answer: intelligence needs to be designed in from day one, not sprinkled on top.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-size:0.78rem;font-weight:600;color:#fff;">Zain Al-Rashid</div>
+            <div style="font-size:0.7rem;color:rgba(255,255,255,0.3);margin-top:2px;">May 8, 2026 · 8 min read</div>
+          </div>
+          <button style="display:flex;align-items:center;gap:6px;font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;color:#C9992A;cursor:pointer;transition:gap 0.2s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">
+            READ MORE
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE GRID -->
+<section style="padding:20px 0 80px;background:#080808;">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#0b1a0b,#051005);height:180px;">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" opacity="0.3">
+            <rect x="5" y="5" width="50" height="50" rx="6" stroke="#C9992A" stroke-width="1.2" fill="none"/>
+            <circle cx="30" cy="30" r="12" stroke="#C9992A" stroke-width="0.8" fill="none"/>
+            <circle cx="30" cy="30" r="4" fill="#C9992A" opacity="0.5"/>
+          </svg>
+        </div>
+        <div style="padding:20px 24px 24px;">
+          <div class="article-tag" style="margin-bottom:12px;">Automation</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.35;">The 5 Workflows Every Enterprise Should Automate First</h3>
+          <p style="font-size:0.78rem;color:rgba(255,255,255,0.32);line-height:1.6;margin-bottom:16px;">Not all automation is equal. These five workflows deliver the fastest ROI and set the foundation for deeper AI adoption.</p>
+          <div style="font-size:0.68rem;color:rgba(255,255,255,0.25);">Sara Novak · April 29, 2026</div>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#1a0b0b,#200d05);height:180px;">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" opacity="0.3">
+            <polygon points="30 5 55 18 55 42 30 55 5 42 5 18" stroke="#C9992A" stroke-width="1.2" fill="none"/>
+            <polygon points="30 16 45 24 45 36 30 44 15 36 15 24" stroke="#C9992A" stroke-width="0.6" fill="none"/>
+          </svg>
+        </div>
+        <div style="padding:20px 24px 24px;">
+          <div class="article-tag" style="margin-bottom:12px;">AI Agents</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.35;">How I Built a Sales Agent That Closes $2M in Pipeline</h3>
+          <p style="font-size:0.78rem;color:rgba(255,255,255,0.32);line-height:1.6;margin-bottom:16px;">A behind-the-scenes look at the architecture, prompting strategy, and integration patterns that made it work.</p>
+          <div style="font-size:0.68rem;color:rgba(255,255,255,0.25);">Zain Al-Rashid · April 15, 2026</div>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#080d1a,#0a1025);height:180px;">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" opacity="0.3">
+            <polygon points="30 4 56 18 56 42 30 56 4 42 4 18" stroke="#C9992A" stroke-width="1.2" fill="none"/>
+            <line x1="4" y1="18" x2="56" y2="42" stroke="#C9992A" stroke-width="0.5"/>
+            <line x1="56" y1="18" x2="4" y2="42" stroke="#C9992A" stroke-width="0.5"/>
+            <circle cx="30" cy="30" r="8" stroke="#C9992A" stroke-width="0.8" fill="none"/>
+          </svg>
+        </div>
+        <div style="padding:20px 24px 24px;">
+          <div class="article-tag" style="margin-bottom:12px;">Web Dev</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.35;">Building AI-Native SaaS: Architecture Decisions That Matter</h3>
+          <p style="font-size:0.78rem;color:rgba(255,255,255,0.32);line-height:1.6;margin-bottom:16px;">From streaming responses to vector databases — the technical choices that separate AI-ready from AI-bolted-on.</p>
+          <div style="font-size:0.68rem;color:rgba(255,255,255,0.25);">Marcus Lee · April 2, 2026</div>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#0b0b1a,#050520);height:180px;">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" opacity="0.3">
+            <rect x="6" y="6" width="48" height="48" rx="5" stroke="#C9992A" stroke-width="1.2" fill="none"/>
+            <path d="M6 20 h48" stroke="#C9992A" stroke-width="0.5"/>
+            <circle cx="14" cy="13" r="2.5" fill="#C9992A" opacity="0.5"/>
+            <circle cx="22" cy="13" r="2.5" fill="#C9992A" opacity="0.3"/>
+            <rect x="12" y="28" width="16" height="10" rx="2" stroke="#C9992A" stroke-width="0.7" fill="none"/>
+            <rect x="34" y="28" width="14" height="22" rx="2" stroke="#C9992A" stroke-width="0.7" fill="none"/>
+            <rect x="12" y="42" width="16" height="8" rx="2" stroke="#C9992A" stroke-width="0.7" fill="none"/>
+          </svg>
+        </div>
+        <div style="padding:20px 24px 24px;">
+          <div class="article-tag" style="margin-bottom:12px;">Branding</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.35;">Why AI Companies Have Terrible Branding (And How to Fix It)</h3>
+          <p style="font-size:0.78rem;color:rgba(255,255,255,0.32);line-height:1.6;margin-bottom:16px;">Generic robot imagery, blue gradients, and bold claims. Here's how to actually build a brand that stands out in the AI space.</p>
+          <div style="font-size:0.68rem;color:rgba(255,255,255,0.25);">Marcus Lee · March 20, 2026</div>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#1a1a0b,#1a1500);height:180px;">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" opacity="0.3">
+            <path d="M30 5 L55 20 L55 40 L30 55 L5 40 L5 20 Z" stroke="#C9992A" stroke-width="1.2" fill="none"/>
+            <circle cx="30" cy="30" r="14" stroke="#C9992A" stroke-width="0.8" fill="none"/>
+            <path d="M30 5 L30 55" stroke="#C9992A" stroke-width="0.4"/>
+            <path d="M5 20 L55 40" stroke="#C9992A" stroke-width="0.4"/>
+            <path d="M55 20 L5 40" stroke="#C9992A" stroke-width="0.4"/>
+          </svg>
+        </div>
+        <div style="padding:20px 24px 24px;">
+          <div class="article-tag" style="margin-bottom:12px;">AI Strategy</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.35;">Choosing the Right LLM for Your Business: A Practical Guide</h3>
+          <p style="font-size:0.78rem;color:rgba(255,255,255,0.32);line-height:1.6;margin-bottom:16px;">GPT-4, Claude, Gemini, or open-source? I break down when to use which model based on cost, privacy, and performance.</p>
+          <div style="font-size:0.68rem;color:rgba(255,255,255,0.25);">Priya Sharma · March 5, 2026</div>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-thumb" style="background:linear-gradient(135deg,#0d1a0b,#091405);height:180px;">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" opacity="0.3">
+            <polygon points="30 4 56 19 56 41 30 56 4 41 4 19" stroke="#C9992A" stroke-width="1.2" fill="none"/>
+            <polygon points="30 15 46 24 46 36 30 45 14 36 14 24" stroke="#C9992A" stroke-width="0.6" fill="none"/>
+            <circle cx="30" cy="30" r="5" fill="#C9992A" opacity="0.4"/>
+          </svg>
+        </div>
+        <div style="padding:20px 24px 24px;">
+          <div class="article-tag" style="margin-bottom:12px;">Case Study</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.35;">How I Reduced Client's Ops Cost by 60% With Automation</h3>
+          <p style="font-size:0.78rem;color:rgba(255,255,255,0.32);line-height:1.6;margin-bottom:16px;">A detailed case study on how I rebuilt a logistics company's operations pipeline with AI at the center.</p>
+          <div style="font-size:0.68rem;color:rgba(255,255,255,0.25);">Sara Novak · February 18, 2026</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+const mbtn=document.getElementById('mob-btn'),mnav=document.getElementById('mob-nav');
+mbtn.addEventListener('click',()=>{const o=mnav.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});
+mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mnav.classList.remove('open');document.body.style.overflow='';}));
+</script>
+<script src="gate.js"></script>
+</body>
+</html>
