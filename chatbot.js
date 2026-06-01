@@ -96,11 +96,8 @@ const markup=`
 <div id="sv-win">
   <div id="sv-hdr">
     <div class="sv-hdr-top">
-      <div class="sv-hdr-icon">
-        <img src="logo-transparent.png" alt="SOLVRA" style="height:28px;display:block;mix-blend-mode:lighten">
-      </div>
       <div class="sv-hdr-text">
-        <div class="sv-hdr-title">SOLVRA</div>
+        <img src="logo-transparent.png" alt="SOLVRA" style="height:26px;display:block;margin-bottom:3px">
         <div class="sv-hdr-sub">AI Studio Assistant</div>
       </div>
       <button id="sv-close" aria-label="Close">
