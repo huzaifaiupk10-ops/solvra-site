@@ -97,7 +97,7 @@ const markup=`
   <div id="sv-hdr">
     <div class="sv-hdr-top">
       <div class="sv-hdr-icon">
-        <svg width="18" height="18" viewBox="0 0 34 34" fill="none"><path d="M17 2L31 9.5V24.5L17 32L3 24.5V9.5L17 2Z" fill="#C4965A" fill-opacity="0.15" stroke="#C4965A" stroke-width="1.3"/><text x="17" y="22" text-anchor="middle" fill="#C4965A" font-size="13" font-weight="700" font-family="sans-serif">S</text></svg>
+        <img src="logo-transparent.png" alt="SOLVRA" style="height:28px;display:block;mix-blend-mode:lighten">
       </div>
       <div class="sv-hdr-text">
         <div class="sv-hdr-title">SOLVRA</div>

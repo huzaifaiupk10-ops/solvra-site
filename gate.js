@@ -53,14 +53,7 @@
   const html = `
 <div id="sv-gate-card">
   <div class="sg-logo">
-    <svg class="sg-logo-mark" viewBox="0 0 32 32" fill="none">
-      <path d="M16 2L30 9.5V22.5L16 30L2 22.5V9.5L16 2Z" fill="rgba(196,150,90,.08)" stroke="#C4965A" stroke-width="1"/>
-      <text x="16" y="21" text-anchor="middle" fill="#C4965A" font-size="13" font-weight="700" font-family="serif">S</text>
-    </svg>
-    <div>
-      <div class="sg-logo-name">SOLVRA</div>
-      <div class="sg-logo-sub">AI STUDIO</div>
-    </div>
+    <img src="logo-transparent.png" alt="SOLVRA" style="height:36px;display:block">
   </div>
 
   <div class="sg-eyebrow">
