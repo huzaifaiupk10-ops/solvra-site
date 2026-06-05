@@ -150,32 +150,23 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
 .work-hd{padding:0 80px;margin-bottom:68px;display:flex;justify-content:space-between;align-items:flex-end}
 .btn-line{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#5C5650;border:none;background:transparent;display:flex;align-items:center;gap:8px;transition:color .2s;padding:0}
 .btn-line:hover{color:#C4965A}
-.proj-arrow-row{display:flex;gap:10px;flex-shrink:0}
-.proj-arrow{width:42px;height:42px;border:1px solid #1E1E1E;background:transparent;border-radius:2px;display:flex;align-items:center;justify-content:center;cursor:none;transition:all .22s;color:rgba(240,235,224,.45);flex-shrink:0}
-.proj-arrow:hover{border-color:rgba(196,150,90,.4);color:#C4965A;background:rgba(196,150,90,.06)}
-.proj-arrow:disabled{opacity:.22;pointer-events:none}
-.proj-scroll-wrap{overflow:hidden;position:relative}
-.proj-track{display:flex;gap:1px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-ms-overflow-style:none;scrollbar-width:none;padding:0 80px;cursor:grab;user-select:none}
-.proj-track::-webkit-scrollbar{display:none}
-.proj-track.is-dragging{cursor:grabbing;scroll-behavior:auto}
-.proj-card{flex:0 0 390px;scroll-snap-align:start;border:1px solid #1E1E1E;background:#080604;overflow:hidden;position:relative;transition:border-color .3s;display:flex;flex-direction:column}
-.proj-card:hover{border-color:rgba(196,150,90,.2)}
-.pc-img-wrap{position:relative;overflow:hidden;height:250px;flex-shrink:0;border-bottom:1px solid #1E1E1E}
-.pc-img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,opacity .4s}
-.proj-card:hover .pc-img{transform:scale(1.05);opacity:.85}
-.pc-sweep{position:absolute;inset:0;background:rgba(196,150,90,.07);transform:translateX(-100%);transition:transform .55s cubic-bezier(.4,0,.2,1);z-index:1;pointer-events:none}
-.proj-card:hover .pc-sweep{transform:translateX(0)}
-.pc-num{position:absolute;top:12px;right:16px;font-family:'Cormorant Garamond',serif;font-size:3.5rem;color:rgba(196,150,90,.07);line-height:1;pointer-events:none;z-index:0}
-.pc-info{padding:26px 28px;display:flex;flex-direction:column;flex:1}
-.pc-cat{font-family:'JetBrains Mono',monospace;font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;color:#C4965A;margin-bottom:9px}
-.pc-title{font-family:'Cormorant Garamond',serif;font-size:1.55rem;line-height:1.05;margin-bottom:10px}
-.pc-desc{font-size:.78rem;color:rgba(240,235,224,.52);line-height:1.6;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.pc-pills{display:flex;flex-wrap:wrap;gap:5px}
-.pc-pill{font-family:'JetBrains Mono',monospace;font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border:1px solid #1E1E1E;color:#5C5650;border-radius:2px}
-.pc-link{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:#C4965A;display:inline-flex;align-items:center;gap:6px;transition:gap .2s;margin-top:18px}
-.pc-link:hover{gap:10px}
-.proj-progress{height:1px;background:#1E1E1E;position:relative;margin:32px 80px 0}
-.proj-progress-fill{position:absolute;left:0;top:0;height:100%;background:#C4965A;transition:width .1s linear;border-radius:1px}
+.work-list{display:flex;flex-direction:column;gap:12px}
+.wi{display:grid;grid-template-columns:1fr 1fr;border:1px solid #1E1E1E;transition:background .35s;position:relative;overflow:hidden;align-items:stretch}
+.wi:hover{background:#0D0B09}
+.wi-info{padding:36px 48px;display:flex;flex-direction:column;justify-content:center}
+.wi-cat{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:#C4965A;margin-bottom:10px}
+.wi-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.2vw,2rem);color:#F0EBE0;line-height:1.06;margin-bottom:12px}
+.wi-desc{font-size:.8rem;color:rgba(240,235,224,.55);line-height:1.65;max-width:480px}
+.wi-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;margin-bottom:18px}
+.wpill{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid #1E1E1E;color:#5C5650;border-radius:2px}
+.wi-cta{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#C4965A;display:inline-flex;align-items:center;gap:6px;transition:gap .2s;margin-top:auto}
+.wi-cta:hover{gap:10px}
+.wi-vis{border-left:1px solid #1E1E1E;position:relative;overflow:hidden;display:flex;align-items:flex-start}
+.wi-sweep{position:absolute;inset:0;background:rgba(196,150,90,.06);transform:translateX(-100%);transition:transform .55s cubic-bezier(.4,0,.2,1);z-index:2}
+.wi:hover .wi-sweep{transform:translateX(0)}
+.wi-img{width:100%;height:auto;display:block;transition:transform .55s ease,opacity .4s}
+.wi:hover .wi-img{transform:scale(1.04);opacity:.88}
+.wi-ph{font-family:'Cormorant Garamond',serif;font-size:5rem;color:rgba(196,150,90,.05);user-select:none;pointer-events:none;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;line-height:1}
 .work-foot{padding:44px 80px;border-top:1px solid #1E1E1E;display:flex;justify-content:center}
 
 #services{padding:120px 80px;border-bottom:1px solid #1E1E1E;position:relative;z-index:1}
@@ -240,7 +231,7 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
 ::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-track{background:#0A0A0A}
 ::-webkit-scrollbar-thumb{background:rgba(196,150,90,.2)}
-.h1,.sec-h2,.pq,.svc-name,.sk-cat,.pc-title,.con-h,.hs-n,.tm-name,.av-title,.ci-v{background:linear-gradient(110deg,#c0c0c0 0%,#e8e8e8 22%,#ffffff 38%,#f4f4f4 48%,#e2e2e2 58%,#f9f9f9 72%,#ffffff 82%,#d8d8d8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.h1,.sec-h2,.pq,.svc-name,.sk-cat,.wi-title,.con-h,.hs-n,.tm-name,.av-title,.ci-v{background:linear-gradient(110deg,#c0c0c0 0%,#e8e8e8 22%,#ffffff 38%,#f4f4f4 48%,#e2e2e2 58%,#f9f9f9 72%,#ffffff 82%,#d8d8d8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .h1 em,.con-h em,.pq em{background:none;-webkit-text-fill-color:#C4965A}
 .pq::before{-webkit-text-fill-color:rgba(196,150,90,.1)}
 .svc:hover .svc-name{filter:brightness(1.22)}
@@ -263,9 +254,8 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
   .sk-tags{display:none}
   #projects .work-hd{padding:0 40px}
   #projects .work-foot{padding:36px 40px}
-  .proj-track{padding:0 20px}
-  .proj-card{flex:0 0 300px}
-  .proj-progress{margin:24px 20px 0}
+  .wi{grid-template-columns:1fr}
+  .wi-vis{display:none}
   #services{padding:80px 40px}
   .sec-hd{grid-template-columns:1fr;gap:24px;margin-bottom:48px}
   .svc-hd{grid-template-columns:52px 1fr 36px;gap:16px}
@@ -294,8 +284,7 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
   .sk-n{font-size:1.8rem}
   #projects .work-hd{padding:0 20px;flex-direction:column;align-items:flex-start;gap:20px}
   #projects .work-foot{padding:28px 20px}
-  .proj-card{flex:0 0 280px}
-  .pc-img-wrap{height:200px}
+  .wi-info{padding:28px 20px}
   #services{padding:56px 20px}
   .svc-hd{grid-template-columns:44px 1fr 32px;gap:12px;padding:24px 0}
   .svc-bd{padding-left:56px}
@@ -537,138 +526,132 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
       <div class="sec-label"><div class="sl-rule"></div>Selected Projects</div>
       <h2 class="sec-h2" style="margin-top:16px">Projects</h2>
     </div>
-    <div class="proj-arrow-row">
-      <button class="proj-arrow" id="proj-prev" aria-label="Previous"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
-      <button class="proj-arrow" id="proj-next" aria-label="Next"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-    </div>
+    <button class="btn-line">All Projects <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
 
-  <div class="proj-scroll-wrap">
-    <div class="proj-track" id="proj-track">
+  <div class="work-list">
 
-      <div class="proj-card">
-        <div class="pc-img-wrap">
-          <div class="pc-sweep"></div>
-          <img src="project1.png" alt="Gold's Gym Redesign" class="pc-img" loading="lazy"/>
-          <div class="pc-num">01</div>
-        </div>
-        <div class="pc-info">
-          <div class="pc-cat">Premium Fitness Website Concept</div>
-          <div class="pc-title">Gold's Gym Redesign</div>
-          <div class="pc-desc">A premium website redesign for Gold's Gym Woodbridge/Lake Ridge focused on digital presence, visual branding, and membership conversion.</div>
-          <div class="pc-pills"><span class="pc-pill">Web Design</span><span class="pc-pill">UI/UX</span><span class="pc-pill">React</span><span class="pc-pill">Branding</span></div>
-          <a href="project-1.html" class="pc-link">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">Premium Fitness Website Concept</div>
+        <div class="wi-title">Gold's Gym Redesign</div>
+        <div class="wi-desc">A premium website redesign concept for Gold's Gym Woodbridge/Lake Ridge, focused on improving digital presence, visual branding, and membership conversion with a bold luxury fitness aesthetic.</div>
+        <div class="wi-pills"><span class="wpill">Web Design</span><span class="wpill">Website Redesign</span><span class="wpill">UI/UX Design</span><span class="wpill">React</span><span class="wpill">Framer Motion</span><span class="wpill">Branding</span><span class="wpill">Landing Page</span></div>
+        <a href="project-1.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
-
-      <div class="proj-card">
-        <div class="pc-img-wrap">
-          <div class="pc-sweep"></div>
-          <img src="gala-gents.png" alt="Gala Gents" class="pc-img" loading="lazy"/>
-          <div class="pc-num">02</div>
-        </div>
-        <div class="pc-info">
-          <div class="pc-cat">Branding &amp; Web Design</div>
-          <div class="pc-title">Gala Gents</div>
-          <div class="pc-desc">A premium menswear brand concept built around elegance, confidence, and purpose — dark cinematic layout, gold typography, and refined luxury details.</div>
-          <div class="pc-pills"><span class="pc-pill">UX/UI</span><span class="pc-pill">React</span><span class="pc-pill">Node.js</span></div>
-          <a href="project-2.html" class="pc-link">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project1.png" alt="Gold's Gym Redesign" class="wi-img"/>
+        <div class="wi-ph">01</div>
       </div>
-
-      <div class="proj-card">
-        <div class="pc-img-wrap">
-          <div class="pc-sweep"></div>
-          <img src="project3.png" alt="AI Assistant" class="pc-img" loading="lazy"/>
-          <div class="pc-num">03</div>
-        </div>
-        <div class="pc-info">
-          <div class="pc-cat">VirginiaWebs AI-Powered Chatbot UI</div>
-          <div class="pc-title">AI Assistant</div>
-          <div class="pc-desc">A premium AI chatbot UI designed to capture leads and answer customer questions through modern branded automation.</div>
-          <div class="pc-pills"><span class="pc-pill">AI</span><span class="pc-pill">Chatbot UI</span><span class="pc-pill">UI/UX</span><span class="pc-pill">Automation</span></div>
-          <a href="project-3.html" class="pc-link">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="pc-img-wrap">
-          <div class="pc-sweep"></div>
-          <img src="project4.jpg" alt="AI Lead Dashboard" class="pc-img" loading="lazy"/>
-          <div class="pc-num">04</div>
-        </div>
-        <div class="pc-info">
-          <div class="pc-cat">AI Lead Generation &amp; Automation</div>
-          <div class="pc-title">AI Lead Dashboard</div>
-          <div class="pc-desc">A smart dashboard concept focused on automation, AI workflows, lead generation, and agentic systems for business efficiency.</div>
-          <div class="pc-pills"><span class="pc-pill">AI</span><span class="pc-pill">Automation</span><span class="pc-pill">AI Agents</span><span class="pc-pill">Product Design</span></div>
-          <a href="project-4.html" class="pc-link">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="pc-img-wrap">
-          <div class="pc-sweep"></div>
-          <img src="lumen.png" alt="Lumen SaaS Dashboard" class="pc-img" loading="lazy"/>
-          <div class="pc-num">05</div>
-        </div>
-        <div class="pc-info">
-          <div class="pc-cat">Lead Generation SaaS UI Design</div>
-          <div class="pc-title">Lumen</div>
-          <div class="pc-desc">A clean and modern SaaS dashboard for a B2B lead generation platform — lead tables, contact profiles, activity tracking, and AI outreach.</div>
-          <div class="pc-pills"><span class="pc-pill">Figma</span><span class="pc-pill">Product Design</span><span class="pc-pill">SaaS</span><span class="pc-pill">UI Design</span></div>
-          <a href="project-5.html" class="pc-link">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="pc-img-wrap">
-          <div class="pc-sweep"></div>
-          <img src="project6.jpg" alt="Lumière Editorial" class="pc-img" loading="lazy"/>
-          <div class="pc-num">06</div>
-        </div>
-        <div class="pc-info">
-          <div class="pc-cat">Fashion Campaign Design</div>
-          <div class="pc-title">Lumière Editorial</div>
-          <div class="pc-desc">A visually driven fashion campaign concept combining editorial aesthetics, creative direction, and premium digital presentation.</div>
-          <div class="pc-pills"><span class="pc-pill">Content Creation</span><span class="pc-pill">Creative Direction</span><span class="pc-pill">Visual Design</span></div>
-          <a href="project-6.html" class="pc-link">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="pc-img-wrap">
-          <div class="pc-sweep"></div>
-          <img src="project7.jpg" alt="Lumière Visual System" class="pc-img" loading="lazy"/>
-          <div class="pc-num">07</div>
-        </div>
-        <div class="pc-info">
-          <div class="pc-cat">Luxury Brand Identity Design</div>
-          <div class="pc-title">Lumière Visual System</div>
-          <div class="pc-desc">A luxury brand identity concept featuring logo design, typography, color systems, and visual branding for a high-end aesthetic.</div>
-          <div class="pc-pills"><span class="pc-pill">Brand Identity</span><span class="pc-pill">Logo Design</span><span class="pc-pill">Typography</span></div>
-          <a href="project-7.html" class="pc-link">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="pc-img-wrap">
-          <div class="pc-sweep"></div>
-          <img src="project8.jpg" alt="Sol Slice" class="pc-img" loading="lazy"/>
-          <div class="pc-num">08</div>
-        </div>
-        <div class="pc-info">
-          <div class="pc-cat">Creative Agency Landing Page</div>
-          <div class="pc-title">Sol Slice</div>
-          <div class="pc-desc">A creative agency landing page concept focused on bold visuals, modern structure, and a sleek user experience.</div>
-          <div class="pc-pills"><span class="pc-pill">Web Design</span><span class="pc-pill">Front-End</span><span class="pc-pill">UI/UX</span></div>
-          <a href="project-8.html" class="pc-link">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-
     </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">Branding &amp; Web Design</div>
+        <div class="wi-title">Gala Gents</div>
+        <div class="wi-desc">A premium menswear brand concept built around elegance, confidence, and purpose — dark cinematic layout, gold typography, and refined luxury details.</div>
+        <div class="wi-pills"><span class="wpill">UX/UI</span><span class="wpill">React</span><span class="wpill">Node.js</span></div>
+        <a href="project-2.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="gala-gents.png" alt="Gala Gents" class="wi-img"/>
+        <div class="wi-ph">02</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">VirginiaWebs AI-Powered Chatbot UI</div>
+        <div class="wi-title">AI Assistant</div>
+        <div class="wi-desc">VirginiaWebs AI Assistant is a premium AI chatbot UI designed to capture leads and answer customer questions. It helps visitors explore services, pricing, and bookings through a modern branded automation experience.</div>
+        <div class="wi-pills"><span class="wpill">AI</span><span class="wpill">AI Agents</span><span class="wpill">Chatbot UI</span><span class="wpill">UI/UX Design</span><span class="wpill">Automation</span><span class="wpill">Branding</span><span class="wpill">Lead Generation</span></div>
+        <a href="project-3.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project3.png" alt="AI Assistant" class="wi-img"/>
+        <div class="wi-ph">03</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">AI Lead Generation &amp; Automation</div>
+        <div class="wi-title">AI Lead Dashboard</div>
+        <div class="wi-desc">A smart dashboard concept focused on automation, AI workflows, lead generation, and agentic systems for business efficiency.</div>
+        <div class="wi-pills"><span class="wpill">AI</span><span class="wpill">Automation</span><span class="wpill">AI Agents</span><span class="wpill">Product Design</span></div>
+        <a href="project-4.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project4.jpg" alt="AI Lead Dashboard" class="wi-img"/>
+        <div class="wi-ph">04</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">Lead Generation SaaS UI Design</div>
+        <div class="wi-title">Lumen</div>
+        <div class="wi-desc">A clean and modern SaaS dashboard for a B2B lead generation platform — lead tables, contact profiles, activity tracking, and AI-powered outreach emails.</div>
+        <div class="wi-pills"><span class="wpill">Figma</span><span class="wpill">Product Design</span><span class="wpill">SaaS</span><span class="wpill">UI Design</span><span class="wpill">B2B</span></div>
+        <a href="project-5.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="lumen.png" alt="Lumen SaaS Dashboard" class="wi-img"/>
+        <div class="wi-ph">05</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">Fashion Campaign Design</div>
+        <div class="wi-title">Lumi&egrave;re Editorial</div>
+        <div class="wi-desc">A visually driven fashion campaign concept combining editorial aesthetics, creative direction, and premium digital presentation.</div>
+        <div class="wi-pills"><span class="wpill">Content Creation</span><span class="wpill">Creative Direction</span><span class="wpill">Visual Design</span></div>
+        <a href="project-6.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project6.jpg" alt="Lumiere Editorial" class="wi-img"/>
+        <div class="wi-ph">06</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">Luxury Brand Identity Design</div>
+        <div class="wi-title">Lumi&egrave;re Visual System</div>
+        <div class="wi-desc">A luxury brand identity concept featuring logo design, typography, color systems, and visual branding for a high-end aesthetic.</div>
+        <div class="wi-pills"><span class="wpill">Brand Identity</span><span class="wpill">Logo Design</span><span class="wpill">Typography</span><span class="wpill">Color Theory</span></div>
+        <a href="project-7.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project7.jpg" alt="Lumiere Visual System" class="wi-img"/>
+        <div class="wi-ph">07</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-info">
+        <div class="wi-cat">Creative Agency Landing Page</div>
+        <div class="wi-title">Sol Slice</div>
+        <div class="wi-desc">A creative agency landing page concept focused on bold visuals, modern structure, and a sleek user experience.</div>
+        <div class="wi-pills"><span class="wpill">Web Design</span><span class="wpill">Front-End</span><span class="wpill">UI/UX</span></div>
+        <a href="project-8.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="wi-vis">
+        <div class="wi-sweep"></div>
+        <img src="project8.jpg" alt="Sol Slice" class="wi-img"/>
+        <div class="wi-ph">08</div>
+      </div>
+    </div>
+
   </div>
-  <div class="proj-progress"><div class="proj-progress-fill" id="proj-fill"></div></div>
 
   <div class="work-foot">
     <a href="#contact"><button class="btn-fill">Discuss Your Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
@@ -824,7 +807,7 @@ document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cu
   ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
   requestAnimationFrame(animRing);
 })();
-document.querySelectorAll('a, button, .svc-hd, .proj-card, .sk').forEach(el => {
+document.querySelectorAll('a, button, .svc-hd, .wi, .sk').forEach(el => {
   el.addEventListener('mouseenter', () => { cur.style.width = '14px'; cur.style.height = '14px'; ring.style.width = '52px'; ring.style.height = '52px'; });
   el.addEventListener('mouseleave', () => { cur.style.width = '9px'; cur.style.height = '9px'; ring.style.width = '36px'; ring.style.height = '36px'; });
 });
@@ -842,44 +825,6 @@ const revObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revObs.unobserve(e.target); } });
 }, { threshold: 0.08 });
 document.querySelectorAll('.rv, .rv-l, .rv-r').forEach(el => revObs.observe(el));
-
-// Project carousel
-(function(){
-  const track = document.getElementById('proj-track');
-  const fill  = document.getElementById('proj-fill');
-  const prev  = document.getElementById('proj-prev');
-  const next  = document.getElementById('proj-next');
-  if(!track) return;
-
-  const cardW = () => track.querySelector('.proj-card').offsetWidth + 1;
-
-  function updateProgress(){
-    const max = track.scrollWidth - track.clientWidth;
-    const pct = max > 0 ? (track.scrollLeft / max) * 100 : 0;
-    fill.style.width = pct + '%';
-    prev.disabled = track.scrollLeft <= 0;
-    next.disabled = track.scrollLeft >= max - 1;
-  }
-
-  prev.addEventListener('click', () => { track.scrollBy({left: -cardW(), behavior:'smooth'}); });
-  next.addEventListener('click', () => { track.scrollBy({left:  cardW(), behavior:'smooth'}); });
-  track.addEventListener('scroll', updateProgress, {passive:true});
-  updateProgress();
-
-  // Drag to scroll
-  let dragging=false, startX=0, scrollStart=0;
-  track.addEventListener('pointerdown', e => {
-    dragging=true; startX=e.clientX; scrollStart=track.scrollLeft;
-    track.classList.add('is-dragging');
-    track.setPointerCapture(e.pointerId);
-  });
-  track.addEventListener('pointermove', e => {
-    if(!dragging) return;
-    track.scrollLeft = scrollStart - (e.clientX - startX);
-  });
-  track.addEventListener('pointerup', () => { dragging=false; track.classList.remove('is-dragging'); });
-  track.addEventListener('pointercancel', () => { dragging=false; track.classList.remove('is-dragging'); });
-})();
 
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nl');
