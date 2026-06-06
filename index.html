@@ -154,12 +154,22 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
 .work-list{display:flex;flex-direction:row;gap:1px;flex:1;min-height:0;will-change:transform}
 .wi{flex:0 0 78vw;display:grid;grid-template-columns:1.15fr 1fr;border:1px solid #1E1E1E;transition:background .35s;position:relative;overflow:hidden;align-items:stretch}
 .wi:hover{background:#0A0806}
-.wi-vis{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#060504}
+.wi-vis{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#060504;padding:36px 32px}
+.wi-vis::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(196,150,90,.08) 0%,transparent 68%);pointer-events:none;z-index:0}
 .wi-sweep{position:absolute;inset:0;background:rgba(196,150,90,.04);transform:translateX(-100%);transition:transform .55s cubic-bezier(.4,0,.2,1);z-index:2}
 .wi:hover .wi-sweep{transform:translateX(0)}
-.wi-img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .55s ease,opacity .4s}
-.wi:hover .wi-img{transform:scale(1.03);opacity:.92}
 .wi-ph{font-family:'Cormorant Garamond',serif;font-size:7rem;color:rgba(196,150,90,.04);user-select:none;pointer-events:none;position:absolute;bottom:10px;right:18px;line-height:1;z-index:0}
+.browser-mock{width:100%;border-radius:9px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 28px 72px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.03),0 0 120px rgba(196,150,90,.06);background:#141414;position:relative;z-index:1}
+.browser-bar{background:#1d1d1d;padding:9px 13px;display:flex;align-items:center;gap:9px;border-bottom:1px solid rgba(255,255,255,.05)}
+.browser-dots{display:flex;gap:6px;flex-shrink:0}
+.browser-dots span{width:11px;height:11px;border-radius:50%;display:block}
+.browser-dots span:nth-child(1){background:#FF5F57}
+.browser-dots span:nth-child(2){background:#FEBC2E}
+.browser-dots span:nth-child(3){background:#28C840}
+.browser-url{flex:1;background:rgba(255,255,255,.04);border-radius:4px;padding:4px 10px;font-family:'JetBrains Mono',monospace;font-size:.43rem;color:rgba(255,255,255,.22);letter-spacing:.04em}
+.browser-screen{overflow:hidden;line-height:0}
+.wi-img{width:100%;height:auto;display:block;transition:transform .6s ease,opacity .4s}
+.wi:hover .wi-img{transform:scale(1.03);opacity:.92}
 .wi-info{border-left:1px solid #1E1E1E;padding:44px 52px;display:flex;flex-direction:column;justify-content:center;background:#080604}
 .wi-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:22px}
 .wi-cat{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:#C4965A;flex-shrink:0}
@@ -550,7 +560,10 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
     <div class="wi">
       <div class="wi-vis">
         <div class="wi-sweep"></div>
-        <img src="project1.png" alt="Gold's Gym Redesign" class="wi-img"/>
+        <div class="browser-mock">
+          <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">goldsgym.com</div></div>
+          <div class="browser-screen"><img src="project1.png" alt="Gold's Gym Redesign" class="wi-img"/></div>
+        </div>
         <div class="wi-ph">01</div>
       </div>
       <div class="wi-info">
@@ -572,7 +585,10 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
     <div class="wi">
       <div class="wi-vis">
         <div class="wi-sweep"></div>
-        <img src="gala-gents.png" alt="Gala Gents" class="wi-img"/>
+        <div class="browser-mock">
+          <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">galagents.co</div></div>
+          <div class="browser-screen"><img src="gala-gents.png" alt="Gala Gents" class="wi-img"/></div>
+        </div>
         <div class="wi-ph">02</div>
       </div>
       <div class="wi-info">
@@ -594,7 +610,10 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
     <div class="wi">
       <div class="wi-vis">
         <div class="wi-sweep"></div>
-        <img src="project3.png" alt="AI Assistant" class="wi-img"/>
+        <div class="browser-mock">
+          <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">ai.virginiawebs.com</div></div>
+          <div class="browser-screen"><img src="project3.png" alt="AI Assistant" class="wi-img"/></div>
+        </div>
         <div class="wi-ph">03</div>
       </div>
       <div class="wi-info">
@@ -616,7 +635,10 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
     <div class="wi">
       <div class="wi-vis">
         <div class="wi-sweep"></div>
-        <img src="project4.jpg" alt="AI Lead Dashboard" class="wi-img"/>
+        <div class="browser-mock">
+          <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">leads.ai-dashboard.co</div></div>
+          <div class="browser-screen"><img src="project4.jpg" alt="AI Lead Dashboard" class="wi-img"/></div>
+        </div>
         <div class="wi-ph">04</div>
       </div>
       <div class="wi-info">
@@ -638,7 +660,10 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
     <div class="wi">
       <div class="wi-vis">
         <div class="wi-sweep"></div>
-        <img src="lumen.png" alt="Lumen SaaS Dashboard" class="wi-img"/>
+        <div class="browser-mock">
+          <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">lumen.io</div></div>
+          <div class="browser-screen"><img src="lumen.png" alt="Lumen SaaS Dashboard" class="wi-img"/></div>
+        </div>
         <div class="wi-ph">05</div>
       </div>
       <div class="wi-info">
@@ -660,7 +685,10 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
     <div class="wi">
       <div class="wi-vis">
         <div class="wi-sweep"></div>
-        <img src="project6.jpg" alt="Lumière Editorial" class="wi-img"/>
+        <div class="browser-mock">
+          <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">lumiere-editorial.co</div></div>
+          <div class="browser-screen"><img src="project6.jpg" alt="Lumière Editorial" class="wi-img"/></div>
+        </div>
         <div class="wi-ph">06</div>
       </div>
       <div class="wi-info">
@@ -682,7 +710,10 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
     <div class="wi">
       <div class="wi-vis">
         <div class="wi-sweep"></div>
-        <img src="project7.jpg" alt="Lumière Visual System" class="wi-img"/>
+        <div class="browser-mock">
+          <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">lumiere-brand.co</div></div>
+          <div class="browser-screen"><img src="project7.jpg" alt="Lumière Visual System" class="wi-img"/></div>
+        </div>
         <div class="wi-ph">07</div>
       </div>
       <div class="wi-info">
@@ -704,7 +735,10 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
     <div class="wi">
       <div class="wi-vis">
         <div class="wi-sweep"></div>
-        <img src="project8.jpg" alt="Sol Slice" class="wi-img"/>
+        <div class="browser-mock">
+          <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">solslice.co</div></div>
+          <div class="browser-screen"><img src="project8.jpg" alt="Sol Slice" class="wi-img"/></div>
+        </div>
         <div class="wi-ph">08</div>
       </div>
       <div class="wi-info">
