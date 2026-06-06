@@ -152,22 +152,33 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
 .btn-line{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#5C5650;border:none;background:transparent;display:flex;align-items:center;gap:8px;transition:color .2s;padding:0}
 .btn-line:hover{color:#C4965A}
 .work-list{display:flex;flex-direction:row;gap:1px;flex:1;min-height:0;will-change:transform}
-.wi{flex:0 0 72vw;display:grid;grid-template-columns:1fr 1fr;border:1px solid #1E1E1E;transition:background .35s;position:relative;overflow:hidden;align-items:stretch}
-.wi:hover{background:#0D0B09}
-.wi-info{padding:36px 48px;display:flex;flex-direction:column;justify-content:center}
-.wi-cat{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:#C4965A;margin-bottom:10px}
-.wi-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.2vw,2rem);color:#F0EBE0;line-height:1.06;margin-bottom:12px}
-.wi-desc{font-size:.8rem;color:rgba(240,235,224,.55);line-height:1.65;max-width:480px}
-.wi-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;margin-bottom:18px}
-.wpill{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid #1E1E1E;color:#5C5650;border-radius:2px}
-.wi-cta{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#C4965A;display:inline-flex;align-items:center;gap:6px;transition:gap .2s;margin-top:auto}
-.wi-cta:hover{gap:10px}
-.wi-vis{border-left:1px solid #1E1E1E;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.wi-sweep{position:absolute;inset:0;background:rgba(196,150,90,.06);transform:translateX(-100%);transition:transform .55s cubic-bezier(.4,0,.2,1);z-index:2}
+.wi{flex:0 0 78vw;display:grid;grid-template-columns:1.15fr 1fr;border:1px solid #1E1E1E;transition:background .35s;position:relative;overflow:hidden;align-items:stretch}
+.wi:hover{background:#0A0806}
+.wi-vis{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#060504}
+.wi-sweep{position:absolute;inset:0;background:rgba(196,150,90,.04);transform:translateX(-100%);transition:transform .55s cubic-bezier(.4,0,.2,1);z-index:2}
 .wi:hover .wi-sweep{transform:translateX(0)}
 .wi-img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .55s ease,opacity .4s}
-.wi:hover .wi-img{transform:scale(1.04);opacity:.88}
-.wi-ph{font-family:'Cormorant Garamond',serif;font-size:5rem;color:rgba(196,150,90,.05);user-select:none;pointer-events:none;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;line-height:1}
+.wi:hover .wi-img{transform:scale(1.03);opacity:.92}
+.wi-ph{font-family:'Cormorant Garamond',serif;font-size:7rem;color:rgba(196,150,90,.04);user-select:none;pointer-events:none;position:absolute;bottom:10px;right:18px;line-height:1;z-index:0}
+.wi-info{border-left:1px solid #1E1E1E;padding:44px 52px;display:flex;flex-direction:column;justify-content:center;background:#080604}
+.wi-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.wi-cat{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:#C4965A;flex-shrink:0}
+.wi-edot{width:4px;height:4px;border-radius:50%;background:#C4965A;flex-shrink:0}
+.wi-eline{flex:1;height:1px;background:rgba(196,150,90,.22)}
+.wi-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,2.8vw,3.2rem);line-height:1.02;letter-spacing:-.02em;margin-bottom:0}
+.wi-divider{width:36px;height:1px;background:#C4965A;margin:16px 0}
+.wi-desc{font-size:.82rem;color:rgba(240,235,224,.58);line-height:1.72;margin-bottom:18px}
+.wi-svc-lbl{font-family:'JetBrains Mono',monospace;font-size:.46rem;letter-spacing:.22em;text-transform:uppercase;color:#C4965A;margin-bottom:10px}
+.wi-pills{display:flex;flex-wrap:wrap;gap:6px}
+.wpill{font-family:'JetBrains Mono',monospace;font-size:.46rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(240,235,224,.12);color:rgba(240,235,224,.52);border-radius:2px}
+.wi-meta{display:flex;padding-top:18px;border-top:1px solid #1E1E1E;margin-top:18px;gap:0}
+.wi-mi{flex:1;display:flex;flex-direction:column;gap:3px}
+.wi-mi+.wi-mi{border-left:1px solid #1E1E1E;padding-left:16px}
+.wi-mi-ic{color:rgba(196,150,90,.42);margin-bottom:5px}
+.wi-mi-lbl{font-family:'JetBrains Mono',monospace;font-size:.42rem;letter-spacing:.18em;text-transform:uppercase;color:#3A3530}
+.wi-mi-val{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:rgba(240,235,224,.82);line-height:1.3}
+.wi-cta-btn{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:#C4965A;border:1px solid rgba(196,150,90,.35);padding:13px 22px;border-radius:2px;margin-top:20px;transition:all .25s;width:fit-content}
+.wi-cta-btn:hover{background:rgba(196,150,90,.08);border-color:#C4965A;gap:12px}
 .work-foot{padding:32px 80px;border-top:1px solid #1E1E1E;display:flex;justify-content:center;flex-shrink:0}
 
 #services{padding:120px 80px;border-bottom:1px solid #1E1E1E;position:relative;z-index:1}
@@ -537,122 +548,178 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
   <div class="work-list">
 
     <div class="wi">
-      <div class="wi-info">
-        <div class="wi-cat">Premium Fitness Website Concept</div>
-        <div class="wi-title">Gold's Gym Redesign</div>
-        <div class="wi-desc">A premium website redesign concept for Gold's Gym Woodbridge/Lake Ridge, focused on improving digital presence, visual branding, and membership conversion with a bold luxury fitness aesthetic.</div>
-        <div class="wi-pills"><span class="wpill">Web Design</span><span class="wpill">Website Redesign</span><span class="wpill">UI/UX Design</span><span class="wpill">React</span><span class="wpill">Framer Motion</span><span class="wpill">Branding</span><span class="wpill">Landing Page</span></div>
-        <a href="project-1.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
       <div class="wi-vis">
         <div class="wi-sweep"></div>
         <img src="project1.png" alt="Gold's Gym Redesign" class="wi-img"/>
         <div class="wi-ph">01</div>
       </div>
+      <div class="wi-info">
+        <div class="wi-eyebrow"><span class="wi-cat">UI/UX Case Study</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
+        <div class="wi-title">Gold's Gym Redesign</div>
+        <div class="wi-divider"></div>
+        <div class="wi-desc">A premium website redesign concept for Gold's Gym Woodbridge/Lake Ridge, focused on improving digital presence, visual branding, and membership conversion with a bold luxury fitness aesthetic.</div>
+        <div class="wi-svc-lbl">Services</div>
+        <div class="wi-pills"><span class="wpill">Web Design</span><span class="wpill">Website Redesign</span><span class="wpill">UI/UX Design</span><span class="wpill">React</span><span class="wpill">Framer Motion</span><span class="wpill">Branding</span></div>
+        <div class="wi-meta">
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="wi-mi-lbl">Role</div><div class="wi-mi-val">UX/UI Designer</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="wi-mi-lbl">Duration</div><div class="wi-mi-val">4 Weeks</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="wi-mi-lbl">Tool</div><div class="wi-mi-val">Figma, Framer, GSAP</div></div>
+        </div>
+        <a href="project-1.html" class="wi-cta-btn">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
     </div>
 
     <div class="wi">
-      <div class="wi-info">
-        <div class="wi-cat">Branding &amp; Web Design</div>
-        <div class="wi-title">Gala Gents</div>
-        <div class="wi-desc">A premium menswear brand concept built around elegance, confidence, and purpose — dark cinematic layout, gold typography, and refined luxury details.</div>
-        <div class="wi-pills"><span class="wpill">UX/UI</span><span class="wpill">React</span><span class="wpill">Node.js</span></div>
-        <a href="project-2.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
       <div class="wi-vis">
         <div class="wi-sweep"></div>
         <img src="gala-gents.png" alt="Gala Gents" class="wi-img"/>
         <div class="wi-ph">02</div>
       </div>
+      <div class="wi-info">
+        <div class="wi-eyebrow"><span class="wi-cat">Branding &amp; Web Design</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
+        <div class="wi-title">Gala Gents</div>
+        <div class="wi-divider"></div>
+        <div class="wi-desc">A premium menswear brand concept built around elegance, confidence, and purpose — dark cinematic layout, gold typography, and refined luxury details that communicate exclusivity and class.</div>
+        <div class="wi-svc-lbl">Services</div>
+        <div class="wi-pills"><span class="wpill">UX/UI Design</span><span class="wpill">Web Design</span><span class="wpill">Brand Identity</span><span class="wpill">React</span><span class="wpill">Node.js</span></div>
+        <div class="wi-meta">
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="wi-mi-lbl">Role</div><div class="wi-mi-val">Brand Designer</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="wi-mi-lbl">Duration</div><div class="wi-mi-val">3 Weeks</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="wi-mi-lbl">Tool</div><div class="wi-mi-val">Figma, React</div></div>
+        </div>
+        <a href="project-2.html" class="wi-cta-btn">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
     </div>
 
     <div class="wi">
-      <div class="wi-info">
-        <div class="wi-cat">VirginiaWebs AI-Powered Chatbot UI</div>
-        <div class="wi-title">AI Assistant</div>
-        <div class="wi-desc">VirginiaWebs AI Assistant is a premium AI chatbot UI designed to capture leads and answer customer questions. It helps visitors explore services, pricing, and bookings through a modern branded automation experience.</div>
-        <div class="wi-pills"><span class="wpill">AI</span><span class="wpill">AI Agents</span><span class="wpill">Chatbot UI</span><span class="wpill">UI/UX Design</span><span class="wpill">Automation</span><span class="wpill">Branding</span><span class="wpill">Lead Generation</span></div>
-        <a href="project-3.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
       <div class="wi-vis">
         <div class="wi-sweep"></div>
         <img src="project3.png" alt="AI Assistant" class="wi-img"/>
         <div class="wi-ph">03</div>
       </div>
+      <div class="wi-info">
+        <div class="wi-eyebrow"><span class="wi-cat">AI Chatbot UI</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
+        <div class="wi-title">AI Assistant</div>
+        <div class="wi-divider"></div>
+        <div class="wi-desc">VirginiaWebs AI Assistant — a premium chatbot UI designed to capture leads and answer customer questions through a modern branded automation experience.</div>
+        <div class="wi-svc-lbl">Services</div>
+        <div class="wi-pills"><span class="wpill">AI Agents</span><span class="wpill">Chatbot UI</span><span class="wpill">UI/UX Design</span><span class="wpill">Automation</span><span class="wpill">Lead Generation</span></div>
+        <div class="wi-meta">
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="wi-mi-lbl">Role</div><div class="wi-mi-val">UI Designer</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="wi-mi-lbl">Duration</div><div class="wi-mi-val">2 Weeks</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="wi-mi-lbl">Tool</div><div class="wi-mi-val">Figma, Cursor</div></div>
+        </div>
+        <a href="project-3.html" class="wi-cta-btn">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
     </div>
 
     <div class="wi">
-      <div class="wi-info">
-        <div class="wi-cat">AI Lead Generation &amp; Automation</div>
-        <div class="wi-title">AI Lead Dashboard</div>
-        <div class="wi-desc">A smart dashboard concept focused on automation, AI workflows, lead generation, and agentic systems for business efficiency.</div>
-        <div class="wi-pills"><span class="wpill">AI</span><span class="wpill">Automation</span><span class="wpill">AI Agents</span><span class="wpill">Product Design</span></div>
-        <a href="project-4.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
       <div class="wi-vis">
         <div class="wi-sweep"></div>
         <img src="project4.jpg" alt="AI Lead Dashboard" class="wi-img"/>
         <div class="wi-ph">04</div>
       </div>
+      <div class="wi-info">
+        <div class="wi-eyebrow"><span class="wi-cat">AI &amp; Automation</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
+        <div class="wi-title">AI Lead Dashboard</div>
+        <div class="wi-divider"></div>
+        <div class="wi-desc">A smart dashboard concept focused on automation, AI workflows, lead generation, and agentic systems — built for business efficiency at scale.</div>
+        <div class="wi-svc-lbl">Services</div>
+        <div class="wi-pills"><span class="wpill">AI Agents</span><span class="wpill">Automation</span><span class="wpill">Product Design</span><span class="wpill">Dashboard UI</span></div>
+        <div class="wi-meta">
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="wi-mi-lbl">Role</div><div class="wi-mi-val">Product Designer</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="wi-mi-lbl">Duration</div><div class="wi-mi-val">2 Weeks</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="wi-mi-lbl">Tool</div><div class="wi-mi-val">Figma</div></div>
+        </div>
+        <a href="project-4.html" class="wi-cta-btn">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
     </div>
 
     <div class="wi">
-      <div class="wi-info">
-        <div class="wi-cat">Lead Generation SaaS UI Design</div>
-        <div class="wi-title">Lumen</div>
-        <div class="wi-desc">A clean and modern SaaS dashboard for a B2B lead generation platform — lead tables, contact profiles, activity tracking, and AI-powered outreach emails.</div>
-        <div class="wi-pills"><span class="wpill">Figma</span><span class="wpill">Product Design</span><span class="wpill">SaaS</span><span class="wpill">UI Design</span><span class="wpill">B2B</span></div>
-        <a href="project-5.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
       <div class="wi-vis">
         <div class="wi-sweep"></div>
         <img src="lumen.png" alt="Lumen SaaS Dashboard" class="wi-img"/>
         <div class="wi-ph">05</div>
       </div>
+      <div class="wi-info">
+        <div class="wi-eyebrow"><span class="wi-cat">SaaS UI Design</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
+        <div class="wi-title">Lumen</div>
+        <div class="wi-divider"></div>
+        <div class="wi-desc">A clean and modern SaaS dashboard for a B2B lead generation platform — featuring lead tables, contact profiles, activity tracking, and AI-powered outreach emails.</div>
+        <div class="wi-svc-lbl">Services</div>
+        <div class="wi-pills"><span class="wpill">Product Design</span><span class="wpill">SaaS UI</span><span class="wpill">Dashboard Design</span><span class="wpill">Lead Management UX</span></div>
+        <div class="wi-meta">
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="wi-mi-lbl">Role</div><div class="wi-mi-val">UI Designer</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="wi-mi-lbl">Duration</div><div class="wi-mi-val">3 Weeks</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="wi-mi-lbl">Tool</div><div class="wi-mi-val">Figma</div></div>
+        </div>
+        <a href="project-5.html" class="wi-cta-btn">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
     </div>
 
     <div class="wi">
-      <div class="wi-info">
-        <div class="wi-cat">Fashion Campaign Design</div>
-        <div class="wi-title">Lumi&egrave;re Editorial</div>
-        <div class="wi-desc">A visually driven fashion campaign concept combining editorial aesthetics, creative direction, and premium digital presentation.</div>
-        <div class="wi-pills"><span class="wpill">Content Creation</span><span class="wpill">Creative Direction</span><span class="wpill">Visual Design</span></div>
-        <a href="project-6.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
       <div class="wi-vis">
         <div class="wi-sweep"></div>
-        <img src="project6.jpg" alt="Lumiere Editorial" class="wi-img"/>
+        <img src="project6.jpg" alt="Lumière Editorial" class="wi-img"/>
         <div class="wi-ph">06</div>
       </div>
+      <div class="wi-info">
+        <div class="wi-eyebrow"><span class="wi-cat">Fashion Campaign</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
+        <div class="wi-title">Lumière Editorial</div>
+        <div class="wi-divider"></div>
+        <div class="wi-desc">A visually driven fashion campaign concept combining editorial aesthetics, bold creative direction, and a premium digital presentation crafted for high-end appeal.</div>
+        <div class="wi-svc-lbl">Services</div>
+        <div class="wi-pills"><span class="wpill">Content Creation</span><span class="wpill">Creative Direction</span><span class="wpill">Visual Design</span><span class="wpill">Art Direction</span></div>
+        <div class="wi-meta">
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="wi-mi-lbl">Role</div><div class="wi-mi-val">Creative Director</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="wi-mi-lbl">Duration</div><div class="wi-mi-val">2 Weeks</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="wi-mi-lbl">Tool</div><div class="wi-mi-val">Figma, Photoshop</div></div>
+        </div>
+        <a href="project-6.html" class="wi-cta-btn">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
     </div>
 
     <div class="wi">
-      <div class="wi-info">
-        <div class="wi-cat">Luxury Brand Identity Design</div>
-        <div class="wi-title">Lumi&egrave;re Visual System</div>
-        <div class="wi-desc">A luxury brand identity concept featuring logo design, typography, color systems, and visual branding for a high-end aesthetic.</div>
-        <div class="wi-pills"><span class="wpill">Brand Identity</span><span class="wpill">Logo Design</span><span class="wpill">Typography</span><span class="wpill">Color Theory</span></div>
-        <a href="project-7.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
       <div class="wi-vis">
         <div class="wi-sweep"></div>
-        <img src="project7.jpg" alt="Lumiere Visual System" class="wi-img"/>
+        <img src="project7.jpg" alt="Lumière Visual System" class="wi-img"/>
         <div class="wi-ph">07</div>
+      </div>
+      <div class="wi-info">
+        <div class="wi-eyebrow"><span class="wi-cat">Brand Identity</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
+        <div class="wi-title">Lumière Visual System</div>
+        <div class="wi-divider"></div>
+        <div class="wi-desc">A luxury brand identity concept featuring logo design, typography systems, color palettes, and visual branding guidelines for a high-end aesthetic.</div>
+        <div class="wi-svc-lbl">Services</div>
+        <div class="wi-pills"><span class="wpill">Brand Identity</span><span class="wpill">Logo Design</span><span class="wpill">Typography</span><span class="wpill">Color Theory</span></div>
+        <div class="wi-meta">
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="wi-mi-lbl">Role</div><div class="wi-mi-val">Brand Designer</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="wi-mi-lbl">Duration</div><div class="wi-mi-val">3 Weeks</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="wi-mi-lbl">Tool</div><div class="wi-mi-val">Figma, Illustrator</div></div>
+        </div>
+        <a href="project-7.html" class="wi-cta-btn">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
     <div class="wi">
-      <div class="wi-info">
-        <div class="wi-cat">Creative Agency Landing Page</div>
-        <div class="wi-title">Sol Slice</div>
-        <div class="wi-desc">A creative agency landing page concept focused on bold visuals, modern structure, and a sleek user experience.</div>
-        <div class="wi-pills"><span class="wpill">Web Design</span><span class="wpill">Front-End</span><span class="wpill">UI/UX</span></div>
-        <a href="project-8.html" class="wi-cta">View Project <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
       <div class="wi-vis">
         <div class="wi-sweep"></div>
         <img src="project8.jpg" alt="Sol Slice" class="wi-img"/>
         <div class="wi-ph">08</div>
+      </div>
+      <div class="wi-info">
+        <div class="wi-eyebrow"><span class="wi-cat">Creative Agency</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
+        <div class="wi-title">Sol Slice</div>
+        <div class="wi-divider"></div>
+        <div class="wi-desc">A creative agency landing page concept focused on bold visuals, modern structure, and a sleek user experience that makes a strong first impression.</div>
+        <div class="wi-svc-lbl">Services</div>
+        <div class="wi-pills"><span class="wpill">Web Design</span><span class="wpill">Front-End Dev</span><span class="wpill">UI/UX Design</span></div>
+        <div class="wi-meta">
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="wi-mi-lbl">Role</div><div class="wi-mi-val">Web Designer</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="wi-mi-lbl">Duration</div><div class="wi-mi-val">2 Weeks</div></div>
+          <div class="wi-mi"><div class="wi-mi-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="wi-mi-lbl">Tool</div><div class="wi-mi-val">HTML, CSS, JS</div></div>
+        </div>
+        <a href="project-8.html" class="wi-cta-btn">View Case Study <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
