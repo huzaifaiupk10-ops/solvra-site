@@ -276,12 +276,9 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
   #skills{padding:80px 40px}
   .sk{grid-template-columns:52px 1fr;gap:24px}
   .sk-tags{display:none}
-  #proj-pin-wrap{height:auto !important}
-  #projects{position:relative !important;height:auto !important;overflow:visible !important;padding:60px 0 0 !important}
-  .work-hd{padding:0 40px 32px}
-  #projects .work-foot{padding:36px 40px}
-  .work-list{flex-direction:column !important;gap:12px !important;will-change:none !important;transform:none !important}
-  .wi{flex:none !important;width:100% !important;grid-template-columns:1fr}
+  .work-hd{padding:24px 20px 16px}
+  #projects .work-foot{padding:20px 20px}
+  .wi{flex:0 0 85vw;grid-template-columns:1fr}
   .wi-vis{display:none}
   #services{padding:80px 40px}
   .sec-hd{grid-template-columns:1fr;gap:24px;margin-bottom:48px}
@@ -309,9 +306,10 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
   .team-strip{grid-template-columns:1fr 1fr}
   #skills{padding:56px 20px}
   .sk-n{font-size:1.8rem}
-  .work-hd{padding:0 20px 24px;flex-direction:column;align-items:flex-start;gap:20px}
-  #projects .work-foot{padding:28px 20px}
-  .wi-info{padding:28px 20px}
+  .work-hd{padding:20px 16px 14px;flex-direction:column;align-items:flex-start;gap:16px}
+  #projects .work-foot{padding:16px 20px}
+  .wi{flex:0 0 90vw}
+  .wi-info{padding:24px 20px}
   #services{padding:56px 20px}
   .svc-hd{grid-template-columns:44px 1fr 32px;gap:12px;padding:24px 0}
   .svc-bd{padding-left:56px}
@@ -944,12 +942,6 @@ document.querySelectorAll('.rv, .rv-l, .rv-r').forEach(el => revObs.observe(el))
   let maxTranslate = 0;
 
   function setup(){
-    if(window.innerWidth <= 768) {
-      pinWrap.style.height = '';
-      workList.style.transform = '';
-      return;
-    }
-    // Let browser lay out, then measure
     requestAnimationFrame(function(){
       maxTranslate = workList.scrollWidth - window.innerWidth;
       pinWrap.style.height = (window.innerHeight + maxTranslate) + 'px';
@@ -957,7 +949,6 @@ document.querySelectorAll('.rv, .rv-l, .rv-r').forEach(el => revObs.observe(el))
   }
 
   function update(){
-    if(window.innerWidth <= 768) return;
     const pinTop    = pinWrap.getBoundingClientRect().top;
     const scrolled  = Math.max(0, -pinTop);
     const total     = pinWrap.offsetHeight - window.innerHeight;
