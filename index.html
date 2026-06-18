@@ -152,25 +152,25 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
 .btn-line{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#5C5650;border:none;background:transparent;display:flex;align-items:center;gap:8px;transition:color .2s;padding:0}
 .btn-line:hover{color:#C4965A}
 .work-list{display:flex;flex-direction:row;gap:1px;flex:1;min-height:0;will-change:transform}
-.wi{flex:0 0 75vw;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.06);transition:border-color .4s;cursor:none}
+.wi{flex:0 0 75vw;display:grid;grid-template-rows:1fr auto;overflow:hidden;border:1px solid rgba(255,255,255,.06);transition:border-color .4s;cursor:none}
 .wi:hover{border-color:rgba(196,150,90,.3)}
-.wi-bg{position:absolute;inset:0;z-index:0}
+.wi-bg{position:relative;overflow:hidden}
 .wi-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.22,1,.36,1)}
-.wi:hover .wi-img{transform:scale(1.06)}
-.wi-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(6,4,2,.04) 0%,rgba(6,4,2,.08) 28%,rgba(6,4,2,.62) 56%,rgba(6,4,2,.97) 100%);pointer-events:none}
-.wi-num{position:absolute;top:20px;right:28px;z-index:2;font-family:'Cormorant Garamond',serif;font-size:9rem;line-height:1;color:rgba(255,255,255,.05);user-select:none;pointer-events:none;letter-spacing:-.04em}
-.wi-info{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:44px 52px}
-.wi-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.wi:hover .wi-img{transform:scale(1.05)}
+.wi-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,4,2,0) 55%,rgba(6,4,2,.28) 100%);pointer-events:none;z-index:1}
+.wi-num{position:absolute;top:20px;right:24px;z-index:2;font-family:'Cormorant Garamond',serif;font-size:7rem;line-height:1;color:rgba(255,255,255,.08);user-select:none;pointer-events:none;letter-spacing:-.04em}
+.wi-info{background:#0A0806;padding:32px 48px;border-top:1px solid rgba(255,255,255,.06)}
+.wi-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .wi-cat{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:#C4965A;flex-shrink:0}
 .wi-edot{width:3px;height:3px;border-radius:50%;background:#C4965A;flex-shrink:0}
 .wi-eline{flex:1;height:1px;background:rgba(196,150,90,.2)}
-.wi-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3vw,3.8rem);line-height:1;letter-spacing:-.025em;margin-bottom:12px}
-.wi-desc{font-size:.84rem;color:rgba(240,235,224,.62);line-height:1.65;margin-bottom:22px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.wi-foot{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.wi-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,2.8vw,3.4rem);line-height:1;letter-spacing:-.025em;margin-bottom:10px}
+.wi-desc{font-size:.82rem;color:rgba(240,235,224,.56);line-height:1.65;margin-bottom:20px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.wi-foot{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .wi-pills{display:flex;flex-wrap:wrap;gap:5px}
-.wpill{font-family:'JetBrains Mono',monospace;font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border:1px solid rgba(240,235,224,.14);color:rgba(240,235,224,.48);border-radius:2px;background:rgba(6,4,2,.4);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
-.wi-cta-btn{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:#C4965A;border:1px solid rgba(196,150,90,.42);padding:11px 22px;border-radius:2px;white-space:nowrap;transition:all .25s;display:flex;align-items:center;gap:8px;flex-shrink:0;background:rgba(6,4,2,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.wi-cta-btn:hover{background:rgba(196,150,90,.14);border-color:#C4965A}
+.wpill{font-family:'JetBrains Mono',monospace;font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border:1px solid rgba(240,235,224,.12);color:rgba(240,235,224,.45);border-radius:2px;background:rgba(255,255,255,.03)}
+.wi-cta-btn{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:#C4965A;border:1px solid rgba(196,150,90,.4);padding:11px 22px;border-radius:2px;white-space:nowrap;transition:all .25s;display:flex;align-items:center;gap:8px;flex-shrink:0}
+.wi-cta-btn:hover{background:rgba(196,150,90,.1);border-color:#C4965A}
 .work-foot{padding:16px 80px;border-top:1px solid #1E1E1E;display:flex;justify-content:center;flex-shrink:0}
 
 #services{padding:120px 80px;border-bottom:1px solid #1E1E1E;position:relative;z-index:1}
@@ -492,137 +492,92 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
   <div class="work-list">
 
     <div class="wi">
-      <div class="wi-bg"><img src="project1.png" alt="Gold's Gym Redesign" class="wi-img"/></div>
-      <div class="wi-overlay"></div>
-      <div class="wi-num">01</div>
+      <div class="wi-bg"><img src="project1.png" alt="Gold's Gym Redesign" class="wi-img"/><div class="wi-overlay"></div><div class="wi-num">01</div></div>
       <div class="wi-info">
         <div class="wi-eyebrow"><span class="wi-cat">UI/UX Case Study</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
         <div class="wi-title">Gold's Gym Redesign</div>
         <p class="wi-desc">A premium website redesign concept for Gold's Gym focused on improving digital presence, visual branding, and membership conversion with a bold luxury fitness aesthetic.</p>
-        <div class="wi-foot">
-          <div class="wi-pills"><span class="wpill">Web Design</span><span class="wpill">Website Redesign</span><span class="wpill">UI/UX Design</span><span class="wpill">Branding</span><span class="wpill">Landing Page</span></div>
-          <a href="project-1.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a>
-        </div>
+        <div class="wi-foot"><div class="wi-pills"><span class="wpill">Web Design</span><span class="wpill">Website Redesign</span><span class="wpill">UI/UX Design</span><span class="wpill">Branding</span><span class="wpill">Landing Page</span></div><a href="project-1.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a></div>
       </div>
     </div>
 
     <div class="wi">
-      <div class="wi-bg"><img src="gala-gents.png" alt="Gala Gents" class="wi-img"/></div>
-      <div class="wi-overlay"></div>
-      <div class="wi-num">02</div>
+      <div class="wi-bg"><img src="gala-gents.png" alt="Gala Gents" class="wi-img"/><div class="wi-overlay"></div><div class="wi-num">02</div></div>
       <div class="wi-info">
         <div class="wi-eyebrow"><span class="wi-cat">Branding &amp; Web Design</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
         <div class="wi-title">Gala Gents</div>
         <p class="wi-desc">A premium menswear brand concept built around elegance, confidence, and purpose — dark cinematic layout, gold typography, and refined luxury details that communicate exclusivity and class.</p>
-        <div class="wi-foot">
-          <div class="wi-pills"><span class="wpill">UX/UI Design</span><span class="wpill">Web Design</span><span class="wpill">Brand Identity</span><span class="wpill">Luxury Fashion</span><span class="wpill">Visual Design</span></div>
-          <a href="project-2.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a>
-        </div>
+        <div class="wi-foot"><div class="wi-pills"><span class="wpill">UX/UI Design</span><span class="wpill">Web Design</span><span class="wpill">Brand Identity</span><span class="wpill">Luxury Fashion</span><span class="wpill">Visual Design</span></div><a href="project-2.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a></div>
       </div>
     </div>
 
     <div class="wi">
-      <div class="wi-bg"><img src="project3.png" alt="AI Assistant" class="wi-img"/></div>
-      <div class="wi-overlay"></div>
-      <div class="wi-num">03</div>
+      <div class="wi-bg"><img src="project3.png" alt="AI Assistant" class="wi-img"/><div class="wi-overlay"></div><div class="wi-num">03</div></div>
       <div class="wi-info">
         <div class="wi-eyebrow"><span class="wi-cat">AI Chatbot UI</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
         <div class="wi-title">AI Assistant</div>
         <p class="wi-desc">VirginiaWebs AI Assistant — a premium chatbot UI designed to capture leads and answer customer questions through a modern branded automation experience.</p>
-        <div class="wi-foot">
-          <div class="wi-pills"><span class="wpill">Chatbot Design</span><span class="wpill">Lead Generation</span><span class="wpill">Conversational UX</span><span class="wpill">AI Integration</span><span class="wpill">Brand Automation</span></div>
-          <a href="project-3.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a>
-        </div>
+        <div class="wi-foot"><div class="wi-pills"><span class="wpill">Chatbot Design</span><span class="wpill">Lead Generation</span><span class="wpill">Conversational UX</span><span class="wpill">AI Integration</span><span class="wpill">Brand Automation</span></div><a href="project-3.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a></div>
       </div>
     </div>
 
     <div class="wi">
-      <div class="wi-bg"><img src="brand-oasis.png" alt="Brand Oasis" class="wi-img"/></div>
-      <div class="wi-overlay"></div>
-      <div class="wi-num">04</div>
+      <div class="wi-bg"><img src="brand-oasis.png" alt="Brand Oasis" class="wi-img"/><div class="wi-overlay"></div><div class="wi-num">04</div></div>
       <div class="wi-info">
         <div class="wi-eyebrow"><span class="wi-cat">Brand Identity Design</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
         <div class="wi-title">Brand Oasis</div>
         <p class="wi-desc">A premium branding concept for a strategy, design, and growth studio — covering logo design, colour palette, typography, stationery mockups, and social media visuals.</p>
-        <div class="wi-foot">
-          <div class="wi-pills"><span class="wpill">Brand Identity</span><span class="wpill">Visual Design</span><span class="wpill">Logo Design</span><span class="wpill">Typography</span><span class="wpill">Mockups</span></div>
-          <a href="brand-oasis.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a>
-        </div>
+        <div class="wi-foot"><div class="wi-pills"><span class="wpill">Brand Identity</span><span class="wpill">Visual Design</span><span class="wpill">Logo Design</span><span class="wpill">Typography</span><span class="wpill">Mockups</span></div><a href="brand-oasis.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a></div>
       </div>
     </div>
 
     <div class="wi">
-      <div class="wi-bg"><img src="project4.jpg" alt="AI Lead Dashboard" class="wi-img"/></div>
-      <div class="wi-overlay"></div>
-      <div class="wi-num">05</div>
+      <div class="wi-bg"><img src="project4.jpg" alt="AI Lead Dashboard" class="wi-img"/><div class="wi-overlay"></div><div class="wi-num">05</div></div>
       <div class="wi-info">
         <div class="wi-eyebrow"><span class="wi-cat">AI &amp; Automation</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
         <div class="wi-title">AI Lead Dashboard</div>
         <p class="wi-desc">A smart dashboard concept focused on automation, AI workflows, lead generation, and agentic systems — built for business efficiency at scale.</p>
-        <div class="wi-foot">
-          <div class="wi-pills"><span class="wpill">Dashboard Design</span><span class="wpill">AI Workflow</span><span class="wpill">Lead Management</span><span class="wpill">Data Visualisation</span><span class="wpill">Product Design</span></div>
-          <a href="project-4.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a>
-        </div>
+        <div class="wi-foot"><div class="wi-pills"><span class="wpill">Dashboard Design</span><span class="wpill">AI Workflow</span><span class="wpill">Lead Management</span><span class="wpill">Data Visualisation</span><span class="wpill">Product Design</span></div><a href="project-4.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a></div>
       </div>
     </div>
 
     <div class="wi">
-      <div class="wi-bg"><img src="lumen.png" alt="Lumen SaaS Dashboard" class="wi-img"/></div>
-      <div class="wi-overlay"></div>
-      <div class="wi-num">06</div>
+      <div class="wi-bg"><img src="lumen.png" alt="Lumen SaaS Dashboard" class="wi-img"/><div class="wi-overlay"></div><div class="wi-num">06</div></div>
       <div class="wi-info">
         <div class="wi-eyebrow"><span class="wi-cat">SaaS UI Design</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
         <div class="wi-title">Lumen</div>
         <p class="wi-desc">A clean and modern SaaS dashboard for a B2B lead generation platform — featuring lead tables, contact profiles, activity tracking, and AI-powered outreach emails.</p>
-        <div class="wi-foot">
-          <div class="wi-pills"><span class="wpill">SaaS Dashboard</span><span class="wpill">Lead Management</span><span class="wpill">B2B Platform</span><span class="wpill">AI Outreach</span><span class="wpill">Product Design</span></div>
-          <a href="project-5.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a>
-        </div>
+        <div class="wi-foot"><div class="wi-pills"><span class="wpill">SaaS Dashboard</span><span class="wpill">Lead Management</span><span class="wpill">B2B Platform</span><span class="wpill">AI Outreach</span><span class="wpill">Product Design</span></div><a href="project-5.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a></div>
       </div>
     </div>
 
     <div class="wi">
-      <div class="wi-bg"><img src="project6.jpg" alt="Lumière Editorial" class="wi-img"/></div>
-      <div class="wi-overlay"></div>
-      <div class="wi-num">07</div>
+      <div class="wi-bg"><img src="project6.jpg" alt="Lumière Editorial" class="wi-img"/><div class="wi-overlay"></div><div class="wi-num">07</div></div>
       <div class="wi-info">
         <div class="wi-eyebrow"><span class="wi-cat">Fashion Campaign</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
         <div class="wi-title">Lumière Editorial</div>
         <p class="wi-desc">A visually driven fashion campaign concept combining editorial aesthetics, bold creative direction, and a premium digital presentation crafted for high-end appeal.</p>
-        <div class="wi-foot">
-          <div class="wi-pills"><span class="wpill">Fashion Campaign</span><span class="wpill">Creative Direction</span><span class="wpill">Editorial Design</span><span class="wpill">Content Strategy</span><span class="wpill">Art Direction</span></div>
-          <a href="project-6.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a>
-        </div>
+        <div class="wi-foot"><div class="wi-pills"><span class="wpill">Fashion Campaign</span><span class="wpill">Creative Direction</span><span class="wpill">Editorial Design</span><span class="wpill">Content Strategy</span><span class="wpill">Art Direction</span></div><a href="project-6.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a></div>
       </div>
     </div>
 
     <div class="wi">
-      <div class="wi-bg"><img src="project7.jpg" alt="Lumière Visual System" class="wi-img"/></div>
-      <div class="wi-overlay"></div>
-      <div class="wi-num">08</div>
+      <div class="wi-bg"><img src="project7.jpg" alt="Lumière Visual System" class="wi-img"/><div class="wi-overlay"></div><div class="wi-num">08</div></div>
       <div class="wi-info">
         <div class="wi-eyebrow"><span class="wi-cat">Brand Identity</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
         <div class="wi-title">Lumière Visual System</div>
         <p class="wi-desc">A luxury brand identity concept featuring logo design, typography systems, colour palettes, and visual branding guidelines crafted for a high-end aesthetic.</p>
-        <div class="wi-foot">
-          <div class="wi-pills"><span class="wpill">Logo Design</span><span class="wpill">Brand Identity</span><span class="wpill">Typography System</span><span class="wpill">Colour Strategy</span><span class="wpill">Visual Guidelines</span></div>
-          <a href="project-7.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a>
-        </div>
+        <div class="wi-foot"><div class="wi-pills"><span class="wpill">Logo Design</span><span class="wpill">Brand Identity</span><span class="wpill">Typography System</span><span class="wpill">Colour Strategy</span><span class="wpill">Visual Guidelines</span></div><a href="project-7.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a></div>
       </div>
     </div>
 
     <div class="wi">
-      <div class="wi-bg"><img src="project8.jpg" alt="Sol Slice" class="wi-img"/></div>
-      <div class="wi-overlay"></div>
-      <div class="wi-num">09</div>
+      <div class="wi-bg"><img src="project8.jpg" alt="Sol Slice" class="wi-img"/><div class="wi-overlay"></div><div class="wi-num">09</div></div>
       <div class="wi-info">
         <div class="wi-eyebrow"><span class="wi-cat">Creative Agency</span><span class="wi-edot"></span><span class="wi-eline"></span></div>
         <div class="wi-title">Sol Slice</div>
         <p class="wi-desc">A creative agency landing page concept focused on bold visuals, modern structure, and a sleek user experience that makes a powerful first impression.</p>
-        <div class="wi-foot">
-          <div class="wi-pills"><span class="wpill">Landing Page</span><span class="wpill">Agency Website</span><span class="wpill">UI/UX Design</span><span class="wpill">Visual Design</span><span class="wpill">User Experience</span></div>
-          <a href="project-8.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a>
-        </div>
+        <div class="wi-foot"><div class="wi-pills"><span class="wpill">Landing Page</span><span class="wpill">Agency Website</span><span class="wpill">UI/UX Design</span><span class="wpill">Visual Design</span><span class="wpill">User Experience</span></div><a href="project-8.html" class="wi-cta-btn">View Case Study <span style="font-size:.9rem;letter-spacing:0">&#8594;</span></a></div>
       </div>
     </div>
 
