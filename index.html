@@ -155,7 +155,7 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
 .wi{flex:0 0 75vw;display:grid;grid-template-rows:1fr auto;overflow:hidden;border:1px solid rgba(255,255,255,.06);transition:border-color .4s;cursor:none}
 .wi:hover{border-color:rgba(196,150,90,.3)}
 .wi-bg{position:relative;overflow:hidden;background:#070503}
-.wi-img{position:absolute;top:14px;right:18px;bottom:14px;left:18px;width:calc(100% - 36px);height:calc(100% - 28px);object-fit:contain;display:block;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.wi-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;transition:transform .9s cubic-bezier(.22,1,.36,1)}
 .wi:hover .wi-img{transform:scale(1.04)}
 .wi-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(4,2,0,.22) 0%,transparent 70%);pointer-events:none;z-index:1}
 .wi-num{position:absolute;top:16px;right:20px;z-index:2;font-family:'Cormorant Garamond',serif;font-size:6rem;line-height:1;color:rgba(255,255,255,.05);user-select:none;pointer-events:none;letter-spacing:-.04em}
@@ -293,7 +293,6 @@ footer{padding:24px 56px;border-top:1px solid #1E1E1E;display:flex;align-items:c
   .work-hd{padding:20px 16px 14px;flex-direction:column;align-items:flex-start;gap:16px}
   #projects .work-foot{padding:16px 20px}
   .wi{flex:0 0 92vw}
-  .wi-img{top:8px;right:10px;bottom:8px;left:10px;width:calc(100% - 20px);height:calc(100% - 16px)}
   .wi-info{padding:20px 18px}
   .wi-num{font-size:4.5rem}
   #services{padding:56px 20px}
