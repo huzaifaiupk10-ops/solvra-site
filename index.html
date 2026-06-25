@@ -209,6 +209,9 @@ nav {
 .svc-card:hover::before { opacity: 0.5; }
 .svc-card.featured { background: var(--bg-2); grid-column: span 2; }
 .svc-card.featured::before { opacity: 0.3; }
+.svc-img { width: 100%; aspect-ratio: 16/9; overflow: hidden; border-radius: 4px; margin-bottom: 8px; flex-shrink: 0; }
+.svc-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform .7s cubic-bezier(.22,1,.36,1); }
+.svc-card:hover .svc-img img { transform: scale(1.04); }
 .svc-icon { width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .svc-icon svg { color: var(--gold); }
 .svc-name { font-family: var(--font-d); font-size: clamp(1.2rem, 1.8vw, 1.6rem); color: var(--ink); line-height: 1.1; letter-spacing: -.01em; }
@@ -549,6 +552,7 @@ footer { padding: 24px 56px; border-top: 1px solid var(--border-d); display: fle
 
     <div class="svc-grid rv">
       <div class="svc-card">
+        <div class="svc-img"><img src="svc-web.png" alt="Web Development"></div>
         <div class="svc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
         </div>
