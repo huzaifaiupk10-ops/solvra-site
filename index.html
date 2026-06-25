@@ -882,9 +882,11 @@ footer { padding: 24px 56px; border-top: 1px solid var(--border-d); display: fle
 </section>
 
 <!-- Final CTA -->
-<section id="cta">
-  <div class="cta-glow"></div>
-  <div class="cta-inner rv">
+<section id="cta" style="position:relative;overflow:hidden;">
+  <div id="cta-bg" style="position:absolute;inset:-7% -7%;background-image:url('cta-bg.png');background-size:cover;background-position:center;background-repeat:no-repeat;will-change:transform;z-index:0;pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background:rgba(5,5,5,0.58);pointer-events:none;z-index:1;"></div>
+  <canvas id="cta-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;"></canvas>
+  <div class="cta-inner rv" style="position:relative;z-index:3;">
     <h2 class="cta-h">Ready to build the system your<br>competitors <em>wish they had?</em></h2>
     <p class="cta-sub">Whether you have a detailed brief or just a problem worth solving, the next step is a conversation.</p>
     <div class="cta-btns">
@@ -1127,6 +1129,83 @@ function handleForm(e) {
     pulse: Math.random() * Math.PI * 2
   }));
   const bgEl = document.getElementById('about-bg');
+  let mx = -9999, my = -9999, bx = 0, by = 0;
+  sec.addEventListener('mousemove', e => {
+    const r = sec.getBoundingClientRect();
+    mx = e.clientX - r.left;
+    my = e.clientY - r.top;
+  });
+  sec.addEventListener('mouseleave', () => { mx = W / 2; my = H / 2; });
+  function frame() {
+    if (W === 0 || H === 0) { resize(); }
+    ctx.clearRect(0, 0, W, H);
+    const useMx = mx === -9999 ? W / 2 : mx;
+    const useMy = my === -9999 ? H / 2 : my;
+    const tx = (useMx / W - .5) * -22, ty = (useMy / H - .5) * -14;
+    bx += (tx - bx) * .055; by += (ty - by) * .055;
+    bgEl.style.transform = `translate(${bx}px,${by}px)`;
+    for (const p of pts) {
+      p.pulse += .012;
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      const dx = p.x - useMx, dy = p.y - useMy;
+      const d2 = dx * dx + dy * dy;
+      if (d2 < 18000) { const d = Math.sqrt(d2); p.x += dx / d * 1.2; p.y += dy / d * 1.2; }
+      const a = .5 + Math.sin(p.pulse) * .25;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r + Math.sin(p.pulse) * .35, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(196,150,90,${a})`;
+      ctx.fill();
+      const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 5);
+      g.addColorStop(0, `rgba(196,150,90,${a * .3})`);
+      g.addColorStop(1, 'rgba(196,150,90,0)');
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r * 5, 0, Math.PI * 2);
+      ctx.fillStyle = g;
+      ctx.fill();
+    }
+    for (let i = 0; i < N; i++) {
+      for (let j = i + 1; j < N; j++) {
+        const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 150) {
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x, pts[i].y);
+          ctx.lineTo(pts[j].x, pts[j].y);
+          ctx.strokeStyle = `rgba(196,150,90,${(1 - d / 150) * .25})`;
+          ctx.lineWidth = .7;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+</script>
+<script>
+(function(){
+  const sec = document.getElementById('cta');
+  const canvas = document.getElementById('cta-canvas');
+  const ctx = canvas.getContext('2d');
+  const bgEl = document.getElementById('cta-bg');
+  let W, H;
+  function resize() {
+    W = canvas.width = sec.offsetWidth;
+    H = canvas.height = sec.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  const N = 55;
+  const pts = Array.from({length: N}, () => ({
+    x: Math.random() * 1400,
+    y: Math.random() * 800,
+    vx: (Math.random() - .5) * .28,
+    vy: (Math.random() - .5) * .28,
+    r: Math.random() * 1.2 + .4,
+    pulse: Math.random() * Math.PI * 2
+  }));
   let mx = -9999, my = -9999, bx = 0, by = 0;
   sec.addEventListener('mousemove', e => {
     const r = sec.getBoundingClientRect();
