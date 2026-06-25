@@ -193,6 +193,7 @@ nav {
 #services { background: var(--bg-1); border-top: 1px solid var(--border-d); }
 .svc-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 72px; }
 .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border-d); border: 1px solid var(--border-d); }
+@media (max-width: 900px) { .svc-grid { grid-template-columns: 1fr; } }
 .svc-card {
   background: var(--bg-1); padding: 44px 40px;
   display: flex; flex-direction: column; gap: 20px;
@@ -409,8 +410,7 @@ footer { padding: 24px 56px; border-top: 1px solid var(--border-d); display: fle
   .hero-body { padding: 140px 40px 80px; }
   .section-inner { padding: 80px 40px; }
   .svc-intro { grid-template-columns: 1fr; gap: 28px; }
-  .svc-grid { grid-template-columns: repeat(2, 1fr); }
-  .svc-card.featured { grid-column: span 2; }
+  .svc-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; gap: 52px; }
   .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
   .process-steps::before { display: none; }
@@ -444,7 +444,6 @@ footer { padding: 24px 56px; border-top: 1px solid var(--border-d); display: fle
   .hero-btns { flex-direction: column; align-items: flex-start; gap: 14px; }
   .section-inner { padding: 64px 20px; }
   .svc-grid { grid-template-columns: 1fr; }
-  .svc-card.featured { grid-column: span 1; }
   .svc-card { padding: 32px 28px; }
   .process-steps { grid-template-columns: 1fr; gap: 32px; }
   .process-step { align-items: flex-start; text-align: left; flex-direction: row; gap: 20px; }
@@ -543,71 +542,40 @@ footer { padding: 24px 56px; border-top: 1px solid var(--border-d); display: fle
     <div class="svc-intro">
       <div class="rv-l">
         <div class="s-tag"><div class="s-tag-rule"></div><span class="s-tag-text">What We Build</span></div>
-        <h2 class="s-h2">Six ways SOLVRA<br>upgrades your business</h2>
+        <h2 class="s-h2">Three ways SOLVRA<br>upgrades your business</h2>
       </div>
       <p class="s-body rv-r">Every service is engineered to save time, convert visitors, or eliminate the manual work that drains your team. No templates. No shortcuts.</p>
     </div>
 
     <div class="svc-grid rv">
-      <!-- Featured card: spans 2 cols -->
-      <div class="svc-card featured">
-        <div class="svc-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-        </div>
-        <div class="svc-name">Custom AI Agents</div>
-        <p class="svc-desc">Autonomous AI agents that handle research, outreach, scheduling, customer service, and decision-making on behalf of your team. Built on Claude and OpenAI with custom instructions, memory, and tool access tailored to your exact workflows.</p>
-        <div class="svc-tags"><span class="stag">Claude API</span><span class="stag">OpenAI</span><span class="stag">LangChain</span><span class="stag">Custom Memory</span><span class="stag">Tool Use</span></div>
-        <a href="service-2.html" class="svc-link">Learn about AI agents <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-
       <div class="svc-card">
         <div class="svc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
         </div>
-        <div class="svc-name">Premium Web Development</div>
-        <p class="svc-desc">High-performance websites built for conversion. Fast, responsive, and polished from the first scroll to the last button click.</p>
-        <div class="svc-tags"><span class="stag">React</span><span class="stag">Next.js</span><span class="stag">HTML/CSS</span><span class="stag">Performance</span></div>
-        <a href="service-1.html" class="svc-link">Learn about web dev <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <div class="svc-name">Web Development</div>
+        <p class="svc-desc">High-performance websites and web applications built to convert. Every project is responsive, fast, and designed with clear visual hierarchy — from landing pages to full product builds. No templates, no shortcuts.</p>
+        <div class="svc-tags"><span class="stag">React</span><span class="stag">Next.js</span><span class="stag">HTML/CSS</span><span class="stag">Performance</span><span class="stag">SEO</span></div>
+        <a href="service-1.html" class="svc-link">Explore service <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
       <div class="svc-card">
         <div class="svc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         </div>
-        <div class="svc-name">AI Automation Workflows</div>
-        <p class="svc-desc">Connect your tools, eliminate manual steps, and build workflows that trigger, decide, and act without you watching.</p>
-        <div class="svc-tags"><span class="stag">n8n</span><span class="stag">Make</span><span class="stag">Zapier</span><span class="stag">APIs</span></div>
-        <a href="service-2.html" class="svc-link">Learn about automation <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <div class="svc-name">AI Automation &amp; Workflows</div>
+        <p class="svc-desc">Connect your tools, eliminate manual steps, and build intelligent workflows that trigger, decide, and act on their own. From lead routing and follow-up to data processing and reporting — built with n8n, Make, and custom AI logic.</p>
+        <div class="svc-tags"><span class="stag">n8n</span><span class="stag">Make</span><span class="stag">Zapier</span><span class="stag">AI Agents</span><span class="stag">APIs</span></div>
+        <a href="service-2.html" class="svc-link">Explore service <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
       <div class="svc-card">
         <div class="svc-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
-        <div class="svc-name">AI Chatbots &amp; Assistants</div>
-        <p class="svc-desc">Trained on your business data, your tone, and your products. Captures leads at 2am, answers support questions instantly, and routes the right conversations to you.</p>
-        <div class="svc-tags"><span class="stag">RAG</span><span class="stag">Fine-tuning</span><span class="stag">Lead Gen</span><span class="stag">Embeddings</span></div>
-        <a href="service-2.html" class="svc-link">Learn about chatbots <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <div class="svc-name">UI/UX Design</div>
-        <p class="svc-desc">Interfaces that look expensive, load fast, and convert. Every layout is considered, tested, and built for the people who actually use it.</p>
-        <div class="svc-tags"><span class="stag">Figma</span><span class="stag">Prototyping</span><span class="stag">Design Systems</span></div>
-        <a href="service-3.html" class="svc-link">Learn about design <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/><line x1="9.5" y1="14.5" x2="14.5" y2="14.5"/></svg>
-        </div>
-        <div class="svc-name">Business AI Systems</div>
-        <p class="svc-desc">End-to-end AI infrastructure for your company: dashboards, internal tools, data pipelines, and intelligent workflows all working together.</p>
-        <div class="svc-tags"><span class="stag">Supabase</span><span class="stag">Dashboards</span><span class="stag">Integrations</span></div>
-        <a href="service-2.html" class="svc-link">Learn about AI systems <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <div class="svc-name">Branding &amp; Identity</div>
+        <p class="svc-desc">Visual identities that make businesses look like the premium version of themselves. Logo design, typography systems, colour palettes, and brand guidelines — crafted to hold up across every touchpoint, digital and physical.</p>
+        <div class="svc-tags"><span class="stag">Logo Design</span><span class="stag">Typography</span><span class="stag">Color Systems</span><span class="stag">Brand Guidelines</span></div>
+        <a href="service-3.html" class="svc-link">Explore service <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1010,12 +978,9 @@ footer { padding: 24px 56px; border-top: 1px solid var(--border-d); display: fle
         <label class="fl">Service Needed</label>
         <select class="fi">
           <option value="">Select a service</option>
-          <option>Custom AI Agents</option>
-          <option>AI Automation Workflows</option>
-          <option>AI Chatbot</option>
           <option>Web Development</option>
-          <option>UI/UX Design</option>
-          <option>Business AI System</option>
+          <option>AI Automation &amp; Workflows</option>
+          <option>Branding &amp; Identity</option>
           <option>Not sure yet</option>
         </select>
       </div>
