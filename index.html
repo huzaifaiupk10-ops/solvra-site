@@ -1125,6 +1125,13 @@ function handleForm(e) {
     r: Math.random() * 1.2 + .4,
     pulse: Math.random() * Math.PI * 2
   }));
+  let mx = -9999, my = -9999;
+  sec.addEventListener('mousemove', e => {
+    const r = sec.getBoundingClientRect();
+    mx = e.clientX - r.left;
+    my = e.clientY - r.top;
+  });
+  sec.addEventListener('mouseleave', () => { mx = -9999; my = -9999; });
   function frame() {
     if (W === 0 || H === 0) { resize(); }
     ctx.clearRect(0, 0, W, H);
@@ -1133,6 +1140,9 @@ function handleForm(e) {
       p.x += p.vx; p.y += p.vy;
       if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
       if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      const dx = p.x - mx, dy = p.y - my;
+      const d2 = dx * dx + dy * dy;
+      if (d2 < 18000) { const d = Math.sqrt(d2); p.x += dx / d * 1.2; p.y += dy / d * 1.2; }
       const a = .5 + Math.sin(p.pulse) * .25;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r + Math.sin(p.pulse) * .35, 0, Math.PI * 2);
