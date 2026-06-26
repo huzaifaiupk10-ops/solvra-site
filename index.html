@@ -50,8 +50,8 @@
   --gold-lg: #D8A84E;
   --gold-br: #F3C76A;
   --ink: #F5EFE7;
-  --ink-md: #A9A29A;
-  --ink-faint: rgba(245,239,231,0.40);
+  --ink-md: #C2BCB4;
+  --ink-faint: rgba(245,239,231,0.78);
   --border: rgba(255,210,140,0.12);
   --border-s: rgba(255,255,255,0.06);
   --border-d: #1A1814;
@@ -86,7 +86,7 @@ nav {
 .nav-links { display: flex; gap: 32px; }
 .nl {
   font-family: var(--font-m); font-size: .6rem; font-weight: 500;
-  letter-spacing: .16em; text-transform: uppercase; color: rgba(245,239,231,0.55);
+  letter-spacing: .16em; text-transform: uppercase; color: rgba(245,239,231,0.75);
   transition: color .2s; position: relative;
 }
 .nl::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width .3s; }
@@ -112,7 +112,7 @@ nav {
   flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 80px 40px;
 }
 .mob-nav.open { display: flex; }
-.mob-nl { font-family: var(--font-d); font-size: 2.2rem; font-weight: 400; letter-spacing: -.01em; color: rgba(245,239,231,0.6); transition: color .2s; padding: 10px 0; line-height: 1; }
+.mob-nl { font-family: var(--font-d); font-size: 2.2rem; font-weight: 400; letter-spacing: -.01em; color: rgba(245,239,231,0.82); transition: color .2s; padding: 10px 0; line-height: 1; }
 .mob-nl:hover { color: var(--gold); }
 .mob-div { width: 48px; height: 1px; background: var(--border-d); margin: 14px 0; }
 .mob-cta { font-family: var(--font-m); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(196,150,90,0.35); padding: 13px 26px; border-radius: 2px; margin-top: 8px; transition: background .2s; }
@@ -162,11 +162,11 @@ nav {
 .btn-ghost {
   display: flex; align-items: center; gap: 10px;
   font-family: var(--font-m); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase;
-  color: rgba(245,239,231,0.45); transition: all .22s;
+  color: rgba(245,239,231,0.68); transition: all .22s;
 }
 .btn-ghost:hover { color: var(--ink); gap: 16px; }
 .g-arrow {
-  width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(245,239,231,0.12);
+  width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(245,239,231,0.22);
   display: flex; align-items: center; justify-content: center;
   transition: background .2s, border-color .2s; flex-shrink: 0;
 }
@@ -174,14 +174,14 @@ nav {
 .hero-trust {
   margin-top: 48px;
   font-family: var(--font-m); font-size: .5rem; letter-spacing: .18em; text-transform: uppercase;
-  color: rgba(245,239,231,0.25);
+  color: rgba(245,239,231,0.52);
 }
 
 /* Shared section styles */
 .section-inner { padding: 120px 80px; }
 .s-tag { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px; }
 .s-tag-rule { width: 24px; height: 1px; background: var(--border-d); }
-.s-tag-text { font-family: var(--font-m); font-size: .52rem; letter-spacing: .22em; text-transform: uppercase; color: #5C5650; }
+.s-tag-text { font-family: var(--font-m); font-size: .52rem; letter-spacing: .22em; text-transform: uppercase; color: #8C867E; }
 .s-h2 { font-family: var(--font-d); font-size: clamp(2rem, 3.5vw, 3.6rem); line-height: 1.04; letter-spacing: -.02em; color: var(--ink); text-wrap: balance; }
 .s-h2 em { font-style: italic; color: var(--gold); }
 .s-body { font-family: var(--font-b); font-size: .9rem; line-height: 1.78; color: var(--ink-faint); max-width: 56ch; }
@@ -217,9 +217,9 @@ nav {
 .svc-name { font-family: var(--font-d); font-size: clamp(1.2rem, 1.8vw, 1.6rem); color: var(--ink); line-height: 1.1; letter-spacing: -.01em; }
 .svc-desc { font-family: var(--font-b); font-size: .85rem; line-height: 1.75; color: var(--ink-faint); }
 .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
-.stag { font-family: var(--font-m); font-size: .48rem; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--border-d); color: #5C5650; border-radius: 2px; transition: all .2s; }
+.stag { font-family: var(--font-m); font-size: .48rem; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--border-d); color: #8C867E; border-radius: 2px; transition: all .2s; }
 .svc-card:hover .stag { border-color: var(--border); color: var(--gold); }
-.svc-link { font-family: var(--font-m); font-size: .54rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(196,150,90,0.6); display: inline-flex; align-items: center; gap: 6px; transition: all .2s; margin-top: auto; }
+.svc-link { font-family: var(--font-m); font-size: .54rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(196,150,90,0.85); display: inline-flex; align-items: center; gap: 6px; transition: all .2s; margin-top: auto; }
 .svc-card:hover .svc-link { color: var(--gold); gap: 10px; }
 
 /* Why SOLVRA */
@@ -282,13 +282,13 @@ nav {
 
 /* Tech Stack */
 #stack { background: var(--bg-0); border-top: 1px solid var(--border-d); padding: 72px 80px; }
-.stack-label { font-family: var(--font-m); font-size: .52rem; letter-spacing: .22em; text-transform: uppercase; color: #5C5650; text-align: center; margin-bottom: 40px; }
+.stack-label { font-family: var(--font-m); font-size: .52rem; letter-spacing: .22em; text-transform: uppercase; color: #8C867E; text-align: center; margin-bottom: 40px; }
 .stack-grid { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--border-d); }
 .stack-item { flex: 0 0 12.5%; display: flex; align-items: center; justify-content: center; padding: 22px 12px; border-right: 1px solid var(--border-d); border-bottom: 1px solid var(--border-d); transition: background .25s; }
 .stack-item:hover { background: var(--bg-2); }
 .stack-item:nth-child(8n) { border-right: none; }
 .stack-item:nth-last-child(-n+8) { border-bottom: none; }
-.stack-name { font-family: var(--font-m); font-size: .5rem; letter-spacing: .12em; text-transform: uppercase; color: #5C5650; text-align: center; transition: color .2s; }
+.stack-name { font-family: var(--font-m); font-size: .5rem; letter-spacing: .12em; text-transform: uppercase; color: #8C867E; text-align: center; transition: color .2s; }
 .stack-item:hover .stack-name { color: var(--gold); }
 
 /* Pricing */
@@ -303,10 +303,10 @@ nav {
 .price-tagline { font-family: var(--font-b); font-size: .82rem; color: var(--ink-faint); line-height: 1.65; margin-bottom: 32px; min-height: 52px; }
 .price-amount { font-family: var(--font-d); font-size: 2.8rem; color: var(--ink); letter-spacing: -.03em; line-height: 1; margin-bottom: 6px; }
 .price-amount span { font-family: var(--font-b); font-size: .85rem; color: var(--ink-faint); letter-spacing: 0; }
-.price-note { font-family: var(--font-m); font-size: .48rem; letter-spacing: .12em; text-transform: uppercase; color: #5C5650; margin-bottom: 36px; }
+.price-note { font-family: var(--font-m); font-size: .48rem; letter-spacing: .12em; text-transform: uppercase; color: #8C867E; margin-bottom: 36px; }
 .price-divider { height: 1px; background: var(--border-d); margin-bottom: 28px; }
 .price-features { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; flex: 1; }
-.pf { display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-b); font-size: .83rem; line-height: 1.55; color: rgba(245,239,231,0.7); }
+.pf { display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-b); font-size: .83rem; line-height: 1.55; color: rgba(245,239,231,0.88); }
 .pf-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
 .price-btn { font-family: var(--font-m); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; padding: 14px 24px; border-radius: 2px; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all .25s; margin-top: auto; }
 .price-btn-outline { color: var(--gold); border: 1px solid rgba(196,150,90,0.32); }
@@ -359,10 +359,10 @@ nav {
 .con-h em { font-style: italic; color: var(--gold); }
 .con-sub { font-family: var(--font-b); font-size: .88rem; line-height: 1.78; color: var(--ink-faint); margin-bottom: 48px; max-width: 38ch; }
 .field { margin-bottom: 26px; }
-.fl { display: block; font-family: var(--font-m); font-size: .52rem; letter-spacing: .18em; text-transform: uppercase; color: #5C5650; margin-bottom: 10px; }
+.fl { display: block; font-family: var(--font-m); font-size: .52rem; letter-spacing: .18em; text-transform: uppercase; color: #8C867E; margin-bottom: 10px; }
 .fi { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--border-d); padding: 10px 0; color: var(--ink); font-family: var(--font-b); font-size: .9rem; outline: none; transition: border-color .25s; }
 .fi:focus { border-color: rgba(196,150,90,0.5); }
-.fi::placeholder { color: rgba(245,239,231,0.16); }
+.fi::placeholder { color: rgba(245,239,231,0.30); }
 select.fi { appearance: none; cursor: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235C5650' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 2px center; }
 select.fi option { background: #141414; color: var(--ink); }
 textarea.fi { resize: none; min-height: 90px; }
@@ -372,7 +372,7 @@ textarea.fi { resize: none; min-height: 90px; }
 .form-ok { display: none; margin-top: 18px; font-family: var(--font-m); font-size: .6rem; letter-spacing: .08em; color: var(--gold); }
 .ci { padding: 26px 0; border-bottom: 1px solid var(--border-d); }
 .ci:first-of-type { border-top: 1px solid var(--border-d); margin-top: 20px; }
-.ci-l { font-family: var(--font-m); font-size: .48rem; letter-spacing: .2em; text-transform: uppercase; color: #5C5650; margin-bottom: 6px; }
+.ci-l { font-family: var(--font-m); font-size: .48rem; letter-spacing: .2em; text-transform: uppercase; color: #8C867E; margin-bottom: 6px; }
 .ci-v { font-family: var(--font-d); font-size: 1.05rem; color: var(--ink); }
 .soc { display: flex; gap: 12px; margin-top: 36px; }
 .soc-a { width: 36px; height: 36px; border: 1px solid var(--border-d); border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: all .2s; }
@@ -380,9 +380,9 @@ textarea.fi { resize: none; min-height: 90px; }
 
 /* Footer */
 footer { padding: 24px 56px; border-top: 1px solid var(--border-d); display: flex; align-items: center; justify-content: space-between; background: var(--bg-0); }
-.fc { font-family: var(--font-m); font-size: .5rem; letter-spacing: .1em; color: #5C5650; }
+.fc { font-family: var(--font-m); font-size: .5rem; letter-spacing: .1em; color: #8C867E; }
 .fl-links { display: flex; gap: 28px; }
-.fll { font-family: var(--font-m); font-size: .5rem; letter-spacing: .1em; text-transform: uppercase; color: #5C5650; transition: color .2s; }
+.fll { font-family: var(--font-m); font-size: .5rem; letter-spacing: .1em; text-transform: uppercase; color: #8C867E; transition: color .2s; }
 .fll:hover { color: var(--gold); }
 
 /* Scroll reveals */
@@ -695,7 +695,7 @@ footer { padding: 24px 56px; border-top: 1px solid var(--border-d); display: fle
       <div class="s-tag"><div class="s-tag-rule"></div><span class="s-tag-text">Selected Work</span></div>
       <h2 class="s-h2" style="margin-top:16px">Projects</h2>
     </div>
-    <a href="work.html"><button style="font-family:var(--font-m);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#5C5650;display:flex;align-items:center;gap:8px;transition:color .2s;padding:0;background:none;border:none;cursor:none" onmouseenter="this.style.color='var(--gold)'" onmouseleave="this.style.color='#5C5650'">All Projects <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
+    <a href="work.html"><button style="font-family:var(--font-m);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#8C867E;display:flex;align-items:center;gap:8px;transition:color .2s;padding:0;background:none;border:none;cursor:none" onmouseenter="this.style.color='var(--gold)'" onmouseleave="this.style.color='#8C867E'">All Projects <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
   </div>
 
   <div class="work-list">
