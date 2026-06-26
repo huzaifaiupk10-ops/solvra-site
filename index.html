@@ -392,6 +392,10 @@ footer { padding: 24px 56px; border-top: 1px solid var(--border-d); display: fle
 .rv-r { transform: translateX(22px); }
 .rv.in, .rv-l.in, .rv-r.in { opacity: 1; transform: none; transition: opacity .85s ease, transform .85s ease; }
 
+/* Section fade in / fade out */
+.sf { opacity: 0; transform: translateY(36px); transition: opacity .75s cubic-bezier(.4,0,.2,1), transform .75s cubic-bezier(.4,0,.2,1); will-change: opacity, transform; }
+.sf.in { opacity: 1; transform: none; }
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--bg-0); }
@@ -400,6 +404,7 @@ footer { padding: 24px 56px; border-top: 1px solid var(--border-d); display: fle
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .rv, .rv-l, .rv-r { opacity: 1; transform: none; transition: none; }
+  .sf { opacity: 1 !important; transform: none !important; transition: none !important; }
   .h-orb { animation: none; }
   .btn-fill:hover, .sub-btn:hover { transform: none; }
   .wi:hover { transform: none; }
@@ -1064,6 +1069,20 @@ const revObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.08 });
 document.querySelectorAll('.rv, .rv-l, .rv-r').forEach(el => revObs.observe(el));
+
+// Section fade in / fade out
+const sfObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('in');
+    else e.target.classList.remove('in');
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('section:not(#hero), footer').forEach(el => {
+  const r = el.getBoundingClientRect();
+  el.classList.add('sf');
+  if (r.bottom > 0 && r.top < window.innerHeight) el.classList.add('in');
+  sfObs.observe(el);
+});
 
 // Nav active state
 const sections = document.querySelectorAll('section[id]');
