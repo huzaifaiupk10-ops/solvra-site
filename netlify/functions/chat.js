@@ -21,7 +21,7 @@ function isRateLimited(ip) {
 function callGroq(apiKey, userMessage) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({
-      model: 'llama3-8b-8192',
+      model: 'llama-3.1-8b-instant',
       max_tokens: 300,
       temperature: 0.7,
       messages: [

@@ -3,7 +3,7 @@ const https = require('https');
 function callGroq(apiKey) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({
-      model: 'llama3-8b-8192',
+      model: 'llama-3.1-8b-instant',
       max_tokens: 50,
       messages: [
         { role: 'user', content: 'Say hello in one word.' }
