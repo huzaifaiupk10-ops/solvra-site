@@ -1,3 +1,35 @@
+const https = require('https');
+
+// Polyfill fetch for older Node versions
+if (typeof fetch === 'undefined') {
+  global.fetch = function(url, options = {}) {
+    return new Promise((resolve, reject) => {
+      const u = new URL(url);
+      const reqOptions = {
+        hostname: u.hostname,
+        path: u.pathname + u.search,
+        method: options.method || 'GET',
+        headers: options.headers || {}
+      };
+      const req = https.request(reqOptions, (res) => {
+        let data = '';
+        res.on('data', chunk => data += chunk);
+        res.on('end', () => {
+          resolve({
+            ok: res.statusCode >= 200 && res.statusCode < 300,
+            status: res.statusCode,
+            text: () => Promise.resolve(data),
+            json: () => Promise.resolve(JSON.parse(data))
+          });
+        });
+      });
+      req.on('error', reject);
+      if (options.body) req.write(options.body);
+      req.end();
+    });
+  };
+}
+
 // Simple in-memory rate limiter: max 20 requests per IP per minute
 const rateLimitMap = new Map();
 const RATE_LIMIT = 20;
