@@ -1,19 +1,20 @@
 const https = require('https');
 
-function callAnthropic(apiKey) {
+function callGroq(apiKey) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({
-      model: 'claude-3-haiku-20240307',
+      model: 'llama3-8b-8192',
       max_tokens: 50,
-      messages: [{ role: 'user', content: 'Say hello in one word.' }]
+      messages: [
+        { role: 'user', content: 'Say hello in one word.' }
+      ]
     });
     const options = {
-      hostname: 'api.anthropic.com',
-      path: '/v1/messages',
+      hostname: 'api.groq.com',
+      path: '/openai/v1/chat/completions',
       method: 'POST',
       headers: {
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
+        'Authorization': `Bearer ${apiKey}`,
         'content-type': 'application/json',
         'content-length': Buffer.byteLength(body)
       }
@@ -30,13 +31,13 @@ function callAnthropic(apiKey) {
 }
 
 exports.handler = async function (event) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
-    return { statusCode: 200, body: JSON.stringify({ error: 'API key not set' }) };
+    return { statusCode: 200, body: JSON.stringify({ error: 'GROQ_API_KEY not set' }) };
   }
 
   try {
-    const result = await callAnthropic(apiKey);
+    const result = await callGroq(apiKey);
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json' },
