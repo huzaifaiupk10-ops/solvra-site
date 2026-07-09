@@ -5,7 +5,7 @@
   if (localStorage.getItem(KEY)) return;
 
   const css = `
-#sv-gate{position:fixed;inset:0;z-index:8500;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(10,8,6,0.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:opacity .55s ease,transform .55s ease}
+#sv-gate{position:fixed;inset:0;z-index:8500;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(10,8,6,0.97);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);transition:opacity .55s ease,transform .55s ease}
 #sv-gate.sv-gate-out{opacity:0;pointer-events:none}
 
 #sv-gate-card{width:100%;max-width:460px;background:#0D0B09;border:1px solid rgba(196,150,90,0.22);border-radius:4px;padding:52px 48px 40px;position:relative;overflow:hidden;animation:gateIn .65s cubic-bezier(.22,1,.36,1) both}
