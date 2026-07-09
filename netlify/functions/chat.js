@@ -18,18 +18,23 @@ function isRateLimited(ip) {
   return false;
 }
 
-function callGemini(apiKey, userMessage) {
+function callGroq(apiKey, userMessage) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({
-      system_instruction: { parts: [{ text: SYSTEM }] },
-      contents: [{ parts: [{ text: userMessage }] }],
-      generationConfig: { maxOutputTokens: 300, temperature: 0.7 }
+      model: 'llama3-8b-8192',
+      max_tokens: 300,
+      temperature: 0.7,
+      messages: [
+        { role: 'system', content: SYSTEM },
+        { role: 'user', content: userMessage }
+      ]
     });
     const options = {
-      hostname: 'generativelanguage.googleapis.com',
-      path: `/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      hostname: 'api.groq.com',
+      path: '/openai/v1/chat/completions',
       method: 'POST',
       headers: {
+        'Authorization': `Bearer ${apiKey}`,
         'content-type': 'application/json',
         'content-length': Buffer.byteLength(body)
       }
@@ -105,9 +110,9 @@ exports.handler = async function (event) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Message required' }) };
   }
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
-    console.error('GEMINI_API_KEY not set');
+    console.error('GROQ_API_KEY not set');
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': ALLOWED_ORIGIN },
@@ -118,10 +123,10 @@ exports.handler = async function (event) {
   const sanitized = message.replace(/<[^>]*>/g, '').trim().slice(0, 500);
 
   try {
-    const result = await callGemini(apiKey, sanitized);
+    const result = await callGroq(apiKey, sanitized);
 
     if (result.status !== 200) {
-      console.error('Gemini error:', result.status, result.body);
+      console.error('Groq error:', result.status, result.body);
       return {
         statusCode: 500,
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': ALLOWED_ORIGIN },
@@ -130,12 +135,11 @@ exports.handler = async function (event) {
     }
 
     const data = JSON.parse(result.body);
-    const reply = data.candidates &&
-      data.candidates[0] &&
-      data.candidates[0].content &&
-      data.candidates[0].content.parts &&
-      data.candidates[0].content.parts[0].text
-      ? data.candidates[0].content.parts[0].text
+    const reply = data.choices &&
+      data.choices[0] &&
+      data.choices[0].message &&
+      data.choices[0].message.content
+      ? data.choices[0].message.content
       : 'Something went wrong — please try again.';
 
     return {
