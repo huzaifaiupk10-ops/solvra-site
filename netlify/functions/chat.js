@@ -18,16 +18,18 @@ function isRateLimited(ip) {
   return false;
 }
 
-function callAnthropic(apiKey, payload) {
+function callGemini(apiKey, userMessage) {
   return new Promise((resolve, reject) => {
-    const body = JSON.stringify(payload);
+    const body = JSON.stringify({
+      system_instruction: { parts: [{ text: SYSTEM }] },
+      contents: [{ parts: [{ text: userMessage }] }],
+      generationConfig: { maxOutputTokens: 300, temperature: 0.7 }
+    });
     const options = {
-      hostname: 'api.anthropic.com',
-      path: '/v1/messages',
+      hostname: 'generativelanguage.googleapis.com',
+      path: `/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       method: 'POST',
       headers: {
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
         'content-type': 'application/json',
         'content-length': Buffer.byteLength(body)
       }
@@ -35,9 +37,7 @@ function callAnthropic(apiKey, payload) {
     const req = https.request(options, (res) => {
       let data = '';
       res.on('data', chunk => { data += chunk; });
-      res.on('end', () => {
-        resolve({ status: res.statusCode, body: data });
-      });
+      res.on('end', () => resolve({ status: res.statusCode, body: data }));
     });
     req.on('error', reject);
     req.write(body);
@@ -105,9 +105,9 @@ exports.handler = async function (event) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Message required' }) };
   }
 
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    console.error('ANTHROPIC_API_KEY not set');
+    console.error('GEMINI_API_KEY not set');
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': ALLOWED_ORIGIN },
@@ -118,15 +118,10 @@ exports.handler = async function (event) {
   const sanitized = message.replace(/<[^>]*>/g, '').trim().slice(0, 500);
 
   try {
-    const result = await callAnthropic(apiKey, {
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 300,
-      system: SYSTEM,
-      messages: [{ role: 'user', content: sanitized }]
-    });
+    const result = await callGemini(apiKey, sanitized);
 
     if (result.status !== 200) {
-      console.error('Anthropic error:', result.status, result.body);
+      console.error('Gemini error:', result.status, result.body);
       return {
         statusCode: 500,
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': ALLOWED_ORIGIN },
@@ -135,8 +130,12 @@ exports.handler = async function (event) {
     }
 
     const data = JSON.parse(result.body);
-    const reply = data.content && data.content[0] && data.content[0].text
-      ? data.content[0].text
+    const reply = data.candidates &&
+      data.candidates[0] &&
+      data.candidates[0].content &&
+      data.candidates[0].content.parts &&
+      data.candidates[0].content.parts[0].text
+      ? data.candidates[0].content.parts[0].text
       : 'Something went wrong — please try again.';
 
     return {
