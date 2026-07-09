@@ -1,7 +1,7 @@
 # SOLVRA — Premium AI Studio
 
 ## Project
-Static HTML/CSS/JS site. Deployed on Netlify at https://solvrapremium.netlify.app/
+Static HTML/CSS/JS site. Deployed on Netlify at https://solvradev.com (custom domain, was solvrapremium.netlify.app)
 No build tool. All changes go directly to HTML files.
 Netlify reads the root directory. Do not add a build command.
 Do not break `<form name="solvra-leads" netlify>` at bottom of index.html.

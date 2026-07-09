@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,21 +6,21 @@
 <title>SOLVRA — Premium AI Development Studio</title>
 <meta name="description" content="Custom AI agents, automation workflows, and premium websites for businesses that want to move faster. SOLVRA builds AI infrastructure that saves time and scales.">
 <meta name="keywords" content="AI agents, AI automation, custom AI development, premium web development, AI chatbots, business automation, AI studio">
-<link rel="canonical" href="https://solvrapremium.netlify.app/">
+<link rel="canonical" href="https://solvradev.com/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SOLVRA">
 <meta property="og:title" content="SOLVRA — Premium AI Development Studio">
 <meta property="og:description" content="Custom AI agents, automation workflows, and premium websites for businesses that refuse to slow down.">
-<meta property="og:image" content="https://solvrapremium.netlify.app/og-image.png">
+<meta property="og:image" content="https://solvradev.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://solvrapremium.netlify.app">
+<meta property="og:url" content="https://solvradev.com">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SOLVRA — Premium AI Development Studio">
 <meta name="twitter:description" content="Custom AI agents, automation workflows, and premium websites built for serious businesses.">
-<meta name="twitter:image" content="https://solvrapremium.netlify.app/og-image.png">
+<meta name="twitter:image" content="https://solvradev.com/og-image.png">
 
 <script type="application/ld+json">
 {
@@ -28,7 +28,7 @@
   "@type": "ProfessionalService",
   "name": "SOLVRA",
   "description": "Premium AI development studio offering custom AI agents, automation workflows, and web development.",
-  "url": "https://solvrapremium.netlify.app",
+  "url": "https://solvradev.com",
   "email": "huzaifaiupk10@gmail.com",
   "telephone": "+15714774920",
   "founder": { "@type": "Person", "name": "Huzaifa Imran" },
@@ -915,14 +915,14 @@ footer { padding: 24px 56px; border-top: 1px solid var(--border-d); display: fle
     <p class="con-sub">Tell us what you're building. I'll respond within 24 hours, no commitment required.</p>
     <form onsubmit="handleForm(event)">
       <div class="f-row">
-        <div class="field"><label class="fl">First Name</label><input type="text" class="fi" placeholder="John" required></div>
-        <div class="field"><label class="fl">Last Name</label><input type="text" class="fi" placeholder="Doe" required></div>
+        <div class="field"><label class="fl">First Name</label><input type="text" name="first-name" class="fi" placeholder="John" required></div>
+        <div class="field"><label class="fl">Last Name</label><input type="text" name="last-name" class="fi" placeholder="Doe" required></div>
       </div>
-      <div class="field"><label class="fl">Email</label><input type="email" class="fi" placeholder="john@company.com" required></div>
-      <div class="field"><label class="fl">Company</label><input type="text" class="fi" placeholder="Your Company"></div>
+      <div class="field"><label class="fl">Email</label><input type="email" name="email" class="fi" placeholder="john@company.com" required></div>
+      <div class="field"><label class="fl">Company</label><input type="text" name="company" class="fi" placeholder="Your Company"></div>
       <div class="field">
         <label class="fl">Service Needed</label>
-        <select class="fi">
+        <select name="service" class="fi">
           <option value="">Select a service</option>
           <option>Web Development</option>
           <option>AI Automation &amp; Workflows</option>
@@ -930,7 +930,7 @@ footer { padding: 24px 56px; border-top: 1px solid var(--border-d); display: fle
           <option>Not sure yet</option>
         </select>
       </div>
-      <div class="field"><label class="fl">Message</label><textarea class="fi" placeholder="Tell us about your project or the problem you want to solve..." required></textarea></div>
+      <div class="field"><label class="fl">Message</label><textarea name="message" class="fi" placeholder="Tell us about your project or the problem you want to solve..." required></textarea></div>
       <button type="submit" class="sub-btn">Send Message <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       <div class="form-ok" id="formOk">Message received. I'll respond within 24 hours.</div>
     </form>
@@ -1118,17 +1118,65 @@ function toggleFaq(q) {
 }
 
 // Contact form
-function handleForm(e) {
+async function handleForm(e) {
   e.preventDefault();
+  const form = e.target;
   const ok = document.getElementById('formOk');
-  ok.style.display = 'block';
-  e.target.reset();
-  setTimeout(() => { ok.style.display = 'none'; }, 6000);
+  const btn = form.querySelector('.sub-btn');
+  const origHTML = btn.innerHTML;
+
+  const data = {
+    'form-name': 'contact-form',
+    'first-name': form.querySelector('[name="first-name"]').value,
+    'last-name':  form.querySelector('[name="last-name"]').value,
+    'email':      form.querySelector('[name="email"]').value,
+    'company':    form.querySelector('[name="company"]').value,
+    'service':    form.querySelector('[name="service"]').value,
+    'message':    form.querySelector('[name="message"]').value,
+  };
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    const res = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    });
+    if (!res.ok) throw new Error('Submit failed');
+
+    // Fire-and-forget email notification
+    fetch('/.netlify/functions/notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).catch(() => {});
+
+    ok.style.display = 'block';
+    form.reset();
+    setTimeout(() => { ok.style.display = 'none'; }, 6000);
+  } catch {
+    ok.textContent = 'Something went wrong — email us at huzaifaiupk10@gmail.com';
+    ok.style.color = '#e05a5a';
+    ok.style.display = 'block';
+    setTimeout(() => {
+      ok.style.display = 'none';
+      ok.style.color = '';
+      ok.textContent = "Message received. I'll respond within 24 hours.";
+    }, 6000);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = origHTML;
+  }
 }
 </script>
 
 <!-- Netlify form detection -->
-<form name="solvra-leads" netlify style="display:none">
+<form name="solvra-leads" netlify style="display:none" aria-hidden="true">
+  <input name="first-name"> <input name="last-name"> <input name="email"> <input name="company"> <input name="service"> <textarea name="message"></textarea>
+</form>
+<form name="contact-form" netlify style="display:none" aria-hidden="true">
   <input name="first-name"> <input name="last-name"> <input name="email"> <input name="company"> <input name="service"> <textarea name="message"></textarea>
 </form>
 

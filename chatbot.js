@@ -167,15 +167,34 @@ function toggle(){
 sndBtn.addEventListener('click',send);
 inp.addEventListener('keydown',e=>{if(e.key==='Enter')send();});
 
-function send(){
+async function send(){
   const text=inp.value.trim();
   if(!text)return;
   addUser(text);
   inp.value='';
-  const reply=respond(text);
-  if(reply===null)return;
+  const m=text.toLowerCase();
+  // Handle booking intent locally — no API call needed
+  if(has(m,['book','schedule','call','meeting','appointment','speak with','talk to','hop on','zoom','video call','phone call'])){
+    showBookingCard();
+    return;
+  }
   showTyping();
-  setTimeout(()=>{removeTyping();addBot(reply);},700+Math.random()*600);
+  try{
+    const res=await fetch('/.netlify/functions/chat',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({message:text})
+    });
+    if(!res.ok)throw new Error();
+    const {reply}=await res.json();
+    removeTyping();addBot(reply);
+  }catch{
+    // Fallback to local keyword matching if API is unavailable
+    removeTyping();
+    const reply=respond(text);
+    if(reply===null)return;
+    addBot(reply);
+  }
 }
 
 function addUser(text){
