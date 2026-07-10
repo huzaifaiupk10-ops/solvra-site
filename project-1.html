@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Gold&apos;s Gym Redesign &mdash; SOLVRA</title>
+<title>SYLO &mdash; Footwear Brand Identity &mdash; SOLVRA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -11,16 +11,13 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:#0A0A0A;color:#F0EBE0;font-family:'Cormorant Garamond',sans-serif;overflow-x:hidden;cursor:none}
-img,svg{display:block}
+img,svg,video{display:block}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:none}
 #cur{width:9px;height:9px;background:#C4965A;border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);transition:width .15s,height .15s}
 #cur-ring{width:36px;height:36px;border:1px solid rgba(196,150,90,.32);border-radius:50%;position:fixed;z-index:9998;pointer-events:none;transform:translate(-50%,-50%)}
-nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:18px 36px;border-radius:14px;background:rgba(255,255,255,0.04);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,0.08);box-shadow:0 8px 32px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.06)}
-.nb{display:none}
+nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:18px 36px;border-radius:14px;background:rgba(255,255,255,0.04);-webkit-backdrop-filter:blur(28px);backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,0.08);box-shadow:0 8px 32px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.06)}
 .logo{display:flex;align-items:center;gap:12px}
-.lwm{font-family:'Cormorant Garamond',sans-serif;font-weight:700;font-size:.83rem;letter-spacing:.28em;text-transform:uppercase;color:#F0EBE0}
-.lsub{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.22em;color:#C4965A;opacity:.7;margin-top:2px}
 .back-link{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(196,150,90,.6);display:flex;align-items:center;gap:8px;transition:color .2s}
 .back-link:hover{color:#C4965A}
 .nav-cta{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#C4965A;border:1px solid rgba(196,150,90,.32);padding:10px 20px;border-radius:2px;transition:all .25s;background:transparent}
@@ -32,7 +29,7 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
 .proj-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,6.5vw,7.5rem);line-height:.92;letter-spacing:-.03em;margin-bottom:40px;max-width:900px}
 .tag-row{display:flex;flex-wrap:wrap;gap:8px}
 .ptag{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border:1px solid #1E1E1E;color:#5C5650;border-radius:2px}
-.proj-img-wrap{border-bottom:1px solid #1E1E1E;background:#060606;padding:0}
+.proj-img-wrap{border-bottom:1px solid #1E1E1E;background:#060606}
 .proj-img-wrap img{width:100%;height:auto;display:block}
 .proj-details{display:grid;grid-template-columns:1fr 320px;border-bottom:1px solid #1E1E1E}
 .proj-desc-col{padding:72px 80px;border-right:1px solid #1E1E1E}
@@ -42,6 +39,18 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
 .meta-block{margin-bottom:36px}
 .meta-label{font-family:'JetBrains Mono',monospace;font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:#2E2A26;margin-bottom:10px}
 .meta-val{font-family:'Cormorant Garamond',sans-serif;font-size:.85rem;color:rgba(240,235,224,.62);line-height:1.8}
+
+/* Gallery */
+.proj-gallery{padding:0;border-bottom:1px solid #1E1E1E}
+.gallery-label{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:#3A3530;padding:48px 80px 28px}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#111}
+.gallery-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#111}
+.gallery-item{background:#060606;overflow:hidden;position:relative}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.gallery-item:hover img{transform:scale(1.04)}
+.gallery-item video{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-item.wide{grid-column:span 2}
+
 .proj-cta{padding:80px;display:flex;align-items:center;justify-content:space-between;gap:40px}
 .cta-text{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);line-height:1.05;letter-spacing:-.02em;max-width:500px}
 .cta-text em{font-style:italic;color:#C4965A}
@@ -59,6 +68,9 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
   .proj-details{grid-template-columns:1fr}
   .proj-desc-col{padding:48px 24px;border-right:none;border-bottom:1px solid #1E1E1E}
   .proj-meta-col{padding:40px 24px}
+  .gallery-label{padding:40px 24px 20px}
+  .gallery-grid,.gallery-grid-3{grid-template-columns:1fr}
+  .gallery-item.wide{grid-column:span 1}
   .proj-cta{flex-direction:column;align-items:flex-start;padding:48px 24px;gap:24px}
   .cta-btns{flex-direction:column;width:100%}
   .btn-fill,.btn-outline{justify-content:center;width:100%;box-sizing:border-box}
@@ -84,7 +96,6 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
   <a href="index.html" class="logo">
     <img src="logo-transparent.png" alt="SOLVRA" style="height:44px;display:block;mix-blend-mode:lighten">
   </a>
-  <a href="index.html" class="back-link">Home</a>
   <a href="index.html#projects" class="back-link">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
     Back to Work
@@ -95,37 +106,45 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
 <section class="proj-hero">
   <div class="eyebrow">
     <div class="eyebrow-line"></div>
-    <div class="eyebrow-txt">Premium Fitness Website Concept</div>
+    <div class="eyebrow-txt">Footwear Brand Identity</div>
   </div>
-  <h1 class="proj-title">Gold&apos;s Gym<br/>Redesign</h1>
+  <h1 class="proj-title">SYLO</h1>
   <div class="tag-row">
-    <span class="ptag">Web Design</span>
-    <span class="ptag">Website Redesign</span>
-    <span class="ptag">UI/UX Design</span>
-    <span class="ptag">React</span>
-    <span class="ptag">Framer Motion</span>
-    <span class="ptag">Branding</span>
-    <span class="ptag">Landing Page</span>
+    <span class="ptag">Brand Identity</span>
+    <span class="ptag">Art Direction</span>
+    <span class="ptag">Campaign Design</span>
+    <span class="ptag">Product Visualization</span>
+    <span class="ptag">Poster Design</span>
+    <span class="ptag">Sports Branding</span>
+    <span class="ptag">Typography</span>
+    <span class="ptag">AI-Assisted Design</span>
+    <span class="ptag">Canva</span>
+    <span class="ptag">Photoshop</span>
   </div>
 </section>
 
-<div class="proj-img-wrap">
-  <img src="project1.png" alt="Gold's Gym Redesign"/>
+<div class="proj-img-wrap sr">
+  <img src="sylo.png" alt="SYLO Footwear Brand Identity"/>
 </div>
 
-<div class="proj-details">
+<div class="proj-details sr">
   <div class="proj-desc-col">
     <div class="sec-label">Overview</div>
-    <p class="proj-desc-text">A premium website redesign concept for Gold&apos;s Gym Woodbridge/Lake Ridge, focused on improving digital presence, visual branding, and membership conversion with a bold luxury fitness aesthetic. The redesign brings a high-end look and feel that matches the gym&apos;s reputation while dramatically improving the user experience for potential members navigating the site for the first time.</p>
+    <p class="proj-desc-text">SYLO is a conceptual footwear brand identity created for a modern performance-shoe company. The project combines bold art direction, product visualization, and campaign design to establish a sleek, energetic, and recognizable brand presence.</p>
+    <p class="proj-desc-text" style="margin-top:20px">The visual system uses a high-contrast red, white, and black palette, geometric typography, technical design elements, and dynamic product compositions. Multiple campaign posters were developed to showcase the footwear from different angles while maintaining a consistent identity across every touchpoint.</p>
   </div>
   <div class="proj-meta-col">
     <div class="meta-block">
       <div class="meta-label">Category</div>
-      <div class="meta-val">Fitness &amp; Wellness</div>
+      <div class="meta-val">Footwear Branding</div>
     </div>
     <div class="meta-block">
       <div class="meta-label">Services Delivered</div>
-      <div class="meta-val">Web Design<br/>UI/UX Design<br/>React Development<br/>Branding<br/>Landing Page</div>
+      <div class="meta-val">Brand Identity<br/>Art Direction<br/>Campaign Design<br/>Poster Design<br/>Product Visualization<br/>Visual Identity<br/>Creative Direction</div>
+    </div>
+    <div class="meta-block">
+      <div class="meta-label">Tools</div>
+      <div class="meta-val">Canva<br/>Photoshop<br/>AI-Assisted Design</div>
     </div>
     <div class="meta-block">
       <div class="meta-label">Type</div>
@@ -134,8 +153,26 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
   </div>
 </div>
 
-<div class="proj-cta">
-  <div class="cta-text">Want something<br/><em>like this?</em></div>
+<div class="proj-gallery sr">
+  <div class="gallery-label">Campaign Gallery</div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="sylo-1.png" alt="SYLO Side Profile Campaign"/>
+    </div>
+    <div class="gallery-item">
+      <img src="sylo-2.png" alt="SYLO Top View Campaign"/>
+    </div>
+    <div class="gallery-item">
+      <img src="sylo-3.png" alt="SYLO Rear System Campaign"/>
+    </div>
+    <div class="gallery-item">
+      <video src="sylo-video.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+</div>
+
+<div class="proj-cta sr">
+  <div class="cta-text">Want a brand built to<br/><em>move fast?</em></div>
   <div class="cta-btns">
     <a href="index.html#contact"><button class="btn-fill">Start a Project <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></a>
     <a href="index.html#projects"><button class="btn-outline">View All Work</button></a>
@@ -149,7 +186,7 @@ document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.le
 (function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
 document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.width='14px';cur.style.height='14px'});el.addEventListener('mouseleave',()=>{cur.style.width='9px';cur.style.height='9px'})});
 const sr=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');sr.unobserve(e.target)}})},{threshold:0.1});
-document.querySelectorAll('.proj-img-wrap,.proj-details,.proj-cta').forEach(el=>{el.classList.add('sr');sr.observe(el)});
+document.querySelectorAll('.sr').forEach(el=>sr.observe(el));
 </script>
 <script src="gate.js"></script>
 </body>
