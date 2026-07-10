@@ -41,15 +41,14 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
 .meta-val{font-family:'Cormorant Garamond',sans-serif;font-size:.85rem;color:rgba(240,235,224,.62);line-height:1.8}
 
 /* Gallery */
-.proj-gallery{padding:0;border-bottom:1px solid #1E1E1E}
+.proj-gallery{border-bottom:1px solid #1E1E1E}
 .gallery-label{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:#3A3530;padding:48px 80px 28px}
-.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#111}
-.gallery-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#111}
-.gallery-item{background:#060606;overflow:hidden;position:relative}
-.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.4,0,.2,1)}
-.gallery-item:hover img{transform:scale(1.04)}
-.gallery-item video{width:100%;height:100%;object-fit:cover;display:block}
-.gallery-item.wide{grid-column:span 2}
+.gallery-posters{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#111;margin:0 0 2px}
+.gallery-poster{background:#060606;overflow:hidden;aspect-ratio:1/1}
+.gallery-poster img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.gallery-poster:hover img{transform:scale(1.04)}
+.gallery-video-wrap{background:#060606;display:flex;justify-content:center;padding:48px 80px}
+.gallery-video-wrap video{width:100%;max-width:640px;border-radius:2px;display:block;background:#000}
 
 .proj-cta{padding:80px;display:flex;align-items:center;justify-content:space-between;gap:40px}
 .cta-text{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);line-height:1.05;letter-spacing:-.02em;max-width:500px}
@@ -69,8 +68,8 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
   .proj-desc-col{padding:48px 24px;border-right:none;border-bottom:1px solid #1E1E1E}
   .proj-meta-col{padding:40px 24px}
   .gallery-label{padding:40px 24px 20px}
-  .gallery-grid,.gallery-grid-3{grid-template-columns:1fr}
-  .gallery-item.wide{grid-column:span 1}
+  .gallery-posters{grid-template-columns:1fr}
+  .gallery-video-wrap{padding:32px 24px}
   .proj-cta{flex-direction:column;align-items:flex-start;padding:48px 24px;gap:24px}
   .cta-btns{flex-direction:column;width:100%}
   .btn-fill,.btn-outline{justify-content:center;width:100%;box-sizing:border-box}
@@ -155,19 +154,19 @@ nav{position:fixed;top:12px;left:24px;right:24px;z-index:500;display:flex;align-
 
 <div class="proj-gallery sr">
   <div class="gallery-label">Campaign Gallery</div>
-  <div class="gallery-grid">
-    <div class="gallery-item">
+  <div class="gallery-posters">
+    <div class="gallery-poster">
       <img src="sylo-1.png" alt="SYLO Side Profile Campaign"/>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-poster">
       <img src="sylo-2.png" alt="SYLO Top View Campaign"/>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-poster">
       <img src="sylo-3.png" alt="SYLO Rear System Campaign"/>
     </div>
-    <div class="gallery-item">
-      <video src="sylo-video.mp4" autoplay muted loop playsinline></video>
-    </div>
+  </div>
+  <div class="gallery-video-wrap">
+    <video src="sylo-video.mp4" controls playsinline></video>
   </div>
 </div>
 
